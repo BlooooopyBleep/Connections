@@ -22,7 +22,8 @@ public class LaunchApplication {
                 }
             driver.quit();
         }
-            String str1 = list.get(0).substring(1,list.get(0).length()-1);
+    
+       String str1 = list.get(0).substring(1,list.get(0).length()-1);
             String str2 = list.get(1).substring(1,list.get(1).length()-1);
             String str3 = list.get(2).substring(1,list.get(2).length()-1);
             String str4 = list.get(3).substring(1,list.get(3).length()-1);
@@ -38,4 +39,21 @@ public class LaunchApplication {
             String str14 = list.get(13).substring(1,list.get(13).length()-1);
             String str15 = list.get(14).substring(1,list.get(14).length()-1);
             String str16 = list.get(15).substring(1,list.get(15).length()-1);
+            String[] data = new String[16];
+            data[0] = str1;
+            data[1] = str2;
+            data[2] = str3;
+            data[3] = str4;
+            data[4] = str5;
+            data[5] = str6;
+            data[6] = str7;
+            data[7] = str8;
+            data[8] = str9;
+            data[9] = str10;
+            data[10] = str11;
+            data[11] = str12;
+            data[12] = str13;
+            data[13] = str14;
+            data[14] = str15;
+            data[15] = str16;
 }
