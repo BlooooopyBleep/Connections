@@ -20,7 +20,14 @@ public class LaunchApplication {
                 while (matcher.find()) {
                     list.add(matcher.group());
                 }
-            System.out.println(list);
             driver.quit();
         }
+            String str1 = list.get(0).substring(1,list.get(0).length()-1);
+            String str2 = list.get(1).substring(1,list.get(1).length()-1);
+            String str3 = list.get(2).substring(1,list.get(2).length()-1);
+            String str4 = list.get(3).substring(1,list.get(3).length()-1);
+            String str5 = list.get(4).substring(1,list.get(4).length()-1);
+            String str6 = list.get(5).substring(1,list.get(5).length()-1);
+            String str7 = list.get(6).substring(1,list.get(6).length()-1);
+            String str8 = list.get(7).substring(1,list.get(7).length()-1);
 }
