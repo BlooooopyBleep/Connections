@@ -30,4 +30,12 @@ public class LaunchApplication {
             String str6 = list.get(5).substring(1,list.get(5).length()-1);
             String str7 = list.get(6).substring(1,list.get(6).length()-1);
             String str8 = list.get(7).substring(1,list.get(7).length()-1);
+            String str9 = list.get(8).substring(1,list.get(8).length()-1);
+            String str10 = list.get(9).substring(1,list.get(9).length()-1);
+            String str11 = list.get(10).substring(1,list.get(10).length()-1);
+            String str12 = list.get(11).substring(1,list.get(11).length()-1);
+            String str13 = list.get(12).substring(1,list.get(12).length()-1);
+            String str14 = list.get(13).substring(1,list.get(13).length()-1);
+            String str15 = list.get(14).substring(1,list.get(14).length()-1);
+            String str16 = list.get(15).substring(1,list.get(15).length()-1);
 }
