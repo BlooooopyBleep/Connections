@@ -121,7 +121,7 @@ background-color: #6c757d;
     var selectedTextBox = null;
     var touchInProgress = false;
 
-    function handleClick(clickedTextBox) {
+  function handleClick(clickedTextBox) {
       if (!touchInProgress) {
         if (selectedTextBox) {
           var tempText = selectedTextBox.innerHTML;
@@ -146,12 +146,21 @@ background-color: #6c757d;
     }
 
     var draggedItem = null;
+    var clickedOnce = null;
 
     function handleTouchStart(event) {
       touchInProgress = true;
       var touch = event.touches[0];
       draggedItem = document.elementFromPoint(touch.clientX, touch.clientY);
-      draggedItem.classList.add('dragged-item'); // Apply the dragged-item style
+
+      // Check if the box has been clicked once before
+      if (clickedOnce === draggedItem) {
+        clickedOnce = null;
+        event.preventDefault(); // Prevent default action (e.g., scrolling) for the second click
+      } else {
+        clickedOnce = draggedItem;
+        draggedItem.classList.add('dragged-item'); // Apply the dragged-item style
+      }
     }
 
     function handleTouchMove(event) {
@@ -206,7 +215,8 @@ background-color: #6c757d;
         draggedItem.classList.remove('dragged-item'); // Remove the dragged-item style
         draggedItem = null;
       }
-    }  </script>
+    }
+  </script>
 </body>
 
 </html>
