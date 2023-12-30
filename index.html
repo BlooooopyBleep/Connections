@@ -1,3 +1,4 @@
+
 <!DOCTYPE html>
 <html>
 <head>
@@ -43,24 +44,24 @@
 
   <div class = "grid-container-wrapper">
  <h1 style="text-align:center;color:white;"><b>Connections: See It!</b></h1>
-    <button class = "button" onclick="myFunction()">Click Here to Reset!</button>
+    <button class = "button" onclick="resetGrid()">Click Here to Reset!</button>
  <div class = "grid-container">
-<div class = "grid-item" onclick="handleClick(this)"><i>Empty</i></div>
-<div class = "grid-item" onclick="handleClick(this)"><i>Empty</i></div>
-  <div class = "grid-item" onclick="handleClick(this)"><i>Empty</i></div>
-  <div class = "grid-item" onclick="handleClick(this)"><i>Empty</i></div>
-  <div class = "grid-item" onclick="handleClick(this)"><i>Empty</i></div>
-  <div class = "grid-item" onclick="handleClick(this)"><i>Empty</i></div>
-  <div class = "grid-item" onclick="handleClick(this)"><i>Empty</i></div>
-  <div class = "grid-item" onclick="handleClick(this)"><i>Empty</i></div>
-  <div class = "grid-item" onclick="handleClick(this)"><i>Empty</i></div>
-  <div class = "grid-item" onclick="handleClick(this)"><i>Empty</i></div>
-  <div class = "grid-item" onclick="handleClick(this)"><i>Empty</i></div>
-  <div class = "grid-item" onclick="handleClick(this)"><i>Empty</i></div>
-  <div class = "grid-item" onclick="handleClick(this)"><i>Empty</i></div>
-  <div class = "grid-item" onclick="handleClick(this)"><i>Empty</i></div>
-  <div class = "grid-item" onclick="handleClick(this)"><i>Empty</i></div>
-  <div class = "grid-item" onclick="handleClick(this)"><i>Empty</i></div>
+<div id = "num1" class = "grid-item" onclick="handleClick(this)"><i>Empty</i></div>
+<div id = "num2"class = "grid-item" onclick="handleClick(this)"><i>Empty</i></div>
+  <div id = "num3"class = "grid-item" onclick="handleClick(this)"><i>Empty</i></div>
+  <div id = "num4"class = "grid-item" onclick="handleClick(this)"><i>Empty</i></div>
+  <div id = "num5"class = "grid-item" onclick="handleClick(this)"><i>Empty</i></div>
+  <div id = "num6"class = "grid-item" onclick="handleClick(this)"><i>Empty</i></div>
+  <div id = "num7"class = "grid-item" onclick="handleClick(this)"><i>Empty</i></div>
+  <div id = "num8"class = "grid-item" onclick="handleClick(this)"><i>Empty</i></div>
+  <div id = "num9"class = "grid-item" onclick="handleClick(this)"><i>Empty</i></div>
+  <div id = "num10"class = "grid-item" onclick="handleClick(this)"><i>Empty</i></div>
+  <div id = "num11"class = "grid-item" onclick="handleClick(this)"><i>Empty</i></div>
+  <div id = "num12"class = "grid-item" onclick="handleClick(this)"><i>Empty</i></div>
+  <div id = "num13"class = "grid-item" onclick="handleClick(this)"><i>Empty</i></div>
+  <div id = "num14"class = "grid-item" onclick="handleClick(this)"><i>Empty</i></div>
+  <div id = "num15"class = "grid-item" onclick="handleClick(this)"><i>Empty</i></div>
+  <div id = "num16"class = "grid-item" onclick="handleClick(this)"><i>Empty</i></div>
   </div>
  <div class =  "grid-container">
 <div class = "grid-item" id = "box1" onclick="handleClick(this)">placeholder</div>
@@ -82,28 +83,37 @@
 </div>
 </div>
 <script>
-  var data = ["SAINT","BAD","BOY","BY","FLY","TEE","JAY","FRESH","CROP","GEE","CURIOUS","BEE","RAD","EX","TANK","POLO"];
+  var data = ["SAINT", "BAD", "BOY", "BY", "FLY", "TEE", "JAY", "FRESH", "CROP", "GEE", "CURIOUS", "BEE", "RAD", "EX", "TANK", "POLO"];
   for (var wordNum = 1; wordNum <= 16; wordNum++) {
-    document.getElementById("box" + wordNum).innerHTML = data[wordNum-1];}
-       var selectedTextBox = null;
-    function handleClick(clickedTextBox) {
-        if (selectedTextBox) {
-            var tempText = selectedTextBox.innerHTML;
-            selectedTextBox.innerHTML = clickedTextBox.innerHTML;
-            clickedTextBox.innerHTML = tempText;
-            selectedTextBox.classList.remove('selected');
-            selectedTextBox = null;
-        } else {
-            selectedTextBox = clickedTextBox;
-            selectedTextBox.classList.add('selected');
-        }
+    document.getElementById("box" + wordNum).innerHTML = data[wordNum - 1];
+  }
+
+  var selectedTextBox = null;
+
+  function handleClick(clickedTextBox) {
+    if (selectedTextBox) {
+      var tempText = selectedTextBox.innerHTML;
+      selectedTextBox.innerHTML = clickedTextBox.innerHTML;
+      clickedTextBox.innerHTML = tempText;
+      selectedTextBox.classList.remove('selected');
+      selectedTextBox = null;
+    } else {
+      selectedTextBox = clickedTextBox;
+      selectedTextBox.classList.add('selected');
     }
+  }
+	
+function resetGrid() {
+    for (var wordNum = 1; wordNum <= 16; wordNum++) {
+      document.getElementById("box" + wordNum).innerHTML = data[wordNum - 1];
+    }
+    for(var wordNum = 1; wordNum <= 16; wordNum++) {
+      document.getElementById("num" + wordNum).innerHTML ="<i>Empty</i>" ;
+  }}
 
-
-  
-    
-}
 
 </script>
 </body>
 </html>
+
+
