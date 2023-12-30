@@ -114,12 +114,12 @@ background-color: #6c757d;
     
   </div>
 <script>
-
+<script>
   var data = ["SAINT", "BAD", "BOY", "BY", "FLY", "TEE", "JAY", "FRESH", "CROP", "GEE", "CURIOUS", "BEE", "RAD", "EX", "TANK", "POLO"];
  for (var wordNum = 1; wordNum <= 16; wordNum++) {
       document.getElementById("box" + wordNum).innerHTML = data[wordNum - 1];
     }
-   var selectedTextBox = null;
+  var selectedTextBox = null;
 
   function handleClick(clickedTextBox) {
     if (selectedTextBox) {
@@ -182,6 +182,10 @@ background-color: #6c757d;
   document.addEventListener('touchstart', handleTouchStart, { passive: false });
   document.addEventListener('touchmove', handleTouchMove, { passive: false });
   document.addEventListener('touchend', handleTouchEnd, { passive: false });
+
+
+ 
+
 </script>
 </body>
 
