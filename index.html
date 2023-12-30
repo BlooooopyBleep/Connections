@@ -5,12 +5,11 @@
 <title>Connections</title>
   <style>
     body {
-	       margin:0;
+    margin:0;
  background-image: url("https://cdn.mos.cms.futurecdn.net/rpEkiVUMPDHZbQtemd8ms4-1920-80.jpg.webp");
 }
         .button{
-        	font-size:18px;
-            padding:5px;
+        	font-size:3vw;
             color:white;
             font-family:"Times New Roman";
             border-radius: 25px;
@@ -22,29 +21,26 @@
             gap: 10px;
             padding: 10px;
             width: 100%;
+            text-align:center;
         }
- .grid-container-wrapper {
-            margin-top: 50px;
-        }
+
 .grid-item {
             font-family: "Times New Roman";
             background-color: rgba(125, 125, 125,0.5);
             border: 1px solid rgb(0, 0, 0);
-            font-size: 25px;
+            font-size: 5vw;
             color: white;
             text-align: center;
-            border-radius: 25px;
-            width: 100%; 
-            height: 100%;
+            border-radius: 15px;
+      
+       
             box-sizing: border-box;
             padding:20px;
         }
   </style>
 </head>
 <body>
-
-  <div class = "grid-container-wrapper">
- <h1 style="text-align:center;color:white;"><b>Connections: See It!</b></h1>
+ <h1 style="text-align:center;color:white;font-size:10vw"><b>Connections: See It!</b></h1>
     <button class = "button" onclick="resetGrid()">Click Here to Reset!</button>
  <div class = "grid-container">
 <div id = "num1" class = "grid-item" onclick="handleClick(this)"><i>Empty</i></div>
@@ -81,7 +77,6 @@
 <div class = "grid-item" id = "box14" onclick="handleClick(this)">placeholder</div>
 <div class = "grid-item" id = "box15" onclick="handleClick(this)">placeholder</div>
 <div class = "grid-item" id = "box16" onclick="handleClick(this)">placeholder</div>
-</div>
 </div>
 <script>
   var data = ["SAINT", "BAD", "BOY", "BY", "FLY", "TEE", "JAY", "FRESH", "CROP", "GEE", "CURIOUS", "BEE", "RAD", "EX", "TANK", "POLO"];
