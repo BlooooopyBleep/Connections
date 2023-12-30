@@ -7,17 +7,17 @@
   <style>
     h1 {
       text-align: center;
+      font-weight: bold;
       color: white;
       font-size: 4vw;
       font-size: 4vh;
-      font-family: "Times New Roman";
-      margin:3vh;
-      margin: 2vw;
+      font-family: "Helvetica";
+        
     }
 
     body {
-      margin: 0;
-      background-image: url("https://cdn.mos.cms.futurecdn.net/rpEkiVUMPDHZbQtemd8ms4-1920-80.jpg.webp");
+      margin: 2vh;
+      background-color: #495057;
       height: 100vh;
        overflow: hidden
     }
@@ -25,32 +25,36 @@
     .button {
       font-size: 2vw;
       color: white;
-      font-family: "Times New Roman";
+      font-family: "Helvetica";
       border-radius: 10px;
       background-color: rgba(125, 125, 125, 0.5);
       padding: 1vh;
         margin-left: 2vw;
     }
-
+.empty-item {
+      background-color: #343a40;
+          }
+.non-empty-item{
+background-color: #6c757d;
+}
     .grid-container {
       display: grid;
       grid-template-columns: repeat(auto-fill, minmax(20%, 1fr));
-      
-      gap: 1vh;
-      gap: 1vw;
-      padding: 0.2vh;
+      gap: 1.5vh;
+      gap: 1.5vw;
+      padding: 2vh;
       width: 90%;
+      font-weight: bold;
       margin: 0 auto;
       text-align: center;
        height: 60vh;
     }
 
     .grid-item {
-      font-family: "Times New Roman";
-      background-color: rgba(125, 125, 125, 0.5);
-      border: 1px solid rgb(0, 0, 0);
-      font-size: 2vw;
-      font-size: 2vh;
+      font-family: "Helvetica";
+     
+      font-size: 2.2vw;
+      font-size: 2.2vh;
       color: white;
       text-align: center;
       border-radius: 15px;
@@ -62,49 +66,51 @@
 </head>
 
 <body>
+
+  <h1>&nbsp</h1>
   <h1><b>Connections: See It!</b></h1>
   
   <div class="grid-container">
 
-    <div class="grid-item" onclick="handleClick(this)" id="num1"><i>Empty</i></div>
-    <div class="grid-item" onclick="handleClick(this)" id="num2"><i>Empty</i></div>
-    <div class="grid-item" onclick="handleClick(this)" id="num3"><i>Empty</i></div>
-    <div class="grid-item" onclick="handleClick(this)" id="num4"><i>Empty</i></div>
+    <div class="grid-item empty-item" onclick="handleClick(this)" id="num1"><i>Empty</i></div>
+    <div class="grid-item empty-item" onclick="handleClick(this)" id="num2"><i>Empty</i></div>
+    <div class="grid-item empty-item" onclick="handleClick(this)" id="num3"><i>Empty</i></div>
+    <div class="grid-item empty-item" onclick="handleClick(this)" id="num4"><i>Empty</i></div>
     
-    <div class="grid-item" onclick="handleClick(this)" id="num5"><i>Empty</i></div>
-    <div class="grid-item" onclick="handleClick(this)" id="num6"><i>Empty</i></div>
-    <div class="grid-item" onclick="handleClick(this)" id="num7"><i>Empty</i></div>
-    <div class="grid-item" onclick="handleClick(this)" id="num8"><i>Empty</i></div>
+    <div class="grid-item empty-item" onclick="handleClick(this)" id="num5"><i>Empty</i></div>
+    <div class="grid-item empty-item" onclick="handleClick(this)" id="num6"><i>Empty</i></div>
+    <div class="grid-item empty-item" onclick="handleClick(this)" id="num7"><i>Empty</i></div>
+    <div class="grid-item empty-item" onclick="handleClick(this)" id="num8"><i>Empty</i></div>
     
-    <div class="grid-item" onclick="handleClick(this)" id="num9"><i>Empty</i></div>
-    <div class="grid-item" onclick="handleClick(this)" id="num10"><i>Empty</i></div>
-    <div class="grid-item" onclick="handleClick(this)" id="num11"><i>Empty</i></div>
-    <div class="grid-item" onclick="handleClick(this)" id="num12"><i>Empty</i></div>
+    <div class="grid-item empty-item" onclick="handleClick(this)" id="num9"><i>Empty</i></div>
+    <div class="grid-item empty-item" onclick="handleClick(this)" id="num10"><i>Empty</i></div>
+    <div class="grid-item empty-item" onclick="handleClick(this)" id="num11"><i>Empty</i></div>
+    <div class="grid-item empty-item" onclick="handleClick(this)" id="num12"><i>Empty</i></div>
     
-    <div class="grid-item" onclick="handleClick(this)" id="num13"><i>Empty</i></div>
-    <div class="grid-item" onclick="handleClick(this)" id="num14"><i>Empty</i></div>
-    <div class="grid-item" onclick="handleClick(this)" id="num15"><i>Empty</i></div>
-    <div class="grid-item" onclick="handleClick(this)" id="num16"><i>Empty</i></div>
+    <div class="grid-item empty-item" onclick="handleClick(this)" id="num13"><i>Empty</i></div>
+    <div class="grid-item empty-item" onclick="handleClick(this)" id="num14"><i>Empty</i></div>
+    <div class="grid-item empty-item" onclick="handleClick(this)" id="num15"><i>Empty</i></div>
+    <div class="grid-item empty-item" onclick="handleClick(this)" id="num16"><i>Empty</i></div>
     
-    <div class="grid-item" onclick="handleClick(this)" id="box1">placeholder</div>
-    <div class="grid-item" onclick="handleClick(this)" id="box2">placeholder</div>
-    <div class="grid-item" onclick="handleClick(this)" id="box3">placeholder</div>
-    <div class="grid-item" onclick="handleClick(this)" id="box4">placeholder</div>
+    <div class="grid-item non-empty-item" onclick="handleClick(this)" id="box1">placeholder</div>
+    <div class="grid-item non-empty-item" onclick="handleClick(this)" id="box2">placeholder</div>
+    <div class="grid-item non-empty-item" onclick="handleClick(this)" id="box3">placeholder</div>
+    <div class="grid-item non-empty-item" onclick="handleClick(this)" id="box4">placeholder</div>
     
-    <div class="grid-item" onclick="handleClick(this)" id="box5">placeholder</div>
-    <div class="grid-item" onclick="handleClick(this)" id="box6">placeholder</div>
-    <div class="grid-item" onclick="handleClick(this)" id="box7">placeholder</div>
-    <div class="grid-item" onclick="handleClick(this)" id="box8">placeholder</div>
+    <div class="grid-item non-empty-item" onclick="handleClick(this)" id="box5">placeholder</div>
+    <div class="grid-item non-empty-item" onclick="handleClick(this)" id="box6">placeholder</div>
+    <div class="grid-item non-empty-item" onclick="handleClick(this)" id="box7">placeholder</div>
+    <div class="grid-item non-empty-item" onclick="handleClick(this)" id="box8">placeholder</div>
     
-    <div class="grid-item" onclick="handleClick(this)" id="box9">placeholder</div>
-    <div class="grid-item" onclick="handleClick(this)" id="box10">placeholder</div>
-    <div class="grid-item" onclick="handleClick(this)" id="box11">placeholder</div>
-    <div class="grid-item" onclick="handleClick(this)" id="box12">placeholder</div>
+    <div class="grid-item non-empty-item" onclick="handleClick(this)" id="box9">placeholder</div>
+    <div class="grid-item non-empty-item" onclick="handleClick(this)" id="box10">placeholder</div>
+    <div class="grid-item non-empty-item" onclick="handleClick(this)" id="box11">placeholder</div>
+    <div class="grid-item non-empty-item" onclick="handleClick(this)" id="box12">placeholder</div>
     
-    <div class="grid-item" onclick="handleClick(this)" id="box13">placeholder</div>
-    <div class="grid-item" onclick="handleClick(this)" id="box14">placeholder</div>
-    <div class="grid-item" onclick="handleClick(this)" id="box15">placeholder</div>
-    <div class="grid-item" onclick="handleClick(this)" id="box16">placeholder</div>
+    <div class="grid-item non-empty-item" onclick="handleClick(this)" id="box13">placeholder</div>
+    <div class="grid-item non-empty-item" onclick="handleClick(this)" id="box14">placeholder</div>
+    <div class="grid-item non-empty-item" onclick="handleClick(this)" id="box15">placeholder</div>
+    <div class="grid-item non-empty-item" onclick="handleClick(this)" id="box16">placeholder</div>
     
   </div>
   <script>
