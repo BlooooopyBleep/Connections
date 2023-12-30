@@ -113,26 +113,20 @@ background-color: #6c757d;
     <div class="grid-item non-empty-item" onclick="handleClick(this)" id="box16">placeholder</div>
     
   </div>
-  <script>
+<script>
     var data = ["SAINT", "BAD", "BOY", "BY", "FLY", "TEE", "JAY", "FRESH", "CROP", "GEE", "CURIOUS", "BEE", "RAD", "EX", "TANK", "POLO"];
-    for (var wordNum = 1; wordNum <= 16; wordNum++) {
-      document.getElementById("box" + wordNum).innerHTML = data[wordNum - 1];
-    }
-  var selectedTextBox = null;
-    var touchInProgress = false;
+    var selectedTextBox = null;
 
     function handleClick(clickedTextBox) {
-      if (!touchInProgress) {
-        if (selectedTextBox) {
-          var tempText = selectedTextBox.innerHTML;
-          selectedTextBox.innerHTML = clickedTextBox.innerHTML;
-          clickedTextBox.innerHTML = tempText;
-          selectedTextBox.classList.remove('selected');
-          selectedTextBox = null;
-        } else {
-          selectedTextBox = clickedTextBox;
-          selectedTextBox.classList.add('selected');
-        }
+      if (selectedTextBox) {
+        var tempText = selectedTextBox.innerHTML;
+        selectedTextBox.innerHTML = clickedTextBox.innerHTML;
+        clickedTextBox.innerHTML = tempText;
+        selectedTextBox.classList.remove('selected');
+        selectedTextBox = null;
+      } else {
+        selectedTextBox = clickedTextBox;
+        selectedTextBox.classList.add('selected');
       }
     }
 
@@ -146,42 +140,39 @@ background-color: #6c757d;
     }
 
     var draggedItem = null;
-    var clickedOnce = null;
+    var touchStartX, touchStartY;
 
     function handleTouchStart(event) {
-      touchInProgress = true;
-      var touch = event.touches[0];
-      draggedItem = document.elementFromPoint(touch.clientX, touch.clientY);
-
-      // Check if the box has been clicked once before
-      if (clickedOnce === draggedItem) {
-        clickedOnce = null;
-        event.preventDefault(); // Prevent default action (e.g., scrolling) for the second click
-      } else {
-        clickedOnce = draggedItem;
-        draggedItem.classList.add('dragged-item'); // Apply the dragged-item style
-      }
+      draggedItem = event.target;
+      touchStartX = event.touches[0].clientX;
+      touchStartY = event.touches[0].clientY;
     }
 
     function handleTouchMove(event) {
-      event.preventDefault();
-      if (draggedItem && touchInProgress) {
-        var touch = event.touches[0];
-        var target = document.elementFromPoint(touch.clientX, touch.clientY);
-        if (target && target.classList.contains('grid-item')) {
-          var data = draggedItem.innerHTML;
-          draggedItem.innerHTML = target.innerHTML;
-          target.innerHTML = data;
-        }
-      }
+      if (!draggedItem) return;
+
+      var touchX = event.touches[0].clientX;
+      var touchY = event.touches[0].clientY;
+
+      var deltaX = touchX - touchStartX;
+      var deltaY = touchY - touchStartY;
+
+      draggedItem.style.transform = 'translate(' + deltaX + 'px, ' + deltaY + 'px)';
     }
 
     function handleTouchEnd() {
-      if (draggedItem) {
-        draggedItem.classList.remove('dragged-item'); // Remove the dragged-item style
-        draggedItem = null;
-        touchInProgress = false;
+      if (!draggedItem) return;
+
+      draggedItem.style.transform = ''; // Reset the transformation
+
+      var target = document.elementFromPoint(touchStartX, touchStartY);
+      if (target && target.classList.contains('grid-item')) {
+        var data = draggedItem.innerHTML;
+        draggedItem.innerHTML = target.innerHTML;
+        target.innerHTML = data;
       }
+
+      draggedItem = null;
     }
 
     // Add touch event listeners
@@ -193,29 +184,20 @@ background-color: #6c757d;
     document.addEventListener('dragstart', function (event) {
       draggedItem = event.target;
       event.dataTransfer.setData('text/plain', draggedItem.innerHTML);
-      draggedItem.classList.add('dragged-item'); // Apply the dragged-item style
     });
     document.addEventListener('dragover', function (event) {
       event.preventDefault();
     });
     document.addEventListener('drop', function (event) {
       event.preventDefault();
-      handleDrop(event);
-    });
-
-    function handleDrop(event) {
-      if (draggedItem && touchInProgress) {
-        var target = document.elementFromPoint(event.clientX, event.clientY);
-        if (target && target.classList.contains('grid-item')) {
-          var data = event.dataTransfer.getData('text/plain');
-          draggedItem.innerHTML = target.innerHTML;
-          target.innerHTML = data;
-        }
-
-        draggedItem.classList.remove('dragged-item'); // Remove the dragged-item style
-        draggedItem = null;
+      var target = document.elementFromPoint(event.clientX, event.clientY);
+      if (target && target.classList.contains('grid-item')) {
+        var data = event.dataTransfer.getData('text/plain');
+        draggedItem.innerHTML = target.innerHTML;
+        target.innerHTML = data;
       }
-    }
+      draggedItem = null;
+    });
 
   </script>
 </body>
