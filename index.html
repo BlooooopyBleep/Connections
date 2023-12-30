@@ -6,6 +6,14 @@
     body {
  background-image: url("https://cdn.mos.cms.futurecdn.net/rpEkiVUMPDHZbQtemd8ms4-1920-80.jpg.webp");
 }
+        .button{
+        	font-size:18px;
+            padding:5px;
+            color:white;
+            font-family:"Times New Roman";
+            border-radius: 25px;
+           background-color: rgba(125, 125, 125,0.5);
+        }
         .grid-container {
             display: grid;
             grid-template-columns: repeat(4, minmax(0, 1fr));
@@ -35,6 +43,7 @@
 
   <div class = "grid-container-wrapper">
  <h1 style="text-align:center;color:white;"><b>Connections: See It!</b></h1>
+    <button class = "button" onclick="myFunction()">Click Here to Reset!</button>
  <div class = "grid-container">
 <div class = "grid-item" onclick="handleClick(this)"><i>Empty</i></div>
 <div class = "grid-item" onclick="handleClick(this)"><i>Empty</i></div>
@@ -89,6 +98,9 @@
             selectedTextBox.classList.add('selected');
         }
     }
+
+
+  
     
 }
 
