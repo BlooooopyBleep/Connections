@@ -1,115 +1,122 @@
-
 <!DOCTYPE html>
 <html>
-<head>
-<title>Connections</title>
-  <style>
-    body {
-    margin:0;
- background-image: url("https://cdn.mos.cms.futurecdn.net/rpEkiVUMPDHZbQtemd8ms4-1920-80.jpg.webp");
-}
-        .button{
-        	font-size:3vw;
-            color:white;
-            font-family:"Times New Roman";
-            border-radius: 25px;
-           background-color: rgba(125, 125, 125,0.5);
-        }
-        .grid-container {
-            display: grid;
-            grid-template-columns: repeat(4, minmax(0, 1fr));
-            gap: 10px;
-            padding: 10px;
-            width: 100%;
-            text-align:center;
-        }
 
-.grid-item {
-            font-family: "Times New Roman";
-            background-color: rgba(125, 125, 125,0.5);
-            border: 1px solid rgb(0, 0, 0);
-            font-size: 5vw;
-            color: white;
-            text-align: center;
-            border-radius: 15px;
-      
-       
-            box-sizing: border-box;
-            padding:20px;
-        }
+<head>
+  <title>Connections</title>
+  <style>
+    h1 {
+      text-align: center;
+      color: white;
+      font-size: 10vw;
+      font-family: "Times New Roman";
+    }
+
+    body {
+      margin: 0;
+      background-image: url("https://cdn.mos.cms.futurecdn.net/rpEkiVUMPDHZbQtemd8ms4-1920-80.jpg.webp");
+      height: 100vh;
+    }
+
+    .button {
+      font-size: 3vw;
+      color: white;
+      font-family: "Times New Roman";
+      border-radius: 25px;
+      background-color: rgba(125, 125, 125, 0.5);
+    }
+
+    .grid-container {
+      display: grid;
+      grid-template-columns: repeat(4, minmax(0, 1fr));
+      gap: 10px;
+      padding: 10px;
+      width: 100%;
+      text-align: center;
+    }
+
+    .grid-item {
+      font-family: "Times New Roman";
+      background-color: rgba(125, 125, 125, 0.5);
+      border: 1px solid rgb(0, 0, 0);
+      font-size: 5vw;
+      color: white;
+      text-align: center;
+      border-radius: 15px;
+      box-sizing: border-box;
+      padding: 20px;
+    }
   </style>
 </head>
+
 <body>
- <h1 style="text-align:center;color:white;font-size:10vw"><b>Connections: See It!</b></h1>
-    <button class = "button" onclick="resetGrid()">Click Here to Reset!</button>
- <div class = "grid-container">
-<div id = "num1" class = "grid-item" onclick="handleClick(this)"><i>Empty</i></div>
-<div id = "num2"class = "grid-item" onclick="handleClick(this)"><i>Empty</i></div>
-  <div id = "num3"class = "grid-item" onclick="handleClick(this)"><i>Empty</i></div>
-  <div id = "num4"class = "grid-item" onclick="handleClick(this)"><i>Empty</i></div>
-  <div id = "num5"class = "grid-item" onclick="handleClick(this)"><i>Empty</i></div>
-  <div id = "num6"class = "grid-item" onclick="handleClick(this)"><i>Empty</i></div>
-  <div id = "num7"class = "grid-item" onclick="handleClick(this)"><i>Empty</i></div>
-  <div id = "num8"class = "grid-item" onclick="handleClick(this)"><i>Empty</i></div>
-  <div id = "num9"class = "grid-item" onclick="handleClick(this)"><i>Empty</i></div>
-  <div id = "num10"class = "grid-item" onclick="handleClick(this)"><i>Empty</i></div>
-  <div id = "num11"class = "grid-item" onclick="handleClick(this)"><i>Empty</i></div>
-  <div id = "num12"class = "grid-item" onclick="handleClick(this)"><i>Empty</i></div>
-  <div id = "num13"class = "grid-item" onclick="handleClick(this)"><i>Empty</i></div>
-  <div id = "num14"class = "grid-item" onclick="handleClick(this)"><i>Empty</i></div>
-  <div id = "num15"class = "grid-item" onclick="handleClick(this)"><i>Empty</i></div>
-  <div id = "num16"class = "grid-item" onclick="handleClick(this)"><i>Empty</i></div>
+  <h1><b>Connections: See It!</b></h1>
+  <button class="button" onclick="resetGrid()">Click Here to Reset!</button>
+  <div class="grid-container">
+    <div id="num1" class="grid-item" onclick="handleClick(this)"><i>Empty</i></div>
+    <div id="num2" class="grid-item" onclick="handleClick(this)"><i>Empty</i></div>
+    <div id="num3" class="grid-item" onclick="handleClick(this)"><i>Empty</i></div>
+    <div id="num4" class="grid-item" onclick="handleClick(this)"><i>Empty</i></div>
+    <div id="num5" class="grid-item" onclick="handleClick(this)"><i>Empty</i></div>
+    <div id="num6" class="grid-item" onclick="handleClick(this)"><i>Empty</i></div>
+    <div id="num7" class="grid-item" onclick="handleClick(this)"><i>Empty</i></div>
+    <div id="num8" class="grid-item" onclick="handleClick(this)"><i>Empty</i></div>
+    <div id="num9" class="grid-item" onclick="handleClick(this)"><i>Empty</i></div>
+    <div id="num10" class="grid-item" onclick="handleClick(this)"><i>Empty</i></div>
+    <div id="num11" class="grid-item" onclick="handleClick(this)"><i>Empty</i></div>
+    <div id="num12" class="grid-item" onclick="handleClick(this)"><i>Empty</i></div>
+    <div id="num13" class="grid-item" onclick="handleClick(this)"><i>Empty</i></div>
+    <div id="num14" class="grid-item" onclick="handleClick(this)"><i>Empty</i></div>
+    <div id="num15" class="grid-item" onclick="handleClick(this)"><i>Empty</i></div>
+    <div id="num16" class="grid-item" onclick="handleClick(this)"><i>Empty</i></div>
   </div>
- <div class =  "grid-container">
-<div class = "grid-item" id = "box1" onclick="handleClick(this)">placeholder</div>
-<div class = "grid-item" id = "box2" onclick="handleClick(this)">placeholder</div>
-<div class = "grid-item" id = "box3" onclick="handleClick(this)">placeholder</div>
-<div class = "grid-item" id = "box4" onclick="handleClick(this)">placeholder</div>
-<div class = "grid-item" id = "box5" onclick="handleClick(this)">placeholder</div>
-<div class = "grid-item" id = "box6" onclick="handleClick(this)">placeholder</div>
-<div class = "grid-item" id = "box7" onclick="handleClick(this)">placeholder</div>
-<div class = "grid-item" id = "box8" onclick="handleClick(this)">placeholder</div>
-<div class = "grid-item" id = "box9" onclick="handleClick(this)">placeholder</div>
-<div class = "grid-item" id = "box10" onclick="handleClick(this)">placeholder</div>
-<div class = "grid-item" id = "box11" onclick="handleClick(this)">placeholder</div>
-<div class = "grid-item" id = "box12" onclick="handleClick(this)">placeholder</div>
-<div class = "grid-item" id = "box13" onclick="handleClick(this)">placeholder</div>
-<div class = "grid-item" id = "box14" onclick="handleClick(this)">placeholder</div>
-<div class = "grid-item" id = "box15" onclick="handleClick(this)">placeholder</div>
-<div class = "grid-item" id = "box16" onclick="handleClick(this)">placeholder</div>
-</div>
-<script>
-  var data = ["SAINT", "BAD", "BOY", "BY", "FLY", "TEE", "JAY", "FRESH", "CROP", "GEE", "CURIOUS", "BEE", "RAD", "EX", "TANK", "POLO"];
-  for (var wordNum = 1; wordNum <= 16; wordNum++) {
-    document.getElementById("box" + wordNum).innerHTML = data[wordNum - 1];
-  }
-
-  var selectedTextBox = null;
-
-  function handleClick(clickedTextBox) {
-    if (selectedTextBox) {
-      var tempText = selectedTextBox.innerHTML;
-      selectedTextBox.innerHTML = clickedTextBox.innerHTML;
-      clickedTextBox.innerHTML = tempText;
-      selectedTextBox.classList.remove('selected');
-      selectedTextBox = null;
-    } else {
-      selectedTextBox = clickedTextBox;
-      selectedTextBox.classList.add('selected');
-    }
-  }
-	
-function resetGrid() {
+  <div class="grid-container">
+    <div class="grid-item" id="box1" onclick="handleClick(this)">placeholder</div>
+    <div class="grid-item" id="box2" onclick="handleClick(this)">placeholder</div>
+    <div class="grid-item" id="box3" onclick="handleClick(this)">placeholder</div>
+    <div class="grid-item" id="box4" onclick="handleClick(this)">placeholder</div>
+    <div class="grid-item" id="box5" onclick="handleClick(this)">placeholder</div>
+    <div class="grid-item" id="box6" onclick="handleClick(this)">placeholder</div>
+    <div class="grid-item" id="box7" onclick="handleClick(this)">placeholder</div>
+    <div class="grid-item" id="box8" onclick="handleClick(this)">placeholder</div>
+    <div class="grid-item" id="box9" onclick="handleClick(this)">placeholder</div>
+    <div class="grid-item" id="box10" onclick="handleClick(this)">placeholder</div>
+    <div class="grid-item" id="box11" onclick="handleClick(this)">placeholder</div>
+    <div class="grid-item" id="box12" onclick="handleClick(this)">placeholder</div>
+    <div class="grid-item" id="box13" onclick="handleClick(this)">placeholder</div>
+    <div class="grid-item" id="box14" onclick="handleClick(this)">placeholder</div>
+    <div class="grid-item" id="box15" onclick="handleClick(this)">placeholder</div>
+    <div class="grid-item" id="box16" onclick="handleClick(this)">placeholder</div>
+  </div>
+  <script>
+    var data = ["SAINT", "BAD", "BOY", "BY", "FLY", "TEE", "JAY", "FRESH", "CROP", "GEE", "CURIOUS", "BEE", "RAD", "EX", "TANK", "POLO"];
     for (var wordNum = 1; wordNum <= 16; wordNum++) {
       document.getElementById("box" + wordNum).innerHTML = data[wordNum - 1];
     }
-    for(var wordNum = 1; wordNum <= 16; wordNum++) {
-      document.getElementById("num" + wordNum).innerHTML ="<i>Empty</i>" ;
-  }}
 
+    var selectedTextBox = null;
 
-</script>
+    function handleClick(clickedTextBox) {
+      if (selectedTextBox) {
+        var tempText = selectedTextBox.innerHTML;
+        selectedTextBox.innerHTML = clickedTextBox.innerHTML;
+        clickedTextBox.innerHTML = tempText;
+        selectedTextBox.classList.remove('selected');
+        selectedTextBox = null;
+      } else {
+        selectedTextBox = clickedTextBox;
+        selectedTextBox.classList.add('selected');
+      }
+    }
+
+    function resetGrid() {
+      for (var wordNum = 1; wordNum <= 16; wordNum++) {
+        document.getElementById("box" + wordNum).innerHTML = data[wordNum - 1];
+      }
+      for (var wordNum = 1; wordNum <= 16; wordNum++) {
+        document.getElementById("num" + wordNum).innerHTML = "<i>Empty</i>";
+      }
+    }
+  </script>
 </body>
+
 </html>
-
-
