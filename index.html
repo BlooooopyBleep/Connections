@@ -1,4 +1,124 @@
-var selectedTextBox = null;
+ 
+<!DOCTYPE html>
+<html>
+
+<head>
+  <title>Connections</title>
+  <style>
+    h1 {
+      text-align: center;
+      font-weight: bold;
+      color: white;
+      font-size: 4vw;
+      font-size: 4vh;
+      font-family: "Helvetica";
+        
+    }
+
+    body {
+      margin: 2vh;
+      background-color: #495057;
+      height: 100vh;
+       overflow: hidden
+    }
+
+    .button {
+      font-size: 2vw;
+      color: white;
+      font-family: "Helvetica";
+      border-radius: 10px;
+      background-color: rgba(125, 125, 125, 0.5);
+      padding: 1vh;
+        margin-left: 2vw;
+    }
+.empty-item {
+      background-color: #343a40;
+          }
+.non-empty-item{
+background-color: #6c757d;
+}
+    .grid-container {
+      display: grid;
+      grid-template-columns: repeat(auto-fill, minmax(20%, 1fr));
+      gap: 1.5vh;
+      gap: 1.5vw;
+      padding: 2vh;
+      width: 90%;
+      font-weight: bold;
+      margin: 0 auto;
+      text-align: center;
+       height: 60vh;
+    }
+
+    .grid-item {
+      font-family: "Helvetica";
+     
+      font-size: 1.5vw;
+      font-size: 1.5vh;
+      color: white;
+      text-align: center;
+      border-radius: 15px;
+      box-sizing: border-box;
+      padding: 1vh;
+      padding: 1vw;
+    }
+  </style>
+</head>
+
+<body ondragover="handleDragOver(event)" ondrop="handleDrop(event)">>
+
+  <h1>&nbsp</h1>
+  <h1><b>Connections: See It!</b></h1>
+  
+  <div class="grid-container">
+
+    <div class="grid-item empty-item" draggable="true" ondragstart="handleDragStart(event)" onclick="handleClick(this)" id="num1"><i>&nbsp</i></div>
+    <div class="grid-item empty-item" draggable="true" ondragstart="handleDragStart(event)" onclick="handleClick(this)" id="num2"><i>&nbsp</i></div>
+    <div class="grid-item empty-item" draggable="true" ondragstart="handleDragStart(event)" onclick="handleClick(this)" id="num3"><i>&nbsp</i></div>
+    <div class="grid-item empty-item" draggable="true" ondragstart="handleDragStart(event)" onclick="handleClick(this)" id="num4"><i>&nbsp</i></div>
+    
+    <div class="grid-item empty-item" draggable="true" ondragstart="handleDragStart(event)" onclick="handleClick(this)" id="num5"><i>&nbsp</i></div>
+    <div class="grid-item empty-item" draggable="true" ondragstart="handleDragStart(event)" onclick="handleClick(this)" id="num6"><i>&nbsp</i></div>
+    <div class="grid-item empty-item" draggable="true" ondragstart="handleDragStart(event)" onclick="handleClick(this)" id="num7"><i>&nbsp</i></div>
+    <div class="grid-item empty-item" draggable="true" ondragstart="handleDragStart(event)" onclick="handleClick(this)" id="num8"><i>&nbsp</i></div>
+    
+    <div class="grid-item empty-item" draggable="true" ondragstart="handleDragStart(event)" onclick="handleClick(this)" id="num9"><i>&nbsp</i></div>
+    <div class="grid-item empty-item" draggable="true" ondragstart="handleDragStart(event)" onclick="handleClick(this)" id="num10"><i>&nbsp</i></div>
+    <div class="grid-item empty-item" draggable="true" ondragstart="handleDragStart(event)" onclick="handleClick(this)" id="num11"><i>&nbsp</i></div>
+    <div class="grid-item empty-item" draggable="true" ondragstart="handleDragStart(event)" onclick="handleClick(this)" id="num12"><i>&nbsp</i></div>
+    
+    <div class="grid-item empty-item" draggable="true" ondragstart="handleDragStart(event)" onclick="handleClick(this)" id="num13"><i>&nbsp</i></div>
+    <div class="grid-item empty-item" draggable="true" ondragstart="handleDragStart(event)" onclick="handleClick(this)" id="num14"><i>&nbsp</i></div>
+    <div class="grid-item empty-item" draggable="true" ondragstart="handleDragStart(event)" onclick="handleClick(this)" id="num15"><i>&nbsp</i></div>
+    <div class="grid-item empty-item" draggable="true" ondragstart="handleDragStart(event)" onclick="handleClick(this)" id="num16"><i>&nbsp</i></div>
+    
+    <div class="grid-item non-empty-item" draggable="true" ondragstart="handleDragStart(event)" onclick="handleClick(this)" id="box1">placeholder</div>
+    <div class="grid-item non-empty-item" draggable="true" ondragstart="handleDragStart(event)" onclick="handleClick(this)" id="box2">placeholder</div>
+    <div class="grid-item non-empty-item" draggable="true" ondragstart="handleDragStart(event)" onclick="handleClick(this)" id="box3">placeholder</div>
+    <div class="grid-item non-empty-item" draggable="true" ondragstart="handleDragStart(event)" onclick="handleClick(this)" id="box4">placeholder</div>
+    
+    <div class="grid-item non-empty-item" draggable="true" ondragstart="handleDragStart(event)" onclick="handleClick(this)" id="box5">placeholder</div>
+    <div class="grid-item non-empty-item" draggable="true" ondragstart="handleDragStart(event)" onclick="handleClick(this)" id="box6">placeholder</div>
+    <div class="grid-item non-empty-item" draggable="true" ondragstart="handleDragStart(event)" onclick="handleClick(this)" id="box7">placeholder</div>
+    <div class="grid-item non-empty-item" draggable="true" ondragstart="handleDragStart(event)" onclick="handleClick(this)" id="box8">placeholder</div>
+    
+    <div class="grid-item non-empty-item" draggable="true" ondragstart="handleDragStart(event)" onclick="handleClick(this)" id="box9">placeholder</div>
+    <div class="grid-item non-empty-item" draggable="true" ondragstart="handleDragStart(event)" onclick="handleClick(this)" id="box10">placeholder</div>
+    <div class="grid-item non-empty-item" draggable="true" ondragstart="handleDragStart(event)" onclick="handleClick(this)" id="box11">placeholder</div>
+    <div class="grid-item non-empty-item" draggable="true" ondragstart="handleDragStart(event)" onclick="handleClick(this)" id="box12">placeholder</div>
+    
+    <div class="grid-item non-empty-item" onclick="handleClick(this)" id="box13">placeholder</div>
+    <div class="grid-item non-empty-item" onclick="handleClick(this)" id="box14">placeholder</div>
+    <div class="grid-item non-empty-item" onclick="handleClick(this)" id="box15">placeholder</div>
+    <div class="grid-item non-empty-item" onclick="handleClick(this)" id="box16">placeholder</div>
+    
+  </div>
+  <script>
+    var data = ["SAINT", "BAD", "BOY", "BY", "FLY", "TEE", "JAY", "FRESH", "CROP", "GEE", "CURIOUS", "BEE", "RAD", "EX", "TANK", "POLO"];
+    for (var wordNum = 1; wordNum <= 16; wordNum++) {
+      document.getElementById("box" + wordNum).innerHTML = data[wordNum - 1];
+    }
+    var selectedTextBox = null;
     var touchInProgress = false;
 
     function handleClick(clickedTextBox) {
@@ -86,4 +206,7 @@ var selectedTextBox = null;
         draggedItem.classList.remove('dragged-item'); // Remove the dragged-item style
         draggedItem = null;
       }
-    }
+    }  </script>
+</body>
+
+</html>
