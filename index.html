@@ -114,92 +114,72 @@ background-color: #6c757d;
     
   </div>
 <script>
-    var data = ["SAINT", "BAD", "BOY", "BY", "FLY", "TEE", "JAY", "FRESH", "CROP", "GEE", "CURIOUS", "BEE", "RAD", "EX", "TANK", "POLO"];
-    var selectedTextBox = null;
 
-    function handleClick(clickedTextBox) {
-      if (selectedTextBox) {
-        var tempText = selectedTextBox.innerHTML;
-        selectedTextBox.innerHTML = clickedTextBox.innerHTML;
-        clickedTextBox.innerHTML = tempText;
-        selectedTextBox.classList.remove('selected');
-        selectedTextBox = null;
-      } else {
-        selectedTextBox = clickedTextBox;
-        selectedTextBox.classList.add('selected');
-      }
+  var data = ["SAINT", "BAD", "BOY", "BY", "FLY", "TEE", "JAY", "FRESH", "CROP", "GEE", "CURIOUS", "BEE", "RAD", "EX", "TANK", "POLO"];
+  var selectedTextBox = null;
+
+  function handleClick(clickedTextBox) {
+    if (selectedTextBox) {
+      var tempText = selectedTextBox.innerHTML;
+      selectedTextBox.innerHTML = clickedTextBox.innerHTML;
+      clickedTextBox.innerHTML = tempText;
+      selectedTextBox.classList.remove('selected');
+      selectedTextBox = null;
+    } else {
+      selectedTextBox = clickedTextBox;
+      selectedTextBox.classList.add('selected');
     }
+  }
 
-    function resetGrid() {
-      for (var wordNum = 1; wordNum <= 16; wordNum++) {
-        document.getElementById("box" + wordNum).innerHTML = data[wordNum - 1];
-      }
-      for (var wordNum = 1; wordNum <= 16; wordNum++) {
-        document.getElementById("num" + wordNum).innerHTML = "<i>&nbsp</i>";
-      }
+  function resetGrid() {
+    for (var wordNum = 1; wordNum <= 16; wordNum++) {
+      document.getElementById("box" + wordNum).innerHTML = data[wordNum - 1];
     }
-
-    var draggedItem = null;
-    var touchStartX, touchStartY;
-
-    function handleTouchStart(event) {
-      draggedItem = event.target;
-      touchStartX = event.touches[0].clientX;
-      touchStartY = event.touches[0].clientY;
+    for (var wordNum = 1; wordNum <= 16; wordNum++) {
+      document.getElementById("num" + wordNum).innerHTML = "<i>&nbsp</i>";
     }
+  }
 
-    function handleTouchMove(event) {
-      if (!draggedItem) return;
+  var touchStartX, touchStartY, deltaX, deltaY, dragging = false;
 
-      var touchX = event.touches[0].clientX;
-      var touchY = event.touches[0].clientY;
+  function handleTouchStart(event) {
+    touchStartX = event.touches[0].clientX;
+    touchStartY = event.touches[0].clientY;
+    dragging = true;
+  }
 
-      var deltaX = touchX - touchStartX;
-      var deltaY = touchY - touchStartY;
+  function handleTouchMove(event) {
+    if (!dragging) return;
 
-      draggedItem.style.transform = 'translate(' + deltaX + 'px, ' + deltaY + 'px)';
-    }
+    deltaX = event.touches[0].clientX - touchStartX;
+    deltaY = event.touches[0].clientY - touchStartY;
 
-    function handleTouchEnd() {
-      if (!draggedItem) return;
+    event.target.style.transform = 'translate(' + deltaX + 'px, ' + deltaY + 'px)';
+  }
 
-      draggedItem.style.transform = ''; // Reset the transformation
+  function handleTouchEnd(event) {
+    if (!dragging) return;
 
+    dragging = false;
+
+    if (selectedTextBox) {
+      selectedTextBox.style.transform = ''; // Reset the transformation
       var target = document.elementFromPoint(touchStartX, touchStartY);
       if (target && target.classList.contains('grid-item')) {
-        var data = draggedItem.innerHTML;
-        draggedItem.innerHTML = target.innerHTML;
+        var data = selectedTextBox.innerHTML;
+        selectedTextBox.innerHTML = target.innerHTML;
         target.innerHTML = data;
       }
-
-      draggedItem = null;
+      selectedTextBox.classList.remove('selected');
+      selectedTextBox = null;
     }
+  }
 
-    // Add touch event listeners
-    document.addEventListener('touchstart', handleTouchStart, { passive: false });
-    document.addEventListener('touchmove', handleTouchMove, { passive: false });
-    document.addEventListener('touchend', handleTouchEnd, { passive: false });
-
-    // Add drag-and-drop event listeners for computer
-    document.addEventListener('dragstart', function (event) {
-      draggedItem = event.target;
-      event.dataTransfer.setData('text/plain', draggedItem.innerHTML);
-    });
-    document.addEventListener('dragover', function (event) {
-      event.preventDefault();
-    });
-    document.addEventListener('drop', function (event) {
-      event.preventDefault();
-      var target = document.elementFromPoint(event.clientX, event.clientY);
-      if (target && target.classList.contains('grid-item')) {
-        var data = event.dataTransfer.getData('text/plain');
-        draggedItem.innerHTML = target.innerHTML;
-        target.innerHTML = data;
-      }
-      draggedItem = null;
-    });
-
-  </script>
+  // Add touch event listeners
+  document.addEventListener('touchstart', handleTouchStart, { passive: false });
+  document.addEventListener('touchmove', handleTouchMove, { passive: false });
+  document.addEventListener('touchend', handleTouchEnd, { passive: false });
+</script>
 </body>
 
 </html>
