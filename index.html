@@ -3,12 +3,13 @@
 <head>
 <title>Connections</title>
   <style>
-    
+    body {
+ background-image: url("https://cdn.mos.cms.futurecdn.net/rpEkiVUMPDHZbQtemd8ms4-1920-80.jpg.webp");
+}
         .grid-container {
             display: grid;
             grid-template-columns: repeat(4, minmax(0, 1fr));
             gap: 10px;
-            background: url("https://cdn.mos.cms.futurecdn.net/rpEkiVUMPDHZbQtemd8ms4-1920-80.jpg.webp");
             padding: 10px;
             width: 100%;
         }
@@ -17,9 +18,10 @@
         }
 .grid-item {
             font-family: "Times New Roman";
-            background-color: rgb(255, 255, 255);
+            background-color: rgba(125, 125, 125,0.5);
             border: 1px solid rgb(0, 0, 0);
             font-size: 25px;
+            color: white;
             text-align: center;
             border-radius: 25px;
             width: 100%; 
@@ -30,8 +32,10 @@
   </style>
 </head>
 <body>
+
   <div class = "grid-container-wrapper">
-  <div class = "grid-container">
+ <h1 style="text-align:center;color:white;"><b>Connections: See It!</b></h1>
+ <div class = "grid-container">
 <div class = "grid-item" onclick="handleClick(this)"><i>Empty</i></div>
 <div class = "grid-item" onclick="handleClick(this)"><i>Empty</i></div>
   <div class = "grid-item" onclick="handleClick(this)"><i>Empty</i></div>
