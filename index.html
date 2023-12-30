@@ -63,26 +63,9 @@
 </div>
 </div>
 <script>
-  var w1,w2,w3,w4,w5,w6,w7,w8,w9,w10,w11,w12,w13,w14,w15,w16;
-  w1 = "SAINT";
-  w2 = "BAD";
-  w3 = "BOY";
-  w4 = "BY";
-  w5 = "FLY";
-  w6 = "TEE";
-  w7 = "JAY";
-  w8 = "FRESH";
-  w9 = "CROP";
-  w10 = "GEE";
-  w11 = "CURIOUS";
-  w12 = "BEE";
-  w13 = "RAD";
-  w14 = "EX";
-  w15 = "TANK";
-  w16 = "POLO";
-
+  var data = ["SAINT","BAD","BOY","BY","FLY","TEE","JAY","FRESH","CROP","GEE","CURIOUS","BEE","RAD","EX","TANK","POLO"];
   for (var wordNum = 1; wordNum <= 16; wordNum++) {
-    document.getElementById("box" + wordNum).innerHTML = "w" + wordNum;
+    document.getElementById("box" + wordNum).innerHTML = data[wordNum-1];
 }
   
 
