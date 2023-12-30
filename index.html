@@ -65,47 +65,47 @@ background-color: #6c757d;
   </style>
 </head>
 
-<body>
+<body ondragover="handleDragOver(event)" ondrop="handleDrop(event)">>
 
   <h1>&nbsp</h1>
   <h1><b>Connections: See It!</b></h1>
   
   <div class="grid-container">
 
-    <div class="grid-item empty-item" onclick="handleClick(this)" id="num1"><i>&nbsp</i></div>
-    <div class="grid-item empty-item" onclick="handleClick(this)" id="num2"><i>&nbsp</i></div>
-    <div class="grid-item empty-item" onclick="handleClick(this)" id="num3"><i>&nbsp</i></div>
-    <div class="grid-item empty-item" onclick="handleClick(this)" id="num4"><i>&nbsp</i></div>
+    <div class="grid-item empty-item" draggable="true" ondragstart="handleDragStart(event)" onclick="handleClick(this)" id="num1"><i>&nbsp</i></div>
+    <div class="grid-item empty-item" draggable="true" ondragstart="handleDragStart(event)" onclick="handleClick(this)" id="num2"><i>&nbsp</i></div>
+    <div class="grid-item empty-item" draggable="true" ondragstart="handleDragStart(event)" onclick="handleClick(this)" id="num3"><i>&nbsp</i></div>
+    <div class="grid-item empty-item" draggable="true" ondragstart="handleDragStart(event)" onclick="handleClick(this)" id="num4"><i>&nbsp</i></div>
     
-    <div class="grid-item empty-item" onclick="handleClick(this)" id="num5"><i>&nbsp</i></div>
-    <div class="grid-item empty-item" onclick="handleClick(this)" id="num6"><i>&nbsp</i></div>
-    <div class="grid-item empty-item" onclick="handleClick(this)" id="num7"><i>&nbsp</i></div>
-    <div class="grid-item empty-item" onclick="handleClick(this)" id="num8"><i>&nbsp</i></div>
+    <div class="grid-item empty-item" draggable="true" ondragstart="handleDragStart(event)" onclick="handleClick(this)" id="num5"><i>&nbsp</i></div>
+    <div class="grid-item empty-item" draggable="true" ondragstart="handleDragStart(event)" onclick="handleClick(this)" id="num6"><i>&nbsp</i></div>
+    <div class="grid-item empty-item" draggable="true" ondragstart="handleDragStart(event)" onclick="handleClick(this)" id="num7"><i>&nbsp</i></div>
+    <div class="grid-item empty-item" draggable="true" ondragstart="handleDragStart(event)" onclick="handleClick(this)" id="num8"><i>&nbsp</i></div>
     
-    <div class="grid-item empty-item" onclick="handleClick(this)" id="num9"><i>&nbsp</i></div>
-    <div class="grid-item empty-item" onclick="handleClick(this)" id="num10"><i>&nbsp</i></div>
-    <div class="grid-item empty-item" onclick="handleClick(this)" id="num11"><i>&nbsp</i></div>
-    <div class="grid-item empty-item" onclick="handleClick(this)" id="num12"><i>&nbsp</i></div>
+    <div class="grid-item empty-item" draggable="true" ondragstart="handleDragStart(event)" onclick="handleClick(this)" id="num9"><i>&nbsp</i></div>
+    <div class="grid-item empty-item" draggable="true" ondragstart="handleDragStart(event)" onclick="handleClick(this)" id="num10"><i>&nbsp</i></div>
+    <div class="grid-item empty-item" draggable="true" ondragstart="handleDragStart(event)" onclick="handleClick(this)" id="num11"><i>&nbsp</i></div>
+    <div class="grid-item empty-item" draggable="true" ondragstart="handleDragStart(event)" onclick="handleClick(this)" id="num12"><i>&nbsp</i></div>
     
-    <div class="grid-item empty-item" onclick="handleClick(this)" id="num13"><i>&nbsp</i></div>
-    <div class="grid-item empty-item" onclick="handleClick(this)" id="num14"><i>&nbsp</i></div>
-    <div class="grid-item empty-item" onclick="handleClick(this)" id="num15"><i>&nbsp</i></div>
-    <div class="grid-item empty-item" onclick="handleClick(this)" id="num16"><i>&nbsp</i></div>
+    <div class="grid-item empty-item" draggable="true" ondragstart="handleDragStart(event)" onclick="handleClick(this)" id="num13"><i>&nbsp</i></div>
+    <div class="grid-item empty-item" draggable="true" ondragstart="handleDragStart(event)" onclick="handleClick(this)" id="num14"><i>&nbsp</i></div>
+    <div class="grid-item empty-item" draggable="true" ondragstart="handleDragStart(event)" onclick="handleClick(this)" id="num15"><i>&nbsp</i></div>
+    <div class="grid-item empty-item" draggable="true" ondragstart="handleDragStart(event)" onclick="handleClick(this)" id="num16"><i>&nbsp</i></div>
     
-    <div class="grid-item non-empty-item" onclick="handleClick(this)" id="box1">placeholder</div>
-    <div class="grid-item non-empty-item" onclick="handleClick(this)" id="box2">placeholder</div>
-    <div class="grid-item non-empty-item" onclick="handleClick(this)" id="box3">placeholder</div>
-    <div class="grid-item non-empty-item" onclick="handleClick(this)" id="box4">placeholder</div>
+    <div class="grid-item non-empty-item" draggable="true" ondragstart="handleDragStart(event)" onclick="handleClick(this)" id="box1">placeholder</div>
+    <div class="grid-item non-empty-item" draggable="true" ondragstart="handleDragStart(event)" onclick="handleClick(this)" id="box2">placeholder</div>
+    <div class="grid-item non-empty-item" draggable="true" ondragstart="handleDragStart(event)" onclick="handleClick(this)" id="box3">placeholder</div>
+    <div class="grid-item non-empty-item" draggable="true" ondragstart="handleDragStart(event)" onclick="handleClick(this)" id="box4">placeholder</div>
     
-    <div class="grid-item non-empty-item" onclick="handleClick(this)" id="box5">placeholder</div>
-    <div class="grid-item non-empty-item" onclick="handleClick(this)" id="box6">placeholder</div>
-    <div class="grid-item non-empty-item" onclick="handleClick(this)" id="box7">placeholder</div>
-    <div class="grid-item non-empty-item" onclick="handleClick(this)" id="box8">placeholder</div>
+    <div class="grid-item non-empty-item" draggable="true" ondragstart="handleDragStart(event)" onclick="handleClick(this)" id="box5">placeholder</div>
+    <div class="grid-item non-empty-item" draggable="true" ondragstart="handleDragStart(event)" onclick="handleClick(this)" id="box6">placeholder</div>
+    <div class="grid-item non-empty-item" draggable="true" ondragstart="handleDragStart(event)" onclick="handleClick(this)" id="box7">placeholder</div>
+    <div class="grid-item non-empty-item" draggable="true" ondragstart="handleDragStart(event)" onclick="handleClick(this)" id="box8">placeholder</div>
     
-    <div class="grid-item non-empty-item" onclick="handleClick(this)" id="box9">placeholder</div>
-    <div class="grid-item non-empty-item" onclick="handleClick(this)" id="box10">placeholder</div>
-    <div class="grid-item non-empty-item" onclick="handleClick(this)" id="box11">placeholder</div>
-    <div class="grid-item non-empty-item" onclick="handleClick(this)" id="box12">placeholder</div>
+    <div class="grid-item non-empty-item" draggable="true" ondragstart="handleDragStart(event)" onclick="handleClick(this)" id="box9">placeholder</div>
+    <div class="grid-item non-empty-item" draggable="true" ondragstart="handleDragStart(event)" onclick="handleClick(this)" id="box10">placeholder</div>
+    <div class="grid-item non-empty-item" draggable="true" ondragstart="handleDragStart(event)" onclick="handleClick(this)" id="box11">placeholder</div>
+    <div class="grid-item non-empty-item" draggable="true" ondragstart="handleDragStart(event)" onclick="handleClick(this)" id="box12">placeholder</div>
     
     <div class="grid-item non-empty-item" onclick="handleClick(this)" id="box13">placeholder</div>
     <div class="grid-item non-empty-item" onclick="handleClick(this)" id="box14">placeholder</div>
@@ -142,6 +142,29 @@ background-color: #6c757d;
         document.getElementById("num" + wordNum).innerHTML = "<i>&nbsp</i>";
       }
     }
+var draggedItem = null
+function handleDragStart(event) {
+  draggedItem = event.target;
+  event.dataTransfer.setData('text/plain', draggedItem.innerHTML);
+}
+function handleDragOver(event) {
+  event.preventDefault();
+}
+function handleDrop(event) {
+  event.preventDefault();
+  if (draggedItem) {
+    var target = event.target;
+    if (target.classList.contains('grid-item')) {
+      var data = event.dataTransfer.getData('text/plain');
+      draggedItem.innerHTML = target.innerHTML;
+      target.innerHTML = data;
+    }
+
+    draggedItem = null;
+  }
+}
+
+
   </script>
 </body>
 
