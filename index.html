@@ -142,27 +142,44 @@ background-color: #6c757d;
         document.getElementById("num" + wordNum).innerHTML = "<i>&nbsp</i>";
       }
     }
-var draggedItem = null
-function handleDragStart(event) {
-  draggedItem = event.target;
-  event.dataTransfer.setData('text/plain', draggedItem.innerHTML);
-}
-function handleDragOver(event) {
-  event.preventDefault();
-}
-function handleDrop(event) {
-  event.preventDefault();
-  if (draggedItem) {
-    var target = event.target;
-    if (target.classList.contains('grid-item')) {
-      var data = event.dataTransfer.getData('text/plain');
-      draggedItem.innerHTML = target.innerHTML;
-      target.innerHTML = data;
+ var draggedItem = null;
+
+    function handleDragStart(event) {
+      draggedItem = event.target;
+      event.dataTransfer.setData('text/plain', draggedItem.innerHTML);
+      draggedItem.classList.add('dragged-item'); // Apply the dragged-item style
     }
 
-    draggedItem = null;
-  }
-}
+    function handleDrop(event) {
+      event.preventDefault();
+      if (draggedItem) {
+        var target = event.target;
+        if (target.classList.contains('grid-item')) {
+          var data = event.dataTransfer.getData('text/plain');
+          draggedItem.innerHTML = target.innerHTML;
+          target.innerHTML = data;
+        }
+
+        draggedItem.classList.remove('dragged-item'); // Remove the dragged-item style
+        draggedItem = null;
+      }
+    }
+
+    // Add touch event listeners
+    document.addEventListener('touchstart', function (event) {
+      event.preventDefault();
+      handleDragStart(event);
+    }, { passive: false });
+    document.addEventListener('touchmove', handleDrop, { passive: false });
+    document.addEventListener('touchend', handleDrop, { passive: false });
+
+    // Add drag-and-drop event listeners for computer
+    document.addEventListener('dragstart', handleDragStart);
+    document.addEventListener('dragover', function (event) {
+      event.preventDefault();
+    });
+    document.addEventListener('drop', handleDrop);
+
 
 
   </script>
