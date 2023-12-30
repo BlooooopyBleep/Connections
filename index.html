@@ -65,7 +65,7 @@ background-color: #6c757d;
   </style>
 </head>
 
-<body ondragover="handleDragOver(event)" ondrop="handleDrop(event)">
+<body ondragover="handleDragOver(event)" ondrop="handleDrop(event)">>
 
   <h1>&nbsp</h1>
   <h1><b>Connections: See It!</b></h1>
@@ -115,10 +115,6 @@ background-color: #6c757d;
   </div>
   <script>
     var data = ["SAINT", "BAD", "BOY", "BY", "FLY", "TEE", "JAY", "FRESH", "CROP", "GEE", "CURIOUS", "BEE", "RAD", "EX", "TANK", "POLO"];
-    for (var wordNum = 1; wordNum <= 16; wordNum++) {
-      document.getElementById("box" + wordNum).innerHTML = data[wordNum - 1];
-    }
-
     var selectedTextBox = null;
 
     function handleClick(clickedTextBox) {
@@ -142,19 +138,58 @@ background-color: #6c757d;
         document.getElementById("num" + wordNum).innerHTML = "<i>&nbsp</i>";
       }
     }
- var draggedItem = null;
 
-    function handleDragStart(event) {
-      draggedItem = event.target;
-      event.dataTransfer.setData('text/plain', draggedItem.innerHTML);
+    var draggedItem = null;
+
+    function handleTouchStart(event) {
+      var touch = event.touches[0];
+      draggedItem = document.elementFromPoint(touch.clientX, touch.clientY);
       draggedItem.classList.add('dragged-item'); // Apply the dragged-item style
     }
 
-    function handleDrop(event) {
+    function handleTouchMove(event) {
       event.preventDefault();
       if (draggedItem) {
-        var target = event.target;
-        if (target.classList.contains('grid-item')) {
+        var touch = event.touches[0];
+        var target = document.elementFromPoint(touch.clientX, touch.clientY);
+        if (target && target.classList.contains('grid-item')) {
+          var data = draggedItem.innerHTML;
+          draggedItem.innerHTML = target.innerHTML;
+          target.innerHTML = data;
+        }
+      }
+    }
+
+    function handleTouchEnd() {
+      if (draggedItem) {
+        draggedItem.classList.remove('dragged-item'); // Remove the dragged-item style
+        draggedItem = null;
+      }
+    }
+
+    // Add touch event listeners
+    document.addEventListener('touchstart', handleTouchStart, { passive: false });
+    document.addEventListener('touchmove', handleTouchMove, { passive: false });
+    document.addEventListener('touchend', handleTouchEnd, { passive: false });
+
+    // Add drag-and-drop event listeners for computer
+    document.addEventListener('dragstart', function (event) {
+      draggedItem = event.target;
+      event.dataTransfer.setData('text/plain', draggedItem.innerHTML);
+      draggedItem.classList.add('dragged-item'); // Apply the dragged-item style
+    });
+    document.addEventListener('dragover', function (event) {
+      event.preventDefault();
+    });
+    document.addEventListener('drop', function (event) {
+      event.preventDefault();
+      handleDrop(event);
+    });
+
+    function handleDrop(event) {
+      if (draggedItem) {
+        var target = document.elementFromPoint(event.clientX, event.clientY);
+        if (target && target.classList.contains('grid-item')) {
           var data = event.dataTransfer.getData('text/plain');
           draggedItem.innerHTML = target.innerHTML;
           target.innerHTML = data;
@@ -164,22 +199,6 @@ background-color: #6c757d;
         draggedItem = null;
       }
     }
-
-    // Add touch event listeners
-    document.addEventListener('touchstart', function (event) {
-      event.preventDefault();
-      handleDragStart(event);
-    }, { passive: false });
-    document.addEventListener('touchmove', handleDrop, { passive: false });
-    document.addEventListener('touchend', handleDrop, { passive: false });
-
-    // Add drag-and-drop event listeners for computer
-    document.addEventListener('dragstart', handleDragStart);
-    document.addEventListener('dragover', function (event) {
-      event.preventDefault();
-    });
-    document.addEventListener('drop', handleDrop);
-
 
 
   </script>
