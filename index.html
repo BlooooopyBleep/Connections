@@ -9,7 +9,10 @@
       text-align: center;
       color: white;
       font-size: 4vw;
+      font-size: 4vh;
       font-family: "Times New Roman";
+      margin:3vh;
+      margin: 2vw;
     }
 
     body {
@@ -22,14 +25,16 @@
       font-size: 2vw;
       color: white;
       font-family: "Times New Roman";
-      border-radius: 25px;
+      border-radius: 10px;
       background-color: rgba(125, 125, 125, 0.5);
       padding: 1vh;
+        margin-left: 2vw;
     }
 
     .grid-container {
       display: grid;
       grid-template-columns: repeat(auto-fill, minmax(20%, 1fr));
+      gap: 2vh;
       gap: 2vw;
       padding: 2vh;
       width: 90%;
@@ -47,6 +52,7 @@
       border-radius: 15px;
       box-sizing: border-box;
       padding: 2vh;
+      padding: 2vw;
     }
   </style>
 </head>
@@ -54,6 +60,7 @@
 <body>
   <h1><b>Connections: See It!</b></h1>
   <button class="button" onclick="resetGrid()">Click Here to Reset!</button>
+   
   <div class="grid-container">
     <div id="num1" class="grid-item" onclick="handleClick(this)"><i>Empty</i></div>
     <div id="num2" class="grid-item" onclick="handleClick(this)"><i>Empty</i></div>
@@ -123,4 +130,3 @@
 </body>
 
 </html>
-
