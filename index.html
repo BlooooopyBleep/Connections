@@ -75,7 +75,7 @@
 <script>
   var data = ["SAINT","BAD","BOY","BY","FLY","TEE","JAY","FRESH","CROP","GEE","CURIOUS","BEE","RAD","EX","TANK","POLO"];
   for (var wordNum = 1; wordNum <= 16; wordNum++) {
-    document.getElementById("box" + wordNum).innerHTML = data[wordNum-1];
+    document.getElementById("box" + wordNum).innerHTML = data[wordNum-1];}
        var selectedTextBox = null;
     function handleClick(clickedTextBox) {
         if (selectedTextBox) {
@@ -89,6 +89,7 @@
             selectedTextBox.classList.add('selected');
         }
     }
+    
 }
 
 </script>
