@@ -118,10 +118,10 @@ background-color: #6c757d;
     for (var wordNum = 1; wordNum <= 16; wordNum++) {
       document.getElementById("box" + wordNum).innerHTML = data[wordNum - 1];
     }
-    var selectedTextBox = null;
+  var selectedTextBox = null;
     var touchInProgress = false;
 
-  function handleClick(clickedTextBox) {
+    function handleClick(clickedTextBox) {
       if (!touchInProgress) {
         if (selectedTextBox) {
           var tempText = selectedTextBox.innerHTML;
@@ -165,7 +165,7 @@ background-color: #6c757d;
 
     function handleTouchMove(event) {
       event.preventDefault();
-      if (draggedItem) {
+      if (draggedItem && touchInProgress) {
         var touch = event.touches[0];
         var target = document.elementFromPoint(touch.clientX, touch.clientY);
         if (target && target.classList.contains('grid-item')) {
@@ -204,7 +204,7 @@ background-color: #6c757d;
     });
 
     function handleDrop(event) {
-      if (draggedItem) {
+      if (draggedItem && touchInProgress) {
         var target = document.elementFromPoint(event.clientX, event.clientY);
         if (target && target.classList.contains('grid-item')) {
           var data = event.dataTransfer.getData('text/plain');
@@ -216,6 +216,7 @@ background-color: #6c757d;
         draggedItem = null;
       }
     }
+
   </script>
 </body>
 
