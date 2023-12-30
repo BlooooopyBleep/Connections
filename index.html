@@ -53,8 +53,8 @@ background-color: #6c757d;
     .grid-item {
       font-family: "Helvetica";
      
-      font-size: 2vw;
-      font-size: 2vh;
+      font-size: 1.5vw;
+      font-size: 1.5vh;
       color: white;
       text-align: center;
       border-radius: 15px;
@@ -72,25 +72,25 @@ background-color: #6c757d;
   
   <div class="grid-container">
 
-    <div class="grid-item empty-item" onclick="handleClick(this)" id="num1"><i>Empty</i></div>
-    <div class="grid-item empty-item" onclick="handleClick(this)" id="num2"><i>Empty</i></div>
-    <div class="grid-item empty-item" onclick="handleClick(this)" id="num3"><i>Empty</i></div>
-    <div class="grid-item empty-item" onclick="handleClick(this)" id="num4"><i>Empty</i></div>
+    <div class="grid-item empty-item" onclick="handleClick(this)" id="num1"><i>&nbsp</i></div>
+    <div class="grid-item empty-item" onclick="handleClick(this)" id="num2"><i>&nbsp</i></div>
+    <div class="grid-item empty-item" onclick="handleClick(this)" id="num3"><i>&nbsp</i></div>
+    <div class="grid-item empty-item" onclick="handleClick(this)" id="num4"><i>&nbsp</i></div>
     
-    <div class="grid-item empty-item" onclick="handleClick(this)" id="num5"><i>Empty</i></div>
-    <div class="grid-item empty-item" onclick="handleClick(this)" id="num6"><i>Empty</i></div>
-    <div class="grid-item empty-item" onclick="handleClick(this)" id="num7"><i>Empty</i></div>
-    <div class="grid-item empty-item" onclick="handleClick(this)" id="num8"><i>Empty</i></div>
+    <div class="grid-item empty-item" onclick="handleClick(this)" id="num5"><i>&nbsp</i></div>
+    <div class="grid-item empty-item" onclick="handleClick(this)" id="num6"><i>&nbsp</i></div>
+    <div class="grid-item empty-item" onclick="handleClick(this)" id="num7"><i>&nbsp</i></div>
+    <div class="grid-item empty-item" onclick="handleClick(this)" id="num8"><i>&nbsp</i></div>
     
-    <div class="grid-item empty-item" onclick="handleClick(this)" id="num9"><i>Empty</i></div>
-    <div class="grid-item empty-item" onclick="handleClick(this)" id="num10"><i>Empty</i></div>
-    <div class="grid-item empty-item" onclick="handleClick(this)" id="num11"><i>Empty</i></div>
-    <div class="grid-item empty-item" onclick="handleClick(this)" id="num12"><i>Empty</i></div>
+    <div class="grid-item empty-item" onclick="handleClick(this)" id="num9"><i>&nbsp</i></div>
+    <div class="grid-item empty-item" onclick="handleClick(this)" id="num10"><i>&nbsp</i></div>
+    <div class="grid-item empty-item" onclick="handleClick(this)" id="num11"><i>&nbsp</i></div>
+    <div class="grid-item empty-item" onclick="handleClick(this)" id="num12"><i>&nbsp</i></div>
     
-    <div class="grid-item empty-item" onclick="handleClick(this)" id="num13"><i>Empty</i></div>
-    <div class="grid-item empty-item" onclick="handleClick(this)" id="num14"><i>Empty</i></div>
-    <div class="grid-item empty-item" onclick="handleClick(this)" id="num15"><i>Empty</i></div>
-    <div class="grid-item empty-item" onclick="handleClick(this)" id="num16"><i>Empty</i></div>
+    <div class="grid-item empty-item" onclick="handleClick(this)" id="num13"><i>&nbsp</i></div>
+    <div class="grid-item empty-item" onclick="handleClick(this)" id="num14"><i>&nbsp</i></div>
+    <div class="grid-item empty-item" onclick="handleClick(this)" id="num15"><i>&nbsp</i></div>
+    <div class="grid-item empty-item" onclick="handleClick(this)" id="num16"><i>&nbsp</i></div>
     
     <div class="grid-item non-empty-item" onclick="handleClick(this)" id="box1">placeholder</div>
     <div class="grid-item non-empty-item" onclick="handleClick(this)" id="box2">placeholder</div>
@@ -139,7 +139,7 @@ background-color: #6c757d;
         document.getElementById("box" + wordNum).innerHTML = data[wordNum - 1];
       }
       for (var wordNum = 1; wordNum <= 16; wordNum++) {
-        document.getElementById("num" + wordNum).innerHTML = "<i>Empty</i>";
+        document.getElementById("num" + wordNum).innerHTML = "<i>&nbsp</i>";
       }
     }
   </script>
