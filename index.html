@@ -26,48 +26,65 @@
 <body>
   <div class = "grid-container-wrapper">
   <div class = "grid-container">
-<div class = "grid-item"><i>[Insert Word Here]</i></div>
-<div class = "grid-item"><i>[Insert Word Here]</i></div>
-  <div class = "grid-item"><i>[Insert Word Here]</i></div>
-  <div class = "grid-item"><i>[Insert Word Here]</i></div>
-  <div class = "grid-item"><i>[Insert Word Here]</i></div>
-  <div class = "grid-item"><i>[Insert Word Here]</i></div>
-  <div class = "grid-item"><i>[Insert Word Here]</i></div>
-  <div class = "grid-item"><i>[Insert Word Here]</i></div>
-  <div class = "grid-item"><i>[Insert Word Here]</i></div>
-  <div class = "grid-item"><i>[Insert Word Here]</i></div>
-  <div class = "grid-item"><i>[Insert Word Here]</i></div>
-  <div class = "grid-item"><i>[Insert Word Here]</i></div>
-  <div class = "grid-item"><i>[Insert Word Here]</i></div>
-  <div class = "grid-item"><i>[Insert Word Here]</i></div>
-  <div class = "grid-item"><i>[Insert Word Here]</i></div>
-  <div class = "grid-item"><i>[Insert Word Here]</i></div>
+<div class = "grid-item" onclick="handleClick(this)"><i>[Insert Word Here]</i></div>
+<div class = "grid-item" onclick="handleClick(this)"><i>[Insert Word Here]</i></div>
+  <div class = "grid-item" onclick="handleClick(this)"><i>[Insert Word Here]</i></div>
+  <div class = "grid-item" onclick="handleClick(this)"><i>[Insert Word Here]</i></div>
+  <div class = "grid-item" onclick="handleClick(this)"><i>[Insert Word Here]</i></div>
+  <div class = "grid-item" onclick="handleClick(this)"><i>[Insert Word Here]</i></div>
+  <div class = "grid-item" onclick="handleClick(this)"><i>[Insert Word Here]</i></div>
+  <div class = "grid-item" onclick="handleClick(this)"><i>[Insert Word Here]</i></div>
+  <div class = "grid-item" onclick="handleClick(this)"><i>[Insert Word Here]</i></div>
+  <div class = "grid-item" onclick="handleClick(this)"><i>[Insert Word Here]</i></div>
+  <div class = "grid-item" onclick="handleClick(this)"><i>[Insert Word Here]</i></div>
+  <div class = "grid-item" onclick="handleClick(this)"><i>[Insert Word Here]</i></div>
+  <div class = "grid-item" onclick="handleClick(this)"><i>[Insert Word Here]</i></div>
+  <div class = "grid-item" onclick="handleClick(this)"><i>[Insert Word Here]</i></div>
+  <div class = "grid-item" onclick="handleClick(this)"><i>[Insert Word Here]</i></div>
+  <div class = "grid-item" onclick="handleClick(this)"><i>[Insert Word Here]</i></div>
   </div>
  <div class =  "grid-container">
-<div class = "grid-item" id = "box1">placeholder</div>
-<div class = "grid-item" id = "box2">placeholder</div>
-<div class = "grid-item" id = "box3">placeholder</div>
-<div class = "grid-item" id = "box4">placeholder</div>
-<div class = "grid-item" id = "box5">placeholder</div>
-<div class = "grid-item" id = "box6">placeholder</div>
-<div class = "grid-item" id = "box7">placeholder</div>
-<div class = "grid-item" id = "box8">placeholder</div>
-<div class = "grid-item" id = "box9">placeholder</div>
-<div class = "grid-item" id = "box10">placeholder</div>
-<div class = "grid-item" id = "box11">placeholder</div>
-<div class = "grid-item" id = "box12">placeholder</div>
-<div class = "grid-item" id = "box13">placeholder</div>
-<div class = "grid-item" id = "box14">placeholder</div>
-<div class = "grid-item" id = "box15">placeholder</div>
-<div class = "grid-item" id = "box16">placeholder</div>
+<div class = "grid-item" id = "box1" onclick="handleClick(this)">placeholder</div>
+<div class = "grid-item" id = "box2" onclick="handleClick(this)">placeholder</div>
+<div class = "grid-item" id = "box3" onclick="handleClick(this)">placeholder</div>
+<div class = "grid-item" id = "box4" onclick="handleClick(this)">placeholder</div>
+<div class = "grid-item" id = "box5" onclick="handleClick(this)">placeholder</div>
+<div class = "grid-item" id = "box6" onclick="handleClick(this)">placeholder</div>
+<div class = "grid-item" id = "box7" onclick="handleClick(this)">placeholder</div>
+<div class = "grid-item" id = "box8" onclick="handleClick(this)">placeholder</div>
+<div class = "grid-item" id = "box9" onclick="handleClick(this)">placeholder</div>
+<div class = "grid-item" id = "box10" onclick="handleClick(this)">placeholder</div>
+<div class = "grid-item" id = "box11" onclick="handleClick(this)">placeholder</div>
+<div class = "grid-item" id = "box12" onclick="handleClick(this)">placeholder</div>
+<div class = "grid-item" id = "box13" onclick="handleClick(this)">placeholder</div>
+<div class = "grid-item" id = "box14" onclick="handleClick(this)">placeholder</div>
+<div class = "grid-item" id = "box15" onclick="handleClick(this)">placeholder</div>
+<div class = "grid-item" id = "box16" onclick="handleClick(this)">placeholder</div>
 </div>
 </div>
 <script>
   var data = ["SAINT","BAD","BOY","BY","FLY","TEE","JAY","FRESH","CROP","GEE","CURIOUS","BEE","RAD","EX","TANK","POLO"];
   for (var wordNum = 1; wordNum <= 16; wordNum++) {
     document.getElementById("box" + wordNum).innerHTML = data[wordNum-1];
+       var selectedTextBox = null;
+
+    function handleClick(clickedTextBox) {
+        if (selectedTextBox) {
+            // Swap text content
+            var tempText = selectedTextBox.innerHTML;
+            selectedTextBox.innerHTML = clickedTextBox.innerHTML;
+            clickedTextBox.innerHTML = tempText;
+
+            // Reset selectedTextBox
+            selectedTextBox.classList.remove('selected');
+            selectedTextBox = null;
+        } else {
+            // Set selectedTextBox for the first click
+            selectedTextBox = clickedTextBox;
+            selectedTextBox.classList.add('selected');
+        }
+    }
 }
-  
 
 </script>
 </body>
