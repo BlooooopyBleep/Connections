@@ -122,10 +122,14 @@
   </div>
   <script>
     var data = ["SAINT", "BAD", "BOY", "BY", "FLY", "TEE", "JAY", "FRESH", "CROP", "GEE", "CURIOUS", "BEE", "RAD", "EX", "TANK", "POLO"];
-    for (var wordNum = 1; wordNum <= 16; wordNum++) {
-      document.getElementById("box" + wordNum).innerHTML = data[wordNum - 1];
-    }
-   var selectedTextBox = null;
+
+// Ensure the loop starts from 0 and goes up to data.length
+for (var wordNum = 0; wordNum < data.length; wordNum++) {
+  // Adjust the element IDs to match your HTML structure
+  document.getElementById("box" + (wordNum + 1)).innerHTML = data[wordNum];
+}
+
+var selectedTextBox = null;
 
 function handleTouchStart(event) {
   event.preventDefault();
@@ -153,7 +157,7 @@ function handleTouchEnd(event) {
     selectedTextBox.style.transition = ''; // Reset transition
     selectedTextBox.style.transform = ''; // Reset the transformation
     var target = document.elementFromPoint(event.changedTouches[0].clientX, event.changedTouches[0].clientY);
-    if (target && target.classList.contains('grid-item')&& !target.classList.contains('selected')) {
+    if (target && target.classList.contains('grid-item') && !target.classList.contains('selected')) {
       var data = selectedTextBox.innerHTML;
       selectedTextBox.innerHTML = target.innerHTML;
       target.innerHTML = data;
@@ -172,7 +176,7 @@ function highlightBox(clickedTextBox) {
 // Add touch event listeners
 document.addEventListener('touchstart', handleTouchStart, { passive: false });
 document.addEventListener('touchmove', handleTouchMove, { passive: false });
-document.addEventListener('touchend', handleTouchEnd
+document.addEventListener('touchend', handleTouchEnd);
 
   </script>
 </body>
