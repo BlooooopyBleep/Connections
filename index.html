@@ -163,29 +163,54 @@ background-color: #6c757d;
     }
   }
 
+  
+  function handleClick(clickedTextBox) {
+    if (selectedTextBox) {
+      var tempText = selectedTextBox.innerHTML;
+      selectedTextBox.innerHTML = clickedTextBox.innerHTML;
+      clickedTextBox.innerHTML = tempText;
+      selectedTextBox.classList.remove('selected');
+      selectedTextBox = null;
+    } else {
+      selectedTextBox = clickedTextBox;
+      selectedTextBox.classList.add('selected');
+    }
+  }
+
+  function resetGrid() {
+    for (var wordNum = 1; wordNum <= 16; wordNum++) {
+      document.getElementById("box" + wordNum).innerHTML = data[wordNum - 1];
+    }
+    for (var wordNum = 1; wordNum <= 16; wordNum++) {
+      document.getElementById("num" + wordNum).innerHTML = "<i>&nbsp</i>";
+    }
+  }
+
   var touchStartX, touchStartY, deltaX, deltaY, dragging = false;
 
   function handleTouchStart(event) {
     touchStartX = event.touches[0].clientX;
     touchStartY = event.touches[0].clientY;
-    dragging = true;
+    dragging = false;
   }
 
   function handleTouchMove(event) {
-    if (!dragging) return;
-
     deltaX = event.touches[0].clientX - touchStartX;
     deltaY = event.touches[0].clientY - touchStartY;
 
-    event.target.style.transform = 'translate(' + deltaX + 'px, ' + deltaY + 'px)';
+    if (!dragging && (Math.abs(deltaX) > 5 || Math.abs(deltaY) > 5)) {
+      dragging = true;
+    }
+
+    if (dragging) {
+      event.preventDefault(); // Prevent scrolling while dragging
+      selectedTextBox.style.transform = 'translate(' + deltaX + 'px, ' + deltaY + 'px)';
+    }
   }
 
   function handleTouchEnd(event) {
-    if (!dragging) return;
-
-    dragging = false;
-
-    if (selectedTextBox) {
+    if (dragging && selectedTextBox) {
+      dragging = false;
       selectedTextBox.style.transform = ''; // Reset the transformation
       var target = document.elementFromPoint(touchStartX, touchStartY);
       if (target && target.classList.contains('grid-item')) {
