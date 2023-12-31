@@ -124,14 +124,15 @@
 for (var wordNum = 0; wordNum < data.length; wordNum++) {
   document.getElementById("box" + (wordNum + 1)).innerHTML = data[wordNum];
 }
-function reset() {
-  for (var wordNum = 0; wordNum < data.length; wordNum++) {
-    document.getElementById("box" + (wordNum + 1)).innerHTML = data[wordNum];
-  }
-  for (var wordNum = 0; wordNum < data.length; wordNum++) {
-    document.getElementById("num" + (wordNum + 1)).innerHTML = "&nbsp;";
-  }
-}
+   function resetGrid() {
+      for (var wordNum = 1; wordNum <= 16; wordNum++) {
+        document.getElementById("box" + wordNum).innerHTML = data[wordNum - 1];
+      }
+      for (var wordNum = 1; wordNum <= 16; wordNum++) {
+        document.getElementById("num" + wordNum).innerHTML = "&nbsp";
+      }
+    } 
+
 
 
 var selectedTextBox = null;
