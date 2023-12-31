@@ -119,7 +119,28 @@ background-color: #6c757d;
       document.getElementById("box" + wordNum).innerHTML = data[wordNum - 1];
     }
   var selectedTextBox = null;
+ var draggedItem = null;
 
+    function handleDragStart(event) {
+      draggedItem = event.target;
+      event.dataTransfer.setData('text/plain', draggedItem.innerHTML);
+      draggedItem.classList.add('dragged-item'); // Apply the dragged-item style
+    }
+
+    function handleDrop(event) {
+      event.preventDefault();
+      if (draggedItem) {
+        var target = event.target;
+        if (target.classList.contains('grid-item')) {
+          var data = event.dataTransfer.getData('text/plain');
+          draggedItem.innerHTML = target.innerHTML;
+          target.innerHTML = data;
+        }
+
+        draggedItem.classList.remove('dragged-item'); // Remove the dragged-item style
+        draggedItem = null;
+      }
+    }
   function handleClick(clickedTextBox) {
     if (selectedTextBox) {
       var tempText = selectedTextBox.innerHTML;
@@ -181,6 +202,11 @@ background-color: #6c757d;
   document.addEventListener('touchstart', handleTouchStart, { passive: false });
   document.addEventListener('touchmove', handleTouchMove, { passive: false });
   document.addEventListener('touchend', handleTouchEnd, { passive: false });
+  document.addEventListener('dragstart', handleDragStart);
+    document.addEventListener('dragover', function (event) {
+      event.preventDefault();
+    });
+    document.addEventListener('drop', handleDrop);
 
 
  
