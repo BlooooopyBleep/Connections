@@ -138,6 +138,7 @@ function handleTouchStart(event) {
     selectedTextBox = touchedElement;
     highlightBox(selectedTextBox);
     selectedTextBox.style.transition = 'none';
+    selectedTextBox.style.pointerEvents = 'none'; // Disable hitbox
   }
 }
 
@@ -156,6 +157,7 @@ function handleTouchEnd(event) {
   if (selectedTextBox) {
     selectedTextBox.style.transition = ''; // Reset transition
     selectedTextBox.style.transform = ''; // Reset the transformation
+    selectedTextBox.style.pointerEvents = 'auto'; // Enable hitbox
     var target = document.elementFromPoint(event.changedTouches[0].clientX, event.changedTouches[0].clientY);
     if (target && target.classList.contains('grid-item') && !target.classList.contains('selected')) {
       var data = selectedTextBox.innerHTML;
