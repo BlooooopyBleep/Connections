@@ -133,6 +133,8 @@ function handleTouchStart(event) {
   if (touchedElement && touchedElement.classList.contains('grid-item')) {
     selectedTextBox = touchedElement;
     highlightBox(selectedTextBox);
+    selectedTextBox.style.position = 'fixed';
+    selectedTextBox.style.pointerEvents = 'none';
   }
 }
 
@@ -146,6 +148,8 @@ function handleTouchMove(event) {
 function handleTouchEnd(event) {
   event.preventDefault();
   if (selectedTextBox) {
+    selectedTextBox.style.position = ''; // Reset the position
+    selectedTextBox.style.pointerEvents = ''; // Reset pointer events
     selectedTextBox.style.transform = ''; // Reset the transformation
     var target = document.elementFromPoint(event.changedTouches[0].clientX, event.changedTouches[0].clientY);
     if (target && target.classList.contains('grid-item') && !target.classList.contains('selected')) {
@@ -159,7 +163,7 @@ function handleTouchEnd(event) {
 }
 
 function highlightBox(clickedTextBox) {
-  if (clickedTextBox.classList.contains('grid-item')&& !clickedTextBox.classList.contains('selected')) {
+  if (clickedTextBox.classList.contains('grid-item') && !clickedTextBox.classList.contains('selected')) {
     clickedTextBox.classList.add('highlighted');
   }
 }
