@@ -177,7 +177,7 @@ function handleTouchEnd(event) {
   }
 }
 
-function highlightBox(clickedTextBox) {
+function highlightBox(touchedTextBox) {
   if (touchedTextBox.classList.contains('grid-item') && !touchedTextBox.classList.contains('selected')) {
     touchedTextBox.classList.add('highlighted');
   }
