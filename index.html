@@ -124,7 +124,7 @@
 for (var wordNum = 0; wordNum < data.length; wordNum++) {
   document.getElementById("box" + (wordNum + 1)).innerHTML = data[wordNum];
 }
-document.getElementById('resetButton').addEventListener('click', reset);
+document.getElementById('resetButton').addEventListener('touch', reset);
 function reset() {
   for (var wordNum = 0; wordNum < data.length; wordNum++) {
     document.getElementById("box" + (wordNum + 1)).innerHTML = data[wordNum];
