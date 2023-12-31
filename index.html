@@ -126,7 +126,7 @@
       document.getElementById("box" + wordNum).innerHTML = data[wordNum - 1];
     }
 
-    var draggedItem = null;
+   var draggedItem = null;
 
     function handleDragStart(event) {
       var target = event.target;
@@ -149,8 +149,8 @@
     function handleDrop(event) {
       event.preventDefault();
       if (draggedItem) {
-        var target = document.elementFromPoint(event.clientX, event.clientY);
-        if (target && target.classList.contains('grid-item') && target.classList.contains('non-empty-item')) {
+        var target = event.target;
+        if (target && (target.classList.contains('grid-item') || target.classList.contains('non-empty-item'))) {
           var data = event.dataTransfer.getData('text/plain');
           draggedItem.innerHTML = target.innerHTML;
           target.innerHTML = data;
@@ -181,9 +181,6 @@
         draggedItem = null;
       }
     });
-    document.body.addEventListener('touchmove', function (event) {
-    event.preventDefault();
-  }, { passive: false });
 
     // Add drag-and-drop event listeners for computer
     document.addEventListener('dragstart', handleDragStart);
@@ -192,6 +189,10 @@
       event.preventDefault();
     });
     document.addEventListener('drop', handleDrop);
+    document.body.addEventListener('touchmove', function (event) {
+    event.preventDefault();
+  }, { passive: false });
+
   </script>
 </body>
 
