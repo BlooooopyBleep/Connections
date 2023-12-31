@@ -125,46 +125,50 @@
     for (var wordNum = 1; wordNum <= 16; wordNum++) {
       document.getElementById("box" + wordNum).innerHTML = data[wordNum - 1];
     }
-    var selectedTextBox = null;
+   var selectedTextBox = null;
 
-    function handleTouchStart(event) {
-      event.preventDefault();
-      selectedTextBox = event.target;
-      highlightBox(selectedTextBox);
+function handleTouchStart(event) {
+  event.preventDefault();
+  var touchedElement = document.elementFromPoint(event.touches[0].clientX, event.touches[0].clientY);
+  if (touchedElement && touchedElement.classList.contains('grid-item') && touchedElement.classList.contains('non-empty-item')) {
+    selectedTextBox = touchedElement;
+    highlightBox(selectedTextBox);
+  }
+}
+
+function handleTouchMove(event) {
+  event.preventDefault();
+  if (selectedTextBox) {
+    selectedTextBox.style.transform = 'translate(' + event.touches[0].clientX + 'px, ' + event.touches[0].clientY + 'px)';
+  }
+}
+
+function handleTouchEnd(event) {
+  event.preventDefault();
+  if (selectedTextBox) {
+    selectedTextBox.style.transform = ''; // Reset the transformation
+    var target = document.elementFromPoint(event.changedTouches[0].clientX, event.changedTouches[0].clientY);
+    if (target && target.classList.contains('grid-item') && target.classList.contains('non-empty-item') && !target.classList.contains('selected')) {
+      var data = selectedTextBox.innerHTML;
+      selectedTextBox.innerHTML = target.innerHTML;
+      target.innerHTML = data;
+      target.classList.remove('highlighted');
     }
+    selectedTextBox = null;
+  }
+}
 
-    function handleTouchMove(event) {
-      event.preventDefault();
-      if (selectedTextBox) {
-        selectedTextBox.style.transform = 'translate(' + event.touches[0].clientX + 'px, ' + event.touches[0].clientY + 'px)';
-      }
-    }
+function highlightBox(clickedTextBox) {
+  if (clickedTextBox.classList.contains('grid-item') && clickedTextBox.classList.contains('non-empty-item') && !clickedTextBox.classList.contains('selected')) {
+    clickedTextBox.classList.add('highlighted');
+  }
+}
 
-    function handleTouchEnd(event) {
-      event.preventDefault();
-      if (selectedTextBox) {
-        selectedTextBox.style.transform = ''; // Reset the transformation
-        var target = document.elementFromPoint(event.changedTouches[0].clientX, event.changedTouches[0].clientY);
-        if (target && target.classList.contains('grid-item') && !target.classList.contains('selected')) {
-          var data = selectedTextBox.innerHTML;
-          selectedTextBox.innerHTML = target.innerHTML;
-          target.innerHTML = data;
-          target.classList.remove('highlighted');
-        }
-        selectedTextBox = null;
-      }
-    }
+// Add touch event listeners
+document.addEventListener('touchstart', handleTouchStart, { passive: false });
+document.addEventListener('touchmove', handleTouchMove, { passive: false });
+document.addEventListener('touchend', handleTouchEnd, { passive: false });
 
-    function highlightBox(clickedTextBox) {
-      if (clickedTextBox.classList.contains('grid-item') && !clickedTextBox.classList.contains('selected')) {
-        clickedTextBox.classList.add('highlighted');
-      }
-    }
-
-    // Add touch event listeners
-    document.addEventListener('touchstart', handleTouchStart, { passive: false });
-    document.addEventListener('touchmove', handleTouchMove, { passive: false });
-    document.addEventListener('touchend', handleTouchEnd, { passive: false });
   </script>
 </body>
 
