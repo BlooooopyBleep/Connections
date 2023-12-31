@@ -166,16 +166,22 @@ function handleTouchEnd(event) {
     selectedTextBox.style.left = '';
     selectedTextBox.style.top = '';
     selectedTextBox.style.pointerEvents = 'auto'; // Enable hitbox
+    
+    // Remove 'highlighted' class from all grid items
+    document.querySelectorAll('.grid-item').forEach(function (box) {
+      box.classList.remove('highlighted');
+    });
+
     var target = document.elementFromPoint(event.changedTouches[0].clientX, event.changedTouches[0].clientY);
     if (target && target.classList.contains('grid-item') && !target.classList.contains('selected')) {
       var data = selectedTextBox.innerHTML;
       selectedTextBox.innerHTML = target.innerHTML;
       target.innerHTML = data;
-      target.classList.remove('highlighted');
     }
     selectedTextBox = null;
   }
 }
+
 
 function highlightBox(touchedTextBox) {
   // Remove 'highlighted' class from all grid items
