@@ -70,6 +70,11 @@
       touch-action: manipulation;
     }
   </style>
+  <script>
+  document.body.addEventListener('touchmove', function (event) {
+    event.preventDefault();
+  }, { passive: false });
+</script>
 </head>
 
 <body>
