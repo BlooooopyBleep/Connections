@@ -117,14 +117,13 @@
     <div class="grid-item empty-item" ontouchstart="handleTouchStart(event)" ontouchmove="handleTouchMove(event)" ontouchend="handleTouchEnd(event)" id="num14"><i>&nbsp</i></div>
     <div class="grid-item empty-item" ontouchstart="handleTouchStart(event)" ontouchmove="handleTouchMove(event)" ontouchend="handleTouchEnd(event)" id="num15"><i>&nbsp</i></div>
     <div class="grid-item empty-item" ontouchstart="handleTouchStart(event)" ontouchmove="handleTouchMove(event)" ontouchend="handleTouchEnd(event)" id="num16"><i>&nbsp</i></div>
-<button class="button" id="resetButton">Click Here to Reset!</button>
+<button class="button" onTouch="reset()">Click Here to Reset!</button>
   </div>
   <script>
     var data = ["SAINT", "BAD", "BOY", "BY", "FLY", "TEE", "JAY", "FRESH", "CROP", "GEE", "CURIOUS", "BEE", "RAD", "EX", "TANK", "POLO"];
 for (var wordNum = 0; wordNum < data.length; wordNum++) {
   document.getElementById("box" + (wordNum + 1)).innerHTML = data[wordNum];
 }
-document.getElementById('resetButton').addEventListener('touch', reset);
 function reset() {
   for (var wordNum = 0; wordNum < data.length; wordNum++) {
     document.getElementById("box" + (wordNum + 1)).innerHTML = data[wordNum];
