@@ -126,29 +126,37 @@
       document.getElementById("box" + wordNum).innerHTML = data[wordNum - 1];
     }
    var selectedTextBox = null;
+var offsetX = 0;
+var offsetY = 0;
 
 function handleTouchStart(event) {
   event.preventDefault();
   var touchedElement = document.elementFromPoint(event.touches[0].clientX, event.touches[0].clientY);
-  if (touchedElement && touchedElement.classList.contains('grid-item')) {
+  if (touchedElement && touchedElement.classList.contains('grid-item') && touchedElement.classList.contains('non-empty-item')) {
     selectedTextBox = touchedElement;
     highlightBox(selectedTextBox);
+    selectedTextBox.style.position = 'fixed';
+    selectedTextBox.style.pointerEvents = 'none';
+    offsetX = selectedTextBox.getBoundingClientRect().left - event.touches[0].clientX;
+    offsetY = selectedTextBox.getBoundingClientRect().top - event.touches[0].clientY;
   }
 }
 
 function handleTouchMove(event) {
   event.preventDefault();
   if (selectedTextBox) {
-    selectedTextBox.style.transform = 'translate(' + event.touches[0].clientX + 'px, ' + event.touches[0].clientY + 'px)';
+    selectedTextBox.style.transform = 'translate(' + (event.touches[0].clientX + offsetX) + 'px, ' + (event.touches[0].clientY + offsetY) + 'px)';
   }
 }
 
 function handleTouchEnd(event) {
   event.preventDefault();
   if (selectedTextBox) {
+    selectedTextBox.style.position = ''; // Reset the position
+    selectedTextBox.style.pointerEvents = ''; // Reset pointer events
     selectedTextBox.style.transform = ''; // Reset the transformation
     var target = document.elementFromPoint(event.changedTouches[0].clientX, event.changedTouches[0].clientY);
-    if (target && target.classList.contains('grid-item')&& !target.classList.contains('selected')) {
+    if (target && target.classList.contains('grid-item') && target.classList.contains('non-empty-item') && !target.classList.contains('selected')) {
       var data = selectedTextBox.innerHTML;
       selectedTextBox.innerHTML = target.innerHTML;
       target.innerHTML = data;
@@ -159,7 +167,7 @@ function handleTouchEnd(event) {
 }
 
 function highlightBox(clickedTextBox) {
-  if (clickedTextBox.classList.contains('grid-item')&& !clickedTextBox.classList.contains('selected')) {
+  if (clickedTextBox.classList.contains('grid-item') && clickedTextBox.classList.contains('non-empty-item') && !clickedTextBox.classList.contains('selected')) {
     clickedTextBox.classList.add('highlighted');
   }
 }
@@ -168,6 +176,7 @@ function highlightBox(clickedTextBox) {
 document.addEventListener('touchstart', handleTouchStart, { passive: false });
 document.addEventListener('touchmove', handleTouchMove, { passive: false });
 document.addEventListener('touchend', handleTouchEnd, { passive: false });
+
 
   </script>
 </body>
