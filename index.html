@@ -148,7 +148,8 @@ function handleTouchMove(event) {
     var rect = selectedTextBox.getBoundingClientRect();
     var offsetX = rect.width / 2;
     var offsetY = rect.height / 2;
-    selectedTextBox.style.transform = 'translate(' + (event.touches[0].clientX - offsetX) + 'px, ' + (event.touches[0].clientY - offsetY) + 'px)';
+    selectedTextBox.style.left = event.touches[0].clientX - offsetX + 'px';
+    selectedTextBox.style.top = event.touches[0].clientY - offsetY + 'px';
   }
 }
 
@@ -156,7 +157,8 @@ function handleTouchEnd(event) {
   event.preventDefault();
   if (selectedTextBox) {
     selectedTextBox.style.transition = ''; // Reset transition
-    selectedTextBox.style.transform = ''; // Reset the transformation
+    selectedTextBox.style.left = '';
+    selectedTextBox.style.top = '';
     selectedTextBox.style.pointerEvents = 'auto'; // Enable hitbox
     var target = document.elementFromPoint(event.changedTouches[0].clientX, event.changedTouches[0].clientY);
     if (target && target.classList.contains('grid-item') && !target.classList.contains('selected')) {
