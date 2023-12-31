@@ -1,13 +1,13 @@
-
 <!DOCTYPE html>
 <html>
 
 <head>
   <title>Connections</title>
   <style>
-  .highlighted{
+    .highlighted {
       background-color: #e09f3e;
     }
+
     h1 {
       text-align: center;
       font-weight: bold;
@@ -15,14 +15,14 @@
       font-size: 4vw;
       font-size: 4vh;
       font-family: "Helvetica";
-        
+
     }
 
     body {
       margin: 2vh;
       background-color: #495057;
       height: 100vh;
-       overflow: hidden
+      overflow: hidden;
     }
 
     .button {
@@ -32,14 +32,17 @@
       border-radius: 10px;
       background-color: rgba(125, 125, 125, 0.5);
       padding: 1vh;
-        margin-left: 2vw;
+      margin-left: 2vw;
     }
-.empty-item {
+
+    .empty-item {
       background-color: #343a40;
-          }
-.non-empty-item{
-background-color: #6c757d;
-}
+    }
+
+    .non-empty-item {
+      background-color: #6c757d;
+    }
+
     .grid-container {
       display: grid;
       grid-template-columns: repeat(auto-fill, minmax(20%, 1fr));
@@ -50,12 +53,12 @@ background-color: #6c757d;
       font-weight: bold;
       margin: 0 auto;
       text-align: center;
-       height: 60vh;
+      height: 60vh;
     }
 
     .grid-item {
       font-family: "Helvetica";
-     
+
       font-size: 1.5vw;
       font-size: 1.5vh;
       color: white;
@@ -64,6 +67,7 @@ background-color: #6c757d;
       box-sizing: border-box;
       padding: 1vh;
       padding: 1vw;
+      touch-action: manipulation;
     }
   </style>
 </head>
@@ -72,113 +76,96 @@ background-color: #6c757d;
 
   <h1>&nbsp</h1>
   <h1><b>Connections: See It!</b></h1>
-  
+
   <div class="grid-container">
-    
-    <div class="grid-item non-empty-item"   onclick="handleClick(this)" id="box1">placeholder</div>
-    <div class="grid-item non-empty-item"   onclick="handleClick(this)" id="box2">placeholder</div>
-    <div class="grid-item non-empty-item"   onclick="handleClick(this)" id="box3">placeholder</div>
-    <div class="grid-item non-empty-item"   onclick="handleClick(this)" id="box4">placeholder</div>
-    
-    <div class="grid-item non-empty-item"   onclick="handleClick(this)" id="box5">placeholder</div>
-    <div class="grid-item non-empty-item"   onclick="handleClick(this)" id="box6">placeholder</div>
-    <div class="grid-item non-empty-item"   onclick="handleClick(this)" id="box7">placeholder</div>
-    <div class="grid-item non-empty-item"   onclick="handleClick(this)" id="box8">placeholder</div>
-    
-    <div class="grid-item non-empty-item"   onclick="handleClick(this)" id="box9">placeholder</div>
-    <div class="grid-item non-empty-item"   onclick="handleClick(this)" id="box10">placeholder</div>
-    <div class="grid-item non-empty-item"   onclick="handleClick(this)" id="box11">placeholder</div>
-    <div class="grid-item non-empty-item"   onclick="handleClick(this)" id="box12">placeholder</div>
-    
-    <div class="grid-item non-empty-item" onclick="handleClick(this)" id="box13">placeholder</div>
-    <div class="grid-item non-empty-item" onclick="handleClick(this)" id="box14">placeholder</div>
-    <div class="grid-item non-empty-item" onclick="handleClick(this)" id="box15">placeholder</div>
-    <div class="grid-item non-empty-item" onclick="handleClick(this)" id="box16">placeholder</div>
-    
-    <div class="grid-item empty-item"   onclick="handleClick(this)" id="num1"><i>&nbsp</i></div>
-    <div class="grid-item empty-item"   onclick="handleClick(this)" id="num2"><i>&nbsp</i></div>
-    <div class="grid-item empty-item"   onclick="handleClick(this)" id="num3"><i>&nbsp</i></div>
-    <div class="grid-item empty-item"   onclick="handleClick(this)" id="num4"><i>&nbsp</i></div>
-    
-    <div class="grid-item empty-item"   onclick="handleClick(this)" id="num5"><i>&nbsp</i></div>
-    <div class="grid-item empty-item"   onclick="handleClick(this)" id="num6"><i>&nbsp</i></div>
-    <div class="grid-item empty-item"   onclick="handleClick(this)" id="num7"><i>&nbsp</i></div>
-    <div class="grid-item empty-item"   onclick="handleClick(this)" id="num8"><i>&nbsp</i></div>
-    
-    <div class="grid-item empty-item"   onclick="handleClick(this)" id="num9"><i>&nbsp</i></div>
-    <div class="grid-item empty-item"   onclick="handleClick(this)" id="num10"><i>&nbsp</i></div>
-    <div class="grid-item empty-item"   onclick="handleClick(this)" id="num11"><i>&nbsp</i></div>
-    <div class="grid-item empty-item"   onclick="handleClick(this)" id="num12"><i>&nbsp</i></div>
-    
-    <div class="grid-item empty-item"   onclick="handleClick(this)" id="num13"><i>&nbsp</i></div>
-    <div class="grid-item empty-item"   onclick="handleClick(this)" id="num14"><i>&nbsp</i></div>
-    <div class="grid-item empty-item"   onclick="handleClick(this)" id="num15"><i>&nbsp</i></div>
-    <div class="grid-item empty-item"   onclick="handleClick(this)" id="num16"><i>&nbsp</i></div>
-    
+
+    <div class="grid-item non-empty-item" ontouchstart="handleTouchStart(event)" ontouchmove="handleTouchMove(event)" ontouchend="handleTouchEnd(event)" id="box1">placeholder</div>
+    <div class="grid-item non-empty-item" ontouchstart="handleTouchStart(event)" ontouchmove="handleTouchMove(event)" ontouchend="handleTouchEnd(event)" id="box2">placeholder</div>
+    <div class="grid-item non-empty-item" ontouchstart="handleTouchStart(event)" ontouchmove="handleTouchMove(event)" ontouchend="handleTouchEnd(event)" id="box3">placeholder</div>
+    <div class="grid-item non-empty-item" ontouchstart="handleTouchStart(event)" ontouchmove="handleTouchMove(event)" ontouchend="handleTouchEnd(event)" id="box4">placeholder</div>
+
+    <div class="grid-item non-empty-item" ontouchstart="handleTouchStart(event)" ontouchmove="handleTouchMove(event)" ontouchend="handleTouchEnd(event)" id="box5">placeholder</div>
+    <div class="grid-item non-empty-item" ontouchstart="handleTouchStart(event)" ontouchmove="handleTouchMove(event)" ontouchend="handleTouchEnd(event)" id="box6">placeholder</div>
+    <div class="grid-item non-empty-item" ontouchstart="handleTouchStart(event)" ontouchmove="handleTouchMove(event)" ontouchend="handleTouchEnd(event)" id="box7">placeholder</div>
+    <div class="grid-item non-empty-item" ontouchstart="handleTouchStart(event)" ontouchmove="handleTouchMove(event)" ontouchend="handleTouchEnd(event)" id="box8">placeholder</div>
+
+    <div class="grid-item non-empty-item" ontouchstart="handleTouchStart(event)" ontouchmove="handleTouchMove(event)" ontouchend="handleTouchEnd(event)" id="box9">placeholder</div>
+    <div class="grid-item non-empty-item" ontouchstart="handleTouchStart(event)" ontouchmove="handleTouchMove(event)" ontouchend="handleTouchEnd(event)" id="box10">placeholder</div>
+    <div class="grid-item non-empty-item" ontouchstart="handleTouchStart(event)" ontouchmove="handleTouchMove(event)" ontouchend="handleTouchEnd(event)" id="box11">placeholder</div>
+    <div class="grid-item non-empty-item" ontouchstart="handleTouchStart(event)" ontouchmove="handleTouchMove(event)" ontouchend="handleTouchEnd(event)" id="box12">placeholder</div>
+
+    <div class="grid-item non-empty-item" ontouchstart="handleTouchStart(event)" ontouchmove="handleTouchMove(event)" ontouchend="handleTouchEnd(event)" id="box13">placeholder</div>
+    <div class="grid-item non-empty-item" ontouchstart="handleTouchStart(event)" ontouchmove="handleTouchMove(event)" ontouchend="handleTouchEnd(event)" id="box14">placeholder</div>
+    <div class="grid-item non-empty-item" ontouchstart="handleTouchStart(event)" ontouchmove="handleTouchMove(event)" ontouchend="handleTouchEnd(event)" id="box15">placeholder</div>
+    <div class="grid-item non-empty-item" ontouchstart="handleTouchStart(event)" ontouchmove="handleTouchMove(event)" ontouchend="handleTouchEnd(event)" id="box16">placeholder</div>
+
+    <div class="grid-item empty-item" ontouchstart="handleTouchStart(event)" ontouchmove="handleTouchMove(event)" ontouchend="handleTouchEnd(event)" id="num1"><i>&nbsp</i></div>
+    <div class="grid-item empty-item" ontouchstart="handleTouchStart(event)" ontouchmove="handleTouchMove(event)" ontouchend="handleTouchEnd(event)" id="num2"><i>&nbsp</i></div>
+    <div class="grid-item empty-item" ontouchstart="handleTouchStart(event)" ontouchmove="handleTouchMove(event)" ontouchend="handleTouchEnd(event)" id="num3"><i>&nbsp</i></div>
+    <div class="grid-item empty-item" ontouchstart="handleTouchStart(event)" ontouchmove="handleTouchMove(event)" ontouchend="handleTouchEnd(event)" id="num4"><i>&nbsp</i></div>
+
+    <div class="grid-item empty-item" ontouchstart="handleTouchStart(event)" ontouchmove="handleTouchMove(event)" ontouchend="handleTouchEnd(event)" id="num5"><i>&nbsp</i></div>
+    <div class="grid-item empty-item" ontouchstart="handleTouchStart(event)" ontouchmove="handleTouchMove(event)" ontouchend="handleTouchEnd(event)" id="num6"><i>&nbsp</i></div>
+    <div class="grid-item empty-item" ontouchstart="handleTouchStart(event)" ontouchmove="handleTouchMove(event)" ontouchend="handleTouchEnd(event)" id="num7"><i>&nbsp</i></div>
+    <div class="grid-item empty-item" ontouchstart="handleTouchStart(event)" ontouchmove="handleTouchMove(event)" ontouchend="handleTouchEnd(event)" id="num8"><i>&nbsp</i></div>
+
+    <div class="grid-item empty-item" ontouchstart="handleTouchStart(event)" ontouchmove="handleTouchMove(event)" ontouchend="handleTouchEnd(event)" id="num9"><i>&nbsp</i></div>
+    <div class="grid-item empty-item" ontouchstart="handleTouchStart(event)" ontouchmove="handleTouchMove(event)" ontouchend="handleTouchEnd(event)" id="num10"><i>&nbsp</i></div>
+    <div class="grid-item empty-item" ontouchstart="handleTouchStart(event)" ontouchmove="handleTouchMove(event)" ontouchend="handleTouchEnd(event)" id="num11"><i>&nbsp</i></div>
+    <div class="grid-item empty-item" ontouchstart="handleTouchStart(event)" ontouchmove="handleTouchMove(event)" ontouchend="handleTouchEnd(event)" id="num12"><i>&nbsp</i></div>
+
+    <div class="grid-item empty-item" ontouchstart="handleTouchStart(event)" ontouchmove="handleTouchMove(event)" ontouchend="handleTouchEnd(event)" id="num13"><i>&nbsp</i></div>
+    <div class="grid-item empty-item" ontouchstart="handleTouchStart(event)" ontouchmove="handleTouchMove(event)" ontouchend="handleTouchEnd(event)" id="num14"><i>&nbsp</i></div>
+    <div class="grid-item empty-item" ontouchstart="handleTouchStart(event)" ontouchmove="handleTouchMove(event)" ontouchend="handleTouchEnd(event)" id="num15"><i>&nbsp</i></div>
+    <div class="grid-item empty-item" ontouchstart="handleTouchStart(event)" ontouchmove="handleTouchMove(event)" ontouchend="handleTouchEnd(event)" id="num16"><i>&nbsp</i></div>
+
   </div>
-<script>
-  var data = ["SAINT", "BAD", "BOY", "BY", "FLY", "TEE", "JAY", "FRESH", "CROP", "GEE", "CURIOUS", "BEE", "RAD", "EX", "TANK", "POLO"];
- for (var wordNum = 1; wordNum <= 16; wordNum++) {
+  <script>
+    var data = ["SAINT", "BAD", "BOY", "BY", "FLY", "TEE", "JAY", "FRESH", "CROP", "GEE", "CURIOUS", "BEE", "RAD", "EX", "TANK", "POLO"];
+    for (var wordNum = 1; wordNum <= 16; wordNum++) {
       document.getElementById("box" + wordNum).innerHTML = data[wordNum - 1];
     }
- var selectedTextBox = null;
+    var selectedTextBox = null;
 
-    function handleClick(clickedTextBox) {
+    function handleTouchStart(event) {
+      event.preventDefault();
+      selectedTextBox = event.target;
+      highlightBox(selectedTextBox);
+    }
+
+    function handleTouchMove(event) {
+      event.preventDefault();
       if (selectedTextBox) {
-        var tempText = selectedTextBox.innerHTML;
-        selectedTextBox.innerHTML = clickedTextBox.innerHTML;
-        clickedTextBox.innerHTML = tempText;
-        selectedTextBox.classList.remove('selected');
-        selectedTextBox = null;
-      } else {
-        selectedTextBox = clickedTextBox;
-        selectedTextBox.classList.add('selected');
+        selectedTextBox.style.transform = 'translate(' + event.touches[0].clientX + 'px, ' + event.touches[0].clientY + 'px)';
       }
     }
 
-    function resetGrid() {
-      for (var wordNum = 1; wordNum <= 16; wordNum++) {
-        document.getElementById("box" + wordNum).innerHTML = data[wordNum - 1];
-      }
-      for (var wordNum = 1; wordNum <= 16; wordNum++) {
-        document.getElementById("num" + wordNum).innerHTML = "<i>Empty</i>";
-      }
-    } 
-   var draggedItem = null;
-
-    function handleDragStart(event) {
-      var target = event.target;
-      if (target.classList.contains('grid-item') && target.classList.contains('non-empty-item')) {
-        draggedItem = target;
-        event.dataTransfer.setData('text/plain', draggedItem.innerHTML);
-        draggedItem.classList.add('hidden');
-      } else {
-        event.preventDefault();
-      }
-    }
-
-    function handleDragOver(event) {
+    function handleTouchEnd(event) {
       event.preventDefault();
-    }
-
-    function handleDrop(event) {
-      event.preventDefault();
-      if (draggedItem) {
-        var target = event.target;
-        if (target && target.classList.contains('grid-item') && target.classList.contains('non-empty-item')) {
-          var data = event.dataTransfer.getData('text/plain');
-          draggedItem.innerHTML = target.innerHTML;
+      if (selectedTextBox) {
+        selectedTextBox.style.transform = ''; // Reset the transformation
+        var target = document.elementFromPoint(event.changedTouches[0].clientX, event.changedTouches[0].clientY);
+        if (target && target.classList.contains('grid-item') && !target.classList.contains('selected')) {
+          var data = selectedTextBox.innerHTML;
+          selectedTextBox.innerHTML = target.innerHTML;
           target.innerHTML = data;
+          target.classList.remove('highlighted');
         }
-
-        draggedItem.classList.remove('hidden');
-        draggedItem = null;
+        selectedTextBox = null;
       }
     }
 
-</script>
+    function highlightBox(clickedTextBox) {
+      if (clickedTextBox.classList.contains('grid-item') && !clickedTextBox.classList.contains('selected')) {
+        clickedTextBox.classList.add('highlighted');
+      }
+    }
+
+    // Add touch event listeners
+    document.addEventListener('touchstart', handleTouchStart, { passive: false });
+    document.addEventListener('touchmove', handleTouchMove, { passive: false });
+    document.addEventListener('touchend', handleTouchEnd, { passive: false });
+  </script>
 </body>
 
 </html>
-
-
