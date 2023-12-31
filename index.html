@@ -1,19 +1,4 @@
-Todo: 
-SERVER
-CSS EM SCALING
-HTTP REQUEST
-MOBILE FRIENDLY SCALING
-WEIRD OFF CENTER WEBPAGE
-THEMES
-SETTINGS (IDK WHAT FOR)
-GUI IMPROVEMENTS
-NOT ONLY CIRCLES AND SQUARES
-CLICK TO HIGHLIGHT BOX
-SPECIFIC ROWS EACH WITH 4 COLUMNS
-CLEAN UP THE CODE
-LEADERBOARD IF TIME
 
- 
 <!DOCTYPE html>
 <html>
 
@@ -159,6 +144,37 @@ background-color: #6c757d;
         document.getElementById("num" + wordNum).innerHTML = "<i>Empty</i>";
       }
     } 
+   var draggedItem = null;
+
+    function handleDragStart(event) {
+      var target = event.target;
+      if (target.classList.contains('grid-item') && target.classList.contains('non-empty-item')) {
+        draggedItem = target;
+        event.dataTransfer.setData('text/plain', draggedItem.innerHTML);
+        draggedItem.classList.add('hidden');
+      } else {
+        event.preventDefault();
+      }
+    }
+
+    function handleDragOver(event) {
+      event.preventDefault();
+    }
+
+    function handleDrop(event) {
+      event.preventDefault();
+      if (draggedItem) {
+        var target = event.target;
+        if (target && target.classList.contains('grid-item') && target.classList.contains('non-empty-item')) {
+          var data = event.dataTransfer.getData('text/plain');
+          draggedItem.innerHTML = target.innerHTML;
+          target.innerHTML = data;
+        }
+
+        draggedItem.classList.remove('hidden');
+        draggedItem = null;
+      }
+    }
 
 </script>
 </body>
