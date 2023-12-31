@@ -130,11 +130,9 @@
 function handleTouchStart(event) {
   event.preventDefault();
   var touchedElement = document.elementFromPoint(event.touches[0].clientX, event.touches[0].clientY);
-  if (touchedElement && touchedElement.classList.contains('grid-item')) {
+  if (touchedElement && touchedElement.classList.contains('grid-item') && touchedElement.classList.contains('non-empty-item')) {
     selectedTextBox = touchedElement;
     highlightBox(selectedTextBox);
-    selectedTextBox.style.position = 'fixed';
-    selectedTextBox.style.pointerEvents = 'none';
   }
 }
 
@@ -148,11 +146,9 @@ function handleTouchMove(event) {
 function handleTouchEnd(event) {
   event.preventDefault();
   if (selectedTextBox) {
-    selectedTextBox.style.position = ''; // Reset the position
-    selectedTextBox.style.pointerEvents = ''; // Reset pointer events
     selectedTextBox.style.transform = ''; // Reset the transformation
     var target = document.elementFromPoint(event.changedTouches[0].clientX, event.changedTouches[0].clientY);
-    if (target && target.classList.contains('grid-item') && !target.classList.contains('selected')) {
+    if (target && target.classList.contains('grid-item') && target.classList.contains('non-empty-item') && !target.classList.contains('selected')) {
       var data = selectedTextBox.innerHTML;
       selectedTextBox.innerHTML = target.innerHTML;
       target.innerHTML = data;
@@ -163,7 +159,7 @@ function handleTouchEnd(event) {
 }
 
 function highlightBox(clickedTextBox) {
-  if (clickedTextBox.classList.contains('grid-item') && !clickedTextBox.classList.contains('selected')) {
+  if (clickedTextBox.classList.contains('grid-item') && clickedTextBox.classList.contains('non-empty-item') && !clickedTextBox.classList.contains('selected')) {
     clickedTextBox.classList.add('highlighted');
   }
 }
