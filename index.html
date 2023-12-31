@@ -70,14 +70,9 @@
       touch-action: manipulation;
     }
   </style>
-  <script>
-  document.body.addEventListener('touchmove', function (event) {
-    event.preventDefault();
-  }, { passive: false });
-</script>
 </head>
 
-<body>
+<body ondragover="handleDragOver(event)" ondrop="handleDrop(event)">
 
   <h1>&nbsp</h1>
   <h1><b>Connections: See It!</b></h1>
@@ -186,6 +181,9 @@
         draggedItem = null;
       }
     });
+    document.body.addEventListener('touchmove', function (event) {
+    event.preventDefault();
+  }, { passive: false });
 
     // Add drag-and-drop event listeners for computer
     document.addEventListener('dragstart', handleDragStart);
