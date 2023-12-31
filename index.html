@@ -148,8 +148,13 @@ function handleTouchMove(event) {
     var rect = selectedTextBox.getBoundingClientRect();
     var offsetX = rect.width / 2;
     var offsetY = rect.height / 2;
-    selectedTextBox.style.left = event.touches[0].clientX - offsetX + 'px';
-    selectedTextBox.style.top = event.touches[0].clientY - offsetY + 'px';
+    
+    // Adjust for scroll position
+    var scrollX = window.pageXOffset || document.documentElement.scrollLeft;
+    var scrollY = window.pageYOffset || document.documentElement.scrollTop;
+    
+    selectedTextBox.style.left = event.touches[0].clientX - offsetX + scrollX + 'px';
+    selectedTextBox.style.top = event.touches[0].clientY - offsetY + scrollY + 'px';
   }
 }
 
@@ -181,6 +186,7 @@ function highlightBox(clickedTextBox) {
 document.addEventListener('touchstart', handleTouchStart, { passive: false });
 document.addEventListener('touchmove', handleTouchMove, { passive: false });
 document.addEventListener('touchend', handleTouchEnd);
+
 
   </script>
 </body>
