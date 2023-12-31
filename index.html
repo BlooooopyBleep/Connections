@@ -178,6 +178,12 @@ function handleTouchEnd(event) {
 }
 
 function highlightBox(touchedTextBox) {
+  // Remove 'highlighted' class from all grid items
+  document.querySelectorAll('.grid-item').forEach(function (box) {
+    box.classList.remove('highlighted');
+  });
+
+  // Add 'highlighted' class to the currently touched box
   if (touchedTextBox.classList.contains('grid-item') && !touchedTextBox.classList.contains('selected')) {
     touchedTextBox.classList.add('highlighted');
   }
