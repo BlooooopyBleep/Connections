@@ -1,1 +1,78 @@
 
+   
+.menu {
+  display: none;
+  position: fixed;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  background-color: #fff;
+  border: 1px solid #ccc;
+  padding: 20px;
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.2);
+}
+
+    h1 {
+      text-align: center;
+      font-weight: bold;
+      color: white;
+      font-size: 4vw;
+      font-size: 4vh;
+      font-family: "Helvetica";
+      margin-top: 2vh;
+    }
+
+    body {
+      margin: 2vh;
+      background-color: #495057;
+      height: 100vh;
+      overflow: hidden;
+    }
+
+     .highlighted {
+      border: 2px solid yellow;
+    }
+    .button {
+      font-size: 2.5vw;
+      font-size: 2.5vh;
+      color: white;
+      font-weight: bold;
+      font-family: "Helvetica";
+      border-radius: 50px;
+      background-color: rgba(125, 125, 125, 0.5);
+      padding: 2.5vh;
+    }
+
+    .empty-item {
+      background-color: #343a40;
+    }
+
+    .non-empty-item {
+      background-color: #6c757d;
+    }
+
+    .grid-container {
+      display: grid;
+      grid-template-columns: repeat(auto-fill, minmax(20%, 1fr));
+      gap: 1.5vh;
+      gap: 1.5vw;
+      padding: 2vh;
+      width: 90%;
+      font-weight: bold;
+      margin: 0 auto;
+      text-align: center;
+      height: 60vh;
+    }
+
+    .grid-item {
+      font-family: "Helvetica";
+      font-size: 1.5vw;
+      font-size: 1.5vh;
+      color: white;
+      text-align: center;
+      border-radius: 10px;
+      box-sizing: border-box;
+      padding: 1vh;
+      padding: 1vw;
+      touch-action: manipulation;
+    }
