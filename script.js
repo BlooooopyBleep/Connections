@@ -1,22 +1,43 @@
 var xhr = new XMLHttpRequest();
 xhr.withCredentials = true;
+var selectedTextBox = null;
 
 xhr.addEventListener("readystatechange", function() {
   if(this.readyState === 4) {
     console.log(this.responseText);
+    var split = this.responseText.slice(1,-1).split(",");
+    loadData(split);
   }
 });
 
-xhr.open("GET", "http://138.197.38.17:8080/api/v1/dailypuzzle");
+xhr.open("GET", "https://play.william-duan.games:8443/api/v1/dailypuzzle");
 
 xhr.send();
 
-var data = ["SAINT", "BAD", "BOY", "BY", "FLY", "TEE", "JAY", "FRESH", "CROP", "GEE", "CURIOUS", "BEE", "RAD", "EX", "TANK", "POLO"];
+function test() {
+  var xhr = new XMLHttpRequest();
+  xhr.withCredentials = true;
+  var selectedTextBox = null;
 
-window.onload(for (var wordNum = 0; wordNum < data.length; wordNum++) {
-  document.getElementById("box" + (wordNum + 1)).innerHTML = data[wordNum];
+  xhr.addEventListener("readystatechange", function() {
+    if(this.readyState === 4) {
+      console.log(this.responseText);
+      var split = this.responseText.slice(1,-1).split(",");
+      loadData(split);
+    }
+  });
+
+  xhr.open("GET", "https://play.william-duan.games:8080/api/v1/dailypuzzle");
+
+  xhr.send();
 }
-)
+
+function loadData(data) {
+  for (var wordNum = 0; wordNum < data.length; wordNum++) {
+    document.getElementById("box" + (wordNum + 1)).innerHTML = data[wordNum];
+    console.log(data[wordNum] + " loaded");
+  }
+}
    function resetGrid() {
       for (var wordNum = 1; wordNum <= 16; wordNum++) {
         document.getElementById("box" + wordNum).innerHTML = data[wordNum - 1];
@@ -28,7 +49,6 @@ window.onload(for (var wordNum = 0; wordNum < data.length; wordNum++) {
 
 
 
-var selectedTextBox = null;
 
 function handleTouchStart(event) {
   event.preventDefault();
