@@ -3,74 +3,7 @@
 
 <head>
   <title>Connections</title>
-  <script type="text/javascript" src="script.js"></script>
-  <style>
-    
-
-    h1 {
-      text-align: center;
-      font-weight: bold;
-      color: white;
-      font-size: 4vw;
-      font-size: 4vh;
-      font-family: "Helvetica";
-      margin-top: 2vh;
-    }
-
-    body {
-      margin: 2vh;
-      background-color: #495057;
-      height: 100vh;
-      overflow: hidden;
-    }
-
-     .highlighted {
-      border: 2px solid yellow;
-    }
-    .button {
-      font-size: 1.5vw;
-      color: white;
-      font-weight: bold;
-      font-family: "Helvetica";
-      border-radius: 50px;
-      background-color: rgba(125, 125, 125, 0.5);
-      padding: 2.5vh;
-    }
-
-    .empty-item {
-      background-color: #343a40;
-    }
-
-    .non-empty-item {
-      background-color: #6c757d;
-    }
-
-    .grid-container {
-      display: grid;
-      grid-template-columns: repeat(auto-fill, minmax(20%, 1fr));
-      gap: 1.5vh;
-      gap: 1.5vw;
-      padding: 2vh;
-      width: 90%;
-      font-weight: bold;
-      margin: 0 auto;
-      text-align: center;
-      height: 60vh;
-    }
-
-    .grid-item {
-      font-family: "Helvetica";
-      font-size: 1.5vw;
-      font-size: 1.5vh;
-      color: white;
-      text-align: center;
-      border-radius: 10px;
-      box-sizing: border-box;
-      padding: 1vh;
-      padding: 1vw;
-      touch-action: manipulation;
-    }
-  </style>
+   <link rel="stylesheet" href="styles.css">
 </head>
 
 <body>
@@ -117,10 +50,12 @@
     <div class="grid-item empty-item" ontouchstart="handleTouchStart(event)" ontouchmove="handleTouchMove(event)" ontouchend="handleTouchEnd(event)" id="num14"><i>&nbsp</i></div>
     <div class="grid-item empty-item" ontouchstart="handleTouchStart(event)" ontouchmove="handleTouchMove(event)" ontouchend="handleTouchEnd(event)" id="num15"><i>&nbsp</i></div>
     <div class="grid-item empty-item" ontouchstart="handleTouchStart(event)" ontouchmove="handleTouchMove(event)" ontouchend="handleTouchEnd(event)" id="num16"><i>&nbsp</i></div>
-<button class="button" ontouchend="resetGrid()">Reset</button>
-<button class="button" ontouchend="themes()">Themes</button>
-<button class="button" ontouchend="settings()">Settings</button>
+<button class="button" onclick="resetGrid()" ontouchend="resetGrid()">Reset</button>
+<button class="button" onclick="themes()" ontouchend="themes()">Themes</button>
+<button class="button" onclick="settings()" ontouchend="settings()">Settings</button>
   </div>
+  <script type="text/javascript" src="script.js"></script>
 </body>
+
 
 </html>
