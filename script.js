@@ -9,7 +9,7 @@ xhr.addEventListener("readystatechange", function() {
     loadData(split);
   }
 });
-//a
+
 xhr.open("GET", "https://play.william-duan.games:8443/api/v1/dailypuzzle");
 
 xhr.send();
@@ -31,16 +31,6 @@ function test() {
 
   xhr.send();
 }
-var data = ["bruh", "sus", "brainrot", "lobotomy", "hitler", "amogus", "angery", "nice guy", "poopywoopy", "abcd im dumb", "retard", "edge", "skibidi", "fnarf","autism","downSINDROME"];
-
-  for (var wordNum = 0; wordNum < data.length; wordNum++) {
-    document.getElementById("box" + (wordNum + 1)).innerHTML = data[wordNum];
-    console.log(data[wordNum] + " loaded");
-  }
-
-
-// script.js
-var data = ["bruh", "sus", "brainrot", "lobotomy", "hitler", "amogus", "angery", "nice guy", "poopywoopy", "abcd im dumb", "retard", "edge", "skibidi", "fnarf","autism","downSINDROME"];
 
 function loadData() {
   for (var wordNum = 0; wordNum < data.length; wordNum++) {
