@@ -50,6 +50,58 @@ function loadData(data) {
 
 
 
+function themes() {
+
+}
+
+function settings() {
+
+}
+function handleDragStart(event) {
+  event.dataTransfer.setData("text/plain", event.target.id);
+}
+
+function handleDrop(event) {
+  event.preventDefault();
+  var data = event.dataTransfer.getData("text/plain");
+  var draggedElement = document.getElementById(data);
+
+  if (event.target.classList.contains('grid-item') && !event.target.classList.contains('selected')) {
+    var targetText = event.target.innerHTML;
+    event.target.innerHTML = draggedElement.innerHTML;
+    draggedElement.innerHTML = targetText;
+  }
+}
+
+function handleDragOver(event) {
+  event.preventDefault();
+}
+
+var gridItems = document.querySelectorAll('.grid-item');
+gridItems.forEach(function (item) {
+  item.setAttribute('draggable', true);
+  item.addEventListener('dragstart', handleDragStart);
+});
+
+document.addEventListener('dragover', handleDragOver);
+document.addEventListener('drop', handleDrop);
+
+
+function openMenu(menuId) {
+  var menu = document.getElementById(menuId);
+  menu.style.display = 'block';
+}
+
+function closeMenu() {
+  var menus = document.getElementsByClassName('menu');
+  for (var i = 0; i < menus.length; i++) {
+    menus[i].style.display = 'none';
+  }
+}
+
+
+var selectedTextBox = null;
+
 function handleTouchStart(event) {
   event.preventDefault();
   var touchedElement = document.elementFromPoint(event.touches[0].clientX, event.touches[0].clientY);
@@ -57,7 +109,7 @@ function handleTouchStart(event) {
     selectedTextBox = touchedElement;
     highlightBox(selectedTextBox);
     selectedTextBox.style.transition = 'none';
-    selectedTextBox.style.pointerEvents = 'none'; // Disable hitbox
+    selectedTextBox.style.pointerEvents = 'none'; 
   }
 }
 
@@ -104,4 +156,5 @@ function highlightBox(touchedTextBox) {
 document.addEventListener('touchstart', handleTouchStart, { passive: false });
 document.addEventListener('touchmove', handleTouchMove, { passive: false });
 document.addEventListener('touchend', handleTouchEnd);
+
 
