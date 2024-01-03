@@ -38,25 +38,43 @@ function loadData(data) {
     console.log(data[wordNum] + " loaded");
   }
 }
-   function resetGrid() {
-      for (var wordNum = 1; wordNum <= 16; wordNum++) {
-        document.getElementById("box" + wordNum).innerHTML = data[wordNum - 1];
-      }
-      for (var wordNum = 1; wordNum <= 16; wordNum++) {
-        document.getElementById("num" + wordNum).innerHTML = "&nbsp";
-      }
-    } 
 
 
-
-
-function themes() {
-
+function resetGrid() {
+  for (var wordNum = 1; wordNum <= 16; wordNum++) {
+    document.getElementById("box" + wordNum).innerHTML = data[wordNum - 1];
+  }
+  for (var wordNum = 1; wordNum <= 16; wordNum++) {
+    document.getElementById("num" + wordNum).innerHTML = "&nbsp;";
+  }
 }
 
-function settings() {
+     function toggleRectangle(rectangleId) {
+      var rectangle = document.getElementById(rectangleId);
+      rectangle.style.display = rectangle.style.display === 'none' ? 'block' : 'none';
+    }
 
-}
+    function closeRectangle(rectangleId) {
+      var rectangle = document.getElementById(rectangleId);
+      rectangle.style.display = 'none';
+    }
+
+
+    document.getElementById('themesButton').addEventListener('click', function() {
+      toggleRectangle('themesRectangle');
+    });
+    document.getElementById('settingsButton').addEventListener('click', function() {
+      toggleRectangle('settingsRectangle');
+    });
+
+    document.getElementById('themesButton').addEventListener('touchstart', function() {
+  toggleRectangle('themesRectangle');
+});
+
+document.getElementById('settingsButton').addEventListener('touchstart', function() {
+  toggleRectangle('settingsRectangle');
+});
+
 function handleDragStart(event) {
   event.dataTransfer.setData("text/plain", event.target.id);
 }
@@ -85,19 +103,6 @@ gridItems.forEach(function (item) {
 
 document.addEventListener('dragover', handleDragOver);
 document.addEventListener('drop', handleDrop);
-
-
-function openMenu(menuId) {
-  var menu = document.getElementById(menuId);
-  menu.style.display = 'block';
-}
-
-function closeMenu() {
-  var menus = document.getElementsByClassName('menu');
-  for (var i = 0; i < menus.length; i++) {
-    menus[i].style.display = 'none';
-  }
-}
 
 
 var selectedTextBox = null;
@@ -156,5 +161,3 @@ function highlightBox(touchedTextBox) {
 document.addEventListener('touchstart', handleTouchStart, { passive: false });
 document.addEventListener('touchmove', handleTouchMove, { passive: false });
 document.addEventListener('touchend', handleTouchEnd);
-
-
