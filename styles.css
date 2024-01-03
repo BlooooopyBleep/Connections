@@ -20,14 +20,14 @@
     
       .buttonContainer{
           text-align: center;
-          margin-top: 5vh;
+          margin-top: 2vh;
       }
      .highlighted {
       border: 2px solid yellow;
     }
     .button {
-      font-size: 3vw;
-      font-size: 3vh;
+      font-size: 2.3vw;
+      font-size: 2.3vh;
       color: white;
       font-weight: bold;
       font-family: "Helvetica";
@@ -49,6 +49,8 @@
     }
     .buttonRight{
         float:right;
+                margin-right: 3vw;
+
         overflow: hidden;
     }
 
@@ -64,13 +66,11 @@
       display: grid;
       grid-template-columns: repeat(auto-fill, minmax(20%, 1fr));
       gap: 1.5vh;
-      gap: 1.5vw;
       padding: 2vh;
-      width: 90%;
+      width: 95%;
       font-weight: bold;
-      margin: 0 auto;
-      text-align: center;
-      height: 64vh;
+      margin: auto;
+    height: 70vh;
     }
 
       .grid-item {
@@ -80,9 +80,12 @@
   color: white;
   text-align: center;
   border-radius: 10px;
-  box-sizing: content-box;
-  padding: 1vh 1vw; 
+  box-sizing: border-box;
+  padding: 1.5vh 1vw; /* Adjusted padding for better centering */
   touch-action: manipulation;
+  display: flex;
+  align-items: center;
+  justify-content: center;
 }
         .menu {
       display: none;
