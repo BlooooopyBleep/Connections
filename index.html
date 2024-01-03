@@ -52,9 +52,11 @@
     <div class="grid-item empty-item" ontouchstart="handleTouchStart(event)" ontouchmove="handleTouchMove(event)" ontouchend="handleTouchEnd(event)" id="num16"><i>&nbsp</i></div>
     </div>
 <div>
+<div class="buttonContainer">
 <button class="button buttonLeft" onclick="resetGrid()" ontouchend="resetGrid()">Reset</button>
 <button class="button buttonMiddle" onclick="toggleRectangle('themesRectangle')" ontouchend="toggleRectangle('themesRectangle')">Themes</button>
 <button class="button buttonRight" onclick="toggleRectangle('settingsRectangle')"ontouchend="toggleRectangle('settingsRectangle')">Settings</button>
+</div>
 </div>
   <div id="themesRectangle" class="themes">
     <button class="exitButton" onclick="closeRectangle('themesRectangle')" ontouchend="closeRectangle('themesRectangle')">Exit</button>
