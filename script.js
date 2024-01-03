@@ -34,14 +34,9 @@ function test() {
 
 function loadData(data) {
   for (var wordNum = 0; wordNum < data.length; wordNum++) {
-    var gridItem = document.createElement('div');
-    gridItem.className = 'grid-item';
-    gridItem.draggable = true;
-    gridItem.textContent = data[wordNum];
-    document.getElementById('gridContainer').appendChild(gridItem);
+    document.getElementById("box" + (wordNum + 1)).innerHTML = data[wordNum];
     console.log(data[wordNum] + " loaded");
   }
-}
 
 function resetGrid() {
   for (var wordNum = 1; wordNum <= 16; wordNum++) {
