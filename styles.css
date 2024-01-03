@@ -18,7 +18,10 @@
       overflow: hidden;
     }
     
-      
+      .buttonContainer{
+          text-align: center;
+          margin-top: 5vh;
+      }
      .highlighted {
       border: 2px solid yellow;
     }
@@ -37,20 +40,15 @@
     }
     .buttonLeft{
         margin-left: 3vw;
-        margin-top:5vh;
         float:left;
         overflow: hidden;
     }
     .buttonMiddle{
-        margin-left: 8.5vw;
-       margin-top:5vh;
        overflow: hidden;
   
     }
     .buttonRight{
-        margin-right: 3vw;
         float:right;
-        margin-top:5vh;
         overflow: hidden;
     }
 
