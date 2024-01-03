@@ -161,3 +161,5 @@ function highlightBox(touchedTextBox) {
 document.addEventListener('touchstart', handleTouchStart, { passive: false });
 document.addEventListener('touchmove', handleTouchMove, { passive: false });
 document.addEventListener('touchend', handleTouchEnd);
+
+//a
