@@ -25,7 +25,7 @@ function test() {
   xhr.send();
 }
 function loadData(data) {
-  for (var wordNum = 0; wordNum < data.length(); wordNum++) {
+  for (var wordNum = 0; wordNum < data.length; wordNum++) {
     document.getElementById("box" + (wordNum + 1)).innerHTML = data[wordNum];
     console.log(data[wordNum] + " loaded");
   }
