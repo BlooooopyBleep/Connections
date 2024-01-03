@@ -1,12 +1,11 @@
 var xhr = new XMLHttpRequest();
 xhr.withCredentials = true;
 var selectedTextBox = null;
-var data;
 xhr.addEventListener("readystatechange", function() {
   if(this.readyState === 4) {
     console.log(this.responseText);
-    this.data = this.responseText.slice(1,-1).split(",");
-    loadData(data);
+    var split = this.responseText.slice(1,-1).split(",");
+    loadData(split);
   }
 });
 xhr.open("GET", "https://play.william-duan.games:8443/api/v1/dailypuzzle");
@@ -18,7 +17,8 @@ function test() {
   xhr.addEventListener("readystatechange", function() {
     if(this.readyState === 4) {
       console.log(this.responseText);
-      
+      var split = this.responseText.slice(1,-1).split(",");
+      loadData(split);
     }
   });
   xhr.open("GET", "https://play.william-duan.games:8080/api/v1/dailypuzzle");
@@ -29,7 +29,6 @@ function loadData(data) {
     document.getElementById("box" + (wordNum + 1)).innerHTML = data[wordNum];
     console.log(data[wordNum] + " loaded");
   }
-
 }
 function resetGrid() {
   for (var wordNum = 1; wordNum <= 16; wordNum++) {
