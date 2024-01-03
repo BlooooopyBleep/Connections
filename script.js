@@ -32,7 +32,7 @@ function test() {
   xhr.send();
 }
 
-function loadData() {
+function loadData(data) {
   for (var wordNum = 0; wordNum < data.length; wordNum++) {
     var gridItem = document.createElement('div');
     gridItem.className = 'grid-item';
