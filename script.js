@@ -31,13 +31,13 @@ function test() {
 
   xhr.send();
 }
+var data = ["bruh", "sus", "brainrot", "lobotomy", "hitler", "amogus", "angery", "nice guy", "poopywoopy", "abcd im dumb", "retard", "edge", "skibidi", "fnarf","autism","downSINDROME"];
 
-function loadData(data) {
   for (var wordNum = 0; wordNum < data.length; wordNum++) {
     document.getElementById("box" + (wordNum + 1)).innerHTML = data[wordNum];
     console.log(data[wordNum] + " loaded");
   }
-}
+
 
 
 function resetGrid() {
@@ -103,6 +103,9 @@ gridItems.forEach(function (item) {
 
 document.addEventListener('dragover', handleDragOver);
 document.addEventListener('drop', handleDrop);
+document.getElementById('header').addEventListener('touchstart', function(event) {
+  event.preventDefault(); 
+});
 
 
 var selectedTextBox = null;
@@ -161,5 +164,3 @@ function highlightBox(touchedTextBox) {
 document.addEventListener('touchstart', handleTouchStart, { passive: false });
 document.addEventListener('touchmove', handleTouchMove, { passive: false });
 document.addEventListener('touchend', handleTouchEnd);
-
-//a
