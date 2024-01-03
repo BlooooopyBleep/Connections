@@ -14,7 +14,7 @@ function loadData(e) {
 }
 
 function resetGrid() {
-	for (var e = 1; e <= 16; e++) document.getElementById("box" + e).innerHTML = data[e - 1];
+	for (var e = 1; e <= 16; e++) document.getElementById("box" + e).innerHTML = e[e - 1];
 	for (var e = 1; e <= 16; e++) document.getElementById("num" + e).innerHTML = "&nbsp;"
 }
 document.querySelector('.buttonLeft').addEventListener('click', resetGrid);
