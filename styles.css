@@ -14,20 +14,19 @@
     body {
       margin: 2vh;
       background-color: #495057;
-      height: 100vh;
       overflow: hidden;
     }
     
       .buttonContainer{
           text-align: center;
-          margin-top: 2vh;
+
       }
      .highlighted {
       border: 2px solid yellow;
     }
     .button {
-      font-size: 2.3vw;
-      font-size: 2.3vh;
+      font-size: 3vw;
+      font-size: 3vh;
       color: white;
       font-weight: bold;
       font-family: "Helvetica";
@@ -69,19 +68,19 @@
       padding: 2vh;
       width: 95%;
       font-weight: bold;
-      
+margin: auto; 
     height: 70vh;
     }
 
       .grid-item {
   font-family: "Helvetica";
-  font-size: 1.1vw;
-  font-size: 1.1vh;
+  font-size: 1.5vw;
+  font-size: 1.5vh;
   color: white;
   text-align: center;
-  border-radius: 10px;
+  border-radius: 15px;
   box-sizing: border-box;
-  padding: 1.5vh 1vw; /* Adjusted padding for better centering */
+  padding: 1.5vh 1vw; 
   touch-action: manipulation;
   display: flex;
   align-items: center;
