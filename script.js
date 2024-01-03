@@ -14,11 +14,13 @@ function loadData(e) {
 }
 
 function resetGrid() {
-	for (var e = 1; e <= 16; e++) document.getElementById("box" + e).innerHTML = e[e - 1];
-	for (var e = 1; e <= 16; e++) document.getElementById("num" + e).innerHTML = "&nbsp;"
+  for (var wordNum = 1; wordNum <= 16; wordNum++) {
+    document.getElementById("box" + wordNum).innerHTML = e[wordNum - 1];
+  }
+  for (var wordNum = 1; wordNum <= 16; wordNum++) {
+    document.getElementById("num" + wordNum).innerHTML = "&nbsp;";
+  }
 }
-document.querySelector('.buttonLeft').addEventListener('click', resetGrid);
-document.querySelector('.buttonLeft').addEventListener('touchend', resetGrid);
 
 function toggleRectangle(e) {
 	var t = document.getElementById(e);
