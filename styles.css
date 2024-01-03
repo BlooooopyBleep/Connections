@@ -33,13 +33,14 @@
       border: 2px solid yellow;
     }
     .button {
-      font-size: 5vw;
-      font-size: 5vh;
+      font-size: 3vw;
+      font-size: 3vh;
       color: white;
       font-weight: bold;
       font-family: "Helvetica";
       border-radius: 50px;
       background-color: rgba(125, 125, 125, 0.5);
+     
     }
 
     .empty-item {
@@ -63,7 +64,7 @@
       height: 60vh;
     }
 
-   .grid-item {
+      .grid-item {
   font-family: "Helvetica";
   font-size: 1.3vw;
   font-size: 1.3vh;
@@ -74,3 +75,4 @@
   padding: 1vh 1vw; /* Adjusted padding values */
   touch-action: manipulation;
 }
+    }
