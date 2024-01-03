@@ -3,7 +3,6 @@
 
 <head>
   <title>Connections</title>
-   <script type="text/javascript" src="script.js"></script>
    <link rel="stylesheet" href="styles.css">
 </head>
 
@@ -51,10 +50,21 @@
     <div class="grid-item empty-item" ontouchstart="handleTouchStart(event)" ontouchmove="handleTouchMove(event)" ontouchend="handleTouchEnd(event)" id="num14"><i>&nbsp</i></div>
     <div class="grid-item empty-item" ontouchstart="handleTouchStart(event)" ontouchmove="handleTouchMove(event)" ontouchend="handleTouchEnd(event)" id="num15"><i>&nbsp</i></div>
     <div class="grid-item empty-item" ontouchstart="handleTouchStart(event)" ontouchmove="handleTouchMove(event)" ontouchend="handleTouchEnd(event)" id="num16"><i>&nbsp</i></div>
-<button class="button" onclick="resetGrid()" ontouchend="resetGrid()">Reset</button>
-<button class="button" onclick="themes()" ontouchend="themes()">Themes</button>
-<button class="button" onclick="settings()" ontouchend="settings()">Settings</button>
+    </div>
+<div>
+<button class="button buttonLeft" onclick="resetGrid()" ontouchend="resetGrid()">Reset</button>
+<button class="button buttonMiddle" onclick="toggleRectangle('themesRectangle')" ontouchend="toggleRectangle('themesRectangle')">Themes</button>
+<button class="button buttonRight" onclick="toggleRectangle('settingsRectangle')"ontouchend="toggleRectangle('settingsRectangle')">Settings</button>
+</div>
+  <div id="themesRectangle" class="themes">
+    <button class="exitButton" onclick="closeRectangle('themesRectangle')" ontouchend="closeRectangle('themesRectangle')">Exit</button>
   </div>
+
+  <div id="settingsRectangle" class="settings">
+    <button class="exitButton" onclick="closeRectangle('settingsRectangle')"ontouchend="closeRectangle('settingsRectangle')">Exit</button>
+  
+  </div>
+  <script type="text/javascript" src="script.js"></script>
 </body>
 
 
