@@ -25,8 +25,8 @@
       border: 2px solid yellow;
     }
     .button {
-      font-size: 3vw;
-      font-size: 3vh;
+      font-size: 2.3vw;
+      font-size: 2.3vh;
       color: white;
       font-weight: bold;
       font-family: "Helvetica";
@@ -66,7 +66,6 @@
       grid-template-columns: repeat(auto-fill, minmax(20%, 1fr));
       gap: 1.5vh;
       padding: 2vh;
-      width: 95%;
       font-weight: bold;
 margin: auto; 
     height: 70vh;
@@ -74,8 +73,8 @@ margin: auto;
 
       .grid-item {
   font-family: "Helvetica";
-  font-size: 1.5vw;
-  font-size: 1.5vh;
+  font-size: 1vw;
+  font-size: 1vh;
   color: white;
   text-align: center;
   border-radius: 15px;
