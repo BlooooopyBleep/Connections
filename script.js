@@ -1,11 +1,12 @@
 var xhr = new XMLHttpRequest();
 xhr.withCredentials = true;
 var selectedTextBox = null;
+var data;
 xhr.addEventListener("readystatechange", function() {
   if(this.readyState === 4) {
     console.log(this.responseText);
-    var split = this.responseText.slice(1,-1).split(",");
-    loadData(split);
+    this.data = this.responseText.slice(1,-1).split(",");
+    loadData();
   }
 });
 xhr.open("GET", "https://play.william-duan.games:8443/api/v1/dailypuzzle");
@@ -24,7 +25,7 @@ function test() {
   xhr.open("GET", "https://play.william-duan.games:8080/api/v1/dailypuzzle");
   xhr.send();
 }
-function loadData(data) {
+function loadData() {
   for (var wordNum = 0; wordNum < data.length; wordNum++) {
     document.getElementById("box" + (wordNum + 1)).innerHTML = data[wordNum];
     console.log(data[wordNum] + " loaded");
