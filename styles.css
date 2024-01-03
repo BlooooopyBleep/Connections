@@ -8,6 +8,7 @@
       font-size: 4vh;
       font-family: "Helvetica";
       margin-top: 2vh;
+      overflow: hidden;
     }
 
     body {
@@ -32,21 +33,25 @@
       padding: 1vw;
       width:25vw;
       height:10vh;
+      overflow: hidden;
     }
     .buttonLeft{
         margin-left: 3vw;
         margin-top:5vh;
         float:left;
+        overflow: hidden;
     }
     .buttonMiddle{
         margin-left: 8.5vw;
        margin-top:5vh;
+       overflow: hidden;
   
     }
     .buttonRight{
         margin-right: 3vw;
         float:right;
         margin-top:5vh;
+        overflow: hidden;
     }
 
     .empty-item {
@@ -125,4 +130,3 @@
     }
     
 
-a
