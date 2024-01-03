@@ -9,7 +9,7 @@ xhr.addEventListener("readystatechange", function() {
     loadData(split);
   }
 });
-
+//a
 xhr.open("GET", "https://play.william-duan.games:8443/api/v1/dailypuzzle");
 
 xhr.send();
