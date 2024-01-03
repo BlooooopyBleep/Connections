@@ -46,7 +46,8 @@ function resetGrid() {
     document.getElementById("num" + wordNum).innerHTML = "&nbsp;";
   }
 }
-
+document.querySelector('.buttonLeft').addEventListener('click', resetGrid);
+document.querySelector('.buttonLeft').addEventListener('touchend', resetGrid);
 function toggleRectangle(rectangleId) {
   var rectangle = document.getElementById(rectangleId);
   rectangle.style.display = rectangle.style.display === 'none' ? 'block' : 'none';
