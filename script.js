@@ -39,6 +39,19 @@ var data = ["bruh", "sus", "brainrot", "lobotomy", "hitler", "amogus", "angery",
   }
 
 
+// script.js
+var data = ["bruh", "sus", "brainrot", "lobotomy", "hitler", "amogus", "angery", "nice guy", "poopywoopy", "abcd im dumb", "retard", "edge", "skibidi", "fnarf","autism","downSINDROME"];
+
+function loadData() {
+  for (var wordNum = 0; wordNum < data.length; wordNum++) {
+    var gridItem = document.createElement('div');
+    gridItem.className = 'grid-item';
+    gridItem.draggable = true;
+    gridItem.textContent = data[wordNum];
+    document.getElementById('gridContainer').appendChild(gridItem);
+    console.log(data[wordNum] + " loaded");
+  }
+}
 
 function resetGrid() {
   for (var wordNum = 1; wordNum <= 16; wordNum++) {
@@ -49,31 +62,15 @@ function resetGrid() {
   }
 }
 
-     function toggleRectangle(rectangleId) {
-      var rectangle = document.getElementById(rectangleId);
-      rectangle.style.display = rectangle.style.display === 'none' ? 'block' : 'none';
-    }
+function toggleRectangle(rectangleId) {
+  var rectangle = document.getElementById(rectangleId);
+  rectangle.style.display = rectangle.style.display === 'none' ? 'block' : 'none';
+}
 
-    function closeRectangle(rectangleId) {
-      var rectangle = document.getElementById(rectangleId);
-      rectangle.style.display = 'none';
-    }
-
-
-    document.getElementById('themesButton').addEventListener('click', function() {
-      toggleRectangle('themesRectangle');
-    });
-    document.getElementById('settingsButton').addEventListener('click', function() {
-      toggleRectangle('settingsRectangle');
-    });
-
-    document.getElementById('themesButton').addEventListener('touchstart', function() {
-  toggleRectangle('themesRectangle');
-});
-
-document.getElementById('settingsButton').addEventListener('touchstart', function() {
-  toggleRectangle('settingsRectangle');
-});
+function closeRectangle(rectangleId) {
+  var rectangle = document.getElementById(rectangleId);
+  rectangle.style.display = 'none';
+}
 
 function handleDragStart(event) {
   event.dataTransfer.setData("text/plain", event.target.id);
@@ -103,9 +100,19 @@ gridItems.forEach(function (item) {
 
 document.addEventListener('dragover', handleDragOver);
 document.addEventListener('drop', handleDrop);
-document.getElementById('header').addEventListener('touchstart', function(event) {
-  event.preventDefault(); 
-});
+
+
+function openMenu(menuId) {
+  var menu = document.getElementById(menuId);
+  menu.style.display = 'block';
+}
+
+function closeMenu() {
+  var menus = document.getElementsByClassName('menu');
+  for (var i = 0; i < menus.length; i++) {
+    menus[i].style.display = 'none';
+  }
+}
 
 
 var selectedTextBox = null;
@@ -117,6 +124,7 @@ function handleTouchStart(event) {
     selectedTextBox = touchedElement;
     highlightBox(selectedTextBox);
     selectedTextBox.style.transition = 'none';
+    selectedTextBox.style.pointerEvents = 'none'; // Disable hitbox
     selectedTextBox.style.pointerEvents = 'none'; 
   }
 }
@@ -133,7 +141,6 @@ function handleTouchMove(event) {
     selectedTextBox.style.top = event.touches[0].clientY - offsetY + scrollY + 'px';
   }
 }
-
 function handleTouchEnd(event) {
   event.preventDefault();
   if (selectedTextBox) {
