@@ -1,17 +1,5 @@
 
 
-    h1 {
-      text-align: center;
-      font-weight: bold;
-      color: white;
-      font-size: 4vw;
-      font-size: 4vh;
-      font-family: "Helvetica";
-      margin-top: 0.3vh;
-      margin-bottom: 1vh;
-      overflow: hidden;
-    }
-
     body {
       margin: 2vh;
       background-color: #495057;
@@ -28,6 +16,23 @@
      .highlighted {
       border: 2px solid yellow;
     }
+    sus {
+ background-color: rgba(125, 125, 125, 0.5);
+  width: 27vw;
+  border-radius:10px;
+  text-align:center;
+    font-weight: bold;
+      color: white;
+      font-size: 4vw;
+      font-size: 4vh;
+      font-family: "Helvetica";
+      margin-top: 0.3vh;
+      margin-bottom: 1vh;
+      overflow: hidden;
+      box-shadow: 4px 4px 4px 1px rgba(0,0,0,0.5);
+        padding:0.1vw;
+        margin-left:36.5vw;
+}
     .button {
       font-size: 2.3vw;
       font-size: 2.3vh;
@@ -70,12 +75,12 @@
 
     .empty-item {
       background-color: #343a40;
-      opacity: .6;
+      opacity: .7;
     }
 
     .non-empty-item {
       background-color: #6c757d;
-      opacity: .6;
+      opacity: .7;
     }
 
     .grid-container {
@@ -86,7 +91,9 @@
       font-weight: bold;
     margin: auto; 
     height: 68vh;
+  
     }
+
 
       .grid-item {
   font-family: "Helvetica";
@@ -102,6 +109,7 @@
   align-items: center;
   justify-content: center;
   box-shadow: 4px 4px 4px 1px rgba(0,0,0,0.5);
+
 }
        .themes{
     border-radius: 10px;
@@ -135,16 +143,16 @@
         background-color: #495057;
     }
     .spring{
-        background-color: green;
+        background-image: url("spring.jpg");
     }
     .summer{
-        background-color: orange;
+        background-image: url("summer.jpg");
     }
     .fall{
-        background-color: brown;
+        background-image: url("fall.jpg");
     }
     .winter{
-        background-color: blue;
+        background-image: url("winter.jpg");
     }
     
     .titleThemes{
