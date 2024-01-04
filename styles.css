@@ -31,8 +31,7 @@
       overflow: hidden;
       box-shadow: 4px 4px 4px 1px rgba(0,0,0,0.5);
         padding:0.1vw;
-         position: relative;
-    left: 40.5vw;
+
   }
     .button {
       font-size: 2.3vw;
@@ -146,20 +145,33 @@
     }
     .spring{
         background-image: url("spring.jpg");
-        height:100vh;
+
+         background-size: cover;
+    background-repeat: no-repeat;
+    background-position: center center;
+    height: 100vh;
     }
     .summer{
         background-image: url("summer.jpg");
-        height:100vh;
+ background-size: cover;
+    background-repeat: no-repeat;
+    background-position: center center;
+    height: 100vh;
     }
     .fall{
         background-image: url("fall.jpg");
-        height:100vh;
+ background-size: cover;
+    background-repeat: no-repeat;
+    background-position: center center;
+    height: 100vh;
         
     }
     .winter{
         background-image: url("winter.jpg");
-        height:100vh;
+ background-size: cover;
+    background-repeat: no-repeat;
+    background-position: center center;
+    height: 100vh;
         
     }
     
