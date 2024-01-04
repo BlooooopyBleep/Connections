@@ -41,6 +41,8 @@ function resetGrid() {
 }
 document.querySelector('.buttonLeft').addEventListener('click', resetGrid);
 document.querySelector('.buttonLeft').addEventListener('touchend', resetGrid);
+
+
 function toggleRectangle(rectangleId) {
   var rectangle = document.getElementById(rectangleId);
   rectangle.style.display = rectangle.style.display === 'none' ? 'block' : 'none';
@@ -49,6 +51,11 @@ function closeRectangle(rectangleId) {
   var rectangle = document.getElementById(rectangleId);
   rectangle.style.display = 'none';
 }
+
+function changeBodyClass(className) {
+      document.body.className = className;
+    }
+    
 function handleDragStart(event) {
   event.dataTransfer.setData("text/plain", event.target.id);
 }
