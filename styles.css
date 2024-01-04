@@ -47,14 +47,14 @@
        box-shadow: 4px 4px 4px 1px rgba(0,0,0,0.5);
     }
     .themesButtons{
-      font-size: 2vw;
-      font-size: 2vh;
+      font-size: 1.5vw;
+      font-size: 1.5vh;
       color: white;
       font-weight: bold;
       font-family: "Helvetica";
       border-radius: 50px;
       background-color: rgba(125, 125, 125, 0.5);
-      padding: 1vw;
+      padding: 0.5vw;
       width:37vw;
       height:7vh;
       overflow: hidden;
@@ -143,20 +143,20 @@
     }
     .spring{
         background-image: url("spring.jpg");
-        height=100vh;
+        height:100vh;
     }
     .summer{
         background-image: url("summer.jpg");
-        height=100vh;
+        height:100vh;
     }
     .fall{
         background-image: url("fall.jpg");
-        height=100vh;
+        height:100vh;
         
     }
     .winter{
         background-image: url("winter.jpg");
-        height=100vh;
+        height:100vh;
         
     }
     
