@@ -10,7 +10,6 @@
   <h1 id="header"><b>Connections: See It!</b></h1>
 
   <div class="grid-container">
-
     <div class="grid-item non-empty-item" ontouchstart="handleTouchStart(event)" ontouchmove="handleTouchMove(event)" ontouchend="handleTouchEnd(event)" id="box1"></div>
     <div class="grid-item non-empty-item" ontouchstart="handleTouchStart(event)" ontouchmove="handleTouchMove(event)" ontouchend="handleTouchEnd(event)" id="box2"></div>
     <div class="grid-item non-empty-item" ontouchstart="handleTouchStart(event)" ontouchmove="handleTouchMove(event)" ontouchend="handleTouchEnd(event)" id="box3"></div>
@@ -54,17 +53,20 @@
 <div>
 <div class="buttonContainer">
 <button class="button buttonLeft" onclick="resetGrid()" ontouchend="resetGrid()">Reset</button>
-<button class="button buttonMiddle" onclick="toggleRectangle('themesRectangle')" ontouchend="toggleRectangle('themesRectangle')">Themes</button>
-<button class="button buttonRight" onclick="toggleRectangle('settingsRectangle')" ontouchend="toggleRectangle('settingsRectangle')">Settings</button>
+<button class="button buttonRight" onclick="toggleRectangle('themesRectangle')" ontouchend="toggleRectangle('themesRectangle')">Themes</button>
 </div>
 </div>
   <div id="themesRectangle" class="themes">
     <button class="exitButton" onclick="closeRectangle('themesRectangle')" ontouchend="closeRectangle('themesRectangle')">Exit</button>
-  </div>
-
-  <div id="settingsRectangle" class="settings">
-    <button class="exitButton" onclick="closeRectangle('settingsRectangle')"ontouchend="closeRectangle('settingsRectangle')">Exit</button>
-  
+    <p class ="titleThemes">Choose a Theme!</p>
+    <div class="themes2">
+    <button class="themesButtons" onclick="changeBodyClass('light')" ontouchend="changeBodyClass('light')">Light Mode</button>
+    <button class="themesButtons" onclick="changeBodyClass('dark')" ontouchend="changeBodyClass('dark')">Dark Mode</button>
+    <button class="themesButtons" onclick="changeBodyClass('spring')" ontouchend="changeBodyClass('spring')">Spring</button>
+    <button class="themesButtons" onclick="changeBodyClass('summer')" ontouchend="changeBodyClass('summer')">Summer</button>
+    <button class="themesButtons" onclick="changeBodyClass('fall')" ontouchend="changeBodyClass('fall')">Fall</button>
+    <button class="themesButtons" onclick="changeBodyClass('winter')" ontouchend="changeBodyClass('winter')">Winter</button>
+    </div>
   </div>
   <script type="text/javascript" src="script.js"></script>
 </body>
