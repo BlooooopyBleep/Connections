@@ -144,15 +144,21 @@
     }
     .spring{
         background-image: url("spring.jpg");
+        height=100vh;
     }
     .summer{
         background-image: url("summer.jpg");
+        height=100vh;
     }
     .fall{
         background-image: url("fall.jpg");
+        height=100vh;
+        
     }
     .winter{
         background-image: url("winter.jpg");
+        height=100vh;
+        
     }
     
     .titleThemes{
