@@ -57,7 +57,7 @@
       border-radius: 50px;
       background-color: rgba(125, 125, 125, 0.5);
       padding: 0.5vw;
-      width:37vw;
+      width:60vw;
       height:7vh;
       overflow: hidden;
       box-shadow: 4px 4px 4px 1px rgba(0,0,0,0.5);
@@ -114,7 +114,7 @@
 }
        .themes{
     border-radius: 10px;
-    width:40vw;
+    width:70vw;
     height:55vh;
     background-color: #adb5bd;
     position:absolute;
@@ -128,7 +128,7 @@
   flex-direction: column;
   align-items: center;
   justify-content: center;
-  width: 35vw;
+  width: 60vw;
   height: 35vh;
   background-color: #adb5bd;
   position: absolute;
