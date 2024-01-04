@@ -55,6 +55,7 @@ function closeRectangle(rectangleId) {
 function changeBodyClass(className) {
       document.body.className = className;
     }
+   
     
 function handleDragStart(event) {
   event.dataTransfer.setData("text/plain", event.target.id);
