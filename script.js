@@ -22,7 +22,7 @@ function test() {
       loadData(data);
     }
   });
-  xhr.open("GET", "https://play.william-duan.games:8080/api/v1/dailypuzzle");
+  xhr.open("GET", "https://play.william-duan.games:8443/api/v1/dailypuzzle");
   xhr.send();
 }
 function loadData(data) {
