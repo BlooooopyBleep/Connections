@@ -28,9 +28,6 @@ function test() {
   xhr.open("GET", "https://play.william-duan.games:8443/api/v1/dailypuzzle");
   xhr.send();
 }
-
-
-
 function loadData(data) {
   for (var wordNum = 1; wordNum <= 16; wordNum++) {
     document.getElementById("box" + wordNum).innerHTML = data[wordNum - 1];
@@ -44,16 +41,12 @@ function resetGrid() {
   for (var wordNum = 1; wordNum <= 16; wordNum++) {
     document.getElementById("box" + wordNum).innerHTML = data[wordNum - 1];
   }
-
   for (var wordNum = 1; wordNum <= 16; wordNum++) {
     document.getElementById("num" + wordNum).innerHTML = "&nbsp;";
   }
 }
-
 document.querySelector('.buttonLeft').addEventListener('click', resetGrid());
 document.querySelector('.buttonLeft').addEventListener('touchend', resetGrid());
-
-
 function toggleRectangle(rectangleId) {
   var rectangle = document.getElementById(rectangleId);
   rectangle.style.display = rectangle.style.display === 'none' ? 'block' : 'none';
@@ -62,7 +55,6 @@ function closeRectangle(rectangleId) {
   var rectangle = document.getElementById(rectangleId);
   rectangle.style.display = 'none';
 }
-
 function changeBodyClass(className) {
       document.body.className = className;
     }
@@ -75,22 +67,18 @@ function handleDrop(event) {
   event.preventDefault();
   var data = event.dataTransfer.getData("text/plain");
   var draggedElement = document.getElementById(data);
-
   // Check if the dragged element has the redx class
   if (draggedElement.classList.contains('redx')) {
     return; // Prevent dropping elements with redx class
   }
-
   // Check if the target element or any of its ancestors have the redx class
   var target = event.target;
   while (target && !target.classList.contains('redx')) {
     target = target.parentElement;
   }
-
   if (target && target.classList.contains('redx')) {
     return; // Prevent dropping onto elements with redx class
   }
-
   // Proceed with the drop if the above conditions are not met
   if (event.target.classList.contains('grid-item') && !event.target.classList.contains('selected')) {
     var targetText = event.target.innerHTML;
@@ -98,8 +86,6 @@ function handleDrop(event) {
     draggedElement.innerHTML = targetText;
   }
 }
-
-
 function handleDragOver(event) {
   event.preventDefault();
 }
@@ -110,7 +96,6 @@ gridItems.forEach(function (item) {
 });
 document.addEventListener('dragover', handleDragOver);
 document.addEventListener('drop', handleDrop);
-
 function closeMenu() {
   var menus = document.getElementsByClassName('menu');
   for (var i = 0; i < menus.length; i++) {
@@ -151,7 +136,6 @@ function handleTouchEnd(event) {
     document.querySelectorAll('.grid-item').forEach(function (box) {
       box.classList.remove('highlighted');
     });
-
     var target = document.elementFromPoint(event.changedTouches[0].clientX, event.changedTouches[0].clientY);
 
     // Check if the dragged element has the redx class
@@ -175,7 +159,6 @@ function handleTouchEnd(event) {
     selectedTextBox = null;
   }
 }
-
 function highlightBox(touchedTextBox) {
   document.querySelectorAll('.grid-item').forEach(function (box) {
     box.classList.remove('highlighted');
@@ -184,7 +167,6 @@ function highlightBox(touchedTextBox) {
     touchedTextBox.classList.add('highlighted');
   }
 }
-
 function checkAndAddRedX() {
   document.querySelectorAll('.grid-item.non-empty-item').forEach(function (item) {
     if (item.innerHTML.trim() === '&nbsp;') {
@@ -200,12 +182,8 @@ function checkAndRemoveRedX() {
     }
   });
 }
-
 setInterval(checkAndRemoveRedX,1);
-
 setInterval(checkAndAddRedX, 1);
-
 document.addEventListener('touchstart', handleTouchStart, { passive: false });
 document.addEventListener('touchmove', handleTouchMove, { passive: false });
 document.addEventListener('touchend', handleTouchEnd);
-
