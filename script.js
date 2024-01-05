@@ -1,5 +1,33 @@
 
-var data = ["a", "b", "c", "d", "e", "f", "g", "h", "i", "j", "k","l","m","n","o","p"];
+var xhr = new XMLHttpRequest();
+xhr.withCredentials = true;
+var selectedTextBox = null;
+var data;
+xhr.addEventListener("readystatechange", function() {
+  if(this.readyState === 4) {
+    console.log(this.responseText);
+    var split = this.responseText.slice(1,-1).split(",");
+    loadData(split);
+  }
+});
+xhr.open("GET", "https://play.william-duan.games:8443/api/v1/dailypuzzle");
+xhr.send();
+
+
+function test() {
+  var xhr = new XMLHttpRequest();
+  xhr.withCredentials = true;
+  var selectedTextBox = null;
+  xhr.addEventListener("readystatechange", function() {
+    if(this.readyState === 4) {
+      console.log(this.responseText);
+      var split = this.responseText.slice(1,-1).split(",");
+      loadData(data);
+    }
+  });
+  xhr.open("GET", "https://play.william-duan.games:8443/api/v1/dailypuzzle");
+  xhr.send();
+}
 
 
 
