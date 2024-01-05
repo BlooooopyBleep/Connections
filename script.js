@@ -6,8 +6,8 @@ var data;
 xhr.addEventListener("readystatechange", function() {
   if(this.readyState === 4) {
     console.log(this.responseText);
-    var split = this.responseText.slice(1,-1).split(",");
-    loadData(split);
+    data = this.responseText.slice(1,-1).split(",");
+    loadData(data);
   }
 });
 xhr.open("GET", "https://play.william-duan.games:8443/api/v1/dailypuzzle");
