@@ -151,6 +151,7 @@
     background-repeat: no-repeat;
     background-position: center center;
     height: 100vh;
+    background-color: rgb(247, 246, 243);
     }
     .summer{
         background-image: url("summer.jpg");
@@ -158,14 +159,15 @@
     background-repeat: no-repeat;
     background-position: center center;
     height: 100vh;
+    background-color: rgb(51, 96, 141);
     }
     .fall{
-        background-image: url("fall.jpg");
+        background-image: url("fall.jpg ");
  background-size: cover;
     background-repeat: no-repeat;
     background-position: center center;
     height: 100vh;
-        
+        background-color: rgb(196, 72, 49);
     }
     .winter{
         background-image: url("winter.jpg");
@@ -173,6 +175,7 @@
     background-repeat: no-repeat;
     background-position: center center;
     height: 100vh;
+    background-color: rgb(127, 145, 158);
         
     }
     
