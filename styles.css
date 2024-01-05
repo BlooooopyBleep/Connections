@@ -1,118 +1,108 @@
-
-
+  
     body {
-      margin: 2vh;
-      background-color: #495057;
-      overflow: hidden;
-          background-size: cover;
+    margin: 2vh;
+    background-color: #495057;
+    overflow: hidden;
+    background-size: cover;
     background-position: center center;
     }
-    
-      .buttonContainer{
-          margin-top:2vh;
-          text-align: center;
-          
-
-      }
-     .highlighted {
-      border: 2px solid yellow;
+   
+    .buttonContainer{
+    margin-top:2vh;
+    text-align: center;
+    }
+    .highlighted {
+    border: 2px solid yellow;
     }
     sus {
- background-color: rgba(125, 125, 125, 0.5);
-  width: 27vw;
-  border-radius:10px;
-  text-align:center;
+    background-color: rgba(125, 125, 125, 0.5);
+    width: 27vw;
+    border-radius:10px;
+    text-align:center;
     font-weight: bold;
-      color: white;
-      font-size: 3vw;
-      font-size: 3vh;
-      font-family: "Helvetica";
-      margin-top: 0.3vh;
-      margin-bottom: 1vh;
-      overflow: hidden;
-      box-shadow: 4px 4px 4px 1px rgba(0,0,0,0.5);
-        padding:0.1vw;
-
-  }
+    color: white;
+    font-size: 3vw;
+    font-size: 3vh;
+    font-family: "Helvetica";
+    margin-top: 0.3vh;
+    margin-bottom: 1vh;
+    overflow: hidden;
+    box-shadow: 4px 4px 4px 1px rgba(0,0,0,0.5);
+    padding:0.1vw;
+    
+    }
     .button {
-      font-size: 2.3vw;
-      font-size: 2.3vh;
-      color: white;
-      font-weight: bold;
-      font-family: "Helvetica";
-      border-radius: 50px;
-      background-color: rgba(125, 125, 125, 0.5);
-      padding: 1vw;
-      width:25vw;
-      height:7vh;
-      overflow: hidden;
-       box-shadow: 4px 4px 4px 1px rgba(0,0,0,0.5);
+    font-size: 2.3vw;
+    font-size: 2.3vh;
+    color: white;
+    font-weight: bold;
+    font-family: "Helvetica";
+    border-radius: 50px;
+    background-color: rgba(125, 125, 125, 0.5);
+    padding: 1vw;
+    width:25vw;
+    height:7vh;
+    overflow: hidden;
+    box-shadow: 4px 4px 4px 1px rgba(0,0,0,0.5);
     }
     .themesButtons{
-      font-size: 1.5vw;
-      font-size: 1.5vh;
-      color: white;
-      font-weight: bold;
-      font-family: "Helvetica";
-      border-radius: 50px;
-      background-color: rgba(125, 125, 125, 0.5);
-      padding: 0.5vw;
-      width:60vw;
-      height:7vh;
-      overflow: hidden;
-      box-shadow: 4px 4px 4px 1px rgba(0,0,0,0.5);
+    font-size: 1.5vw;
+    font-size: 1.5vh;
+    color: white;
+    font-weight: bold;
+    font-family: "Helvetica";
+    border-radius: 50px;
+    background-color: rgba(125, 125, 125, 0.5);
+    padding: 0.5vw;
+    width:60vw;
+    height:7vh;
+    overflow: hidden;
+    box-shadow: 4px 4px 4px 1px rgba(0,0,0,0.5);
     }
     .buttonLeft{
-        margin-left: 15vw;
-        float:left;
-        overflow: hidden;
+    margin-left: 15vw;
+    float:left;
+    overflow: hidden;
     }
-
     .buttonRight{
-        float:right;
-        margin-right: 15vw;
-        overflow: hidden;
+    float:right;
+    margin-right: 15vw;
+    overflow: hidden;
     }
-
     .empty-item {
-      background-color: #343a40;
-      opacity: .7;
+    background-color: #343a40;
+    opacity: .7;
     }
-
+   
     .non-empty-item {
-      background-color: #6c757d;
-      opacity: .7;
+    background-color: #6c757d;
+    opacity: .7;
     }
-
     .grid-container {
-      display: grid;
-      grid-template-columns: repeat(auto-fill, minmax(20%, 1fr));
-      gap: 1.5vh;
-      padding: 2vh;
-      font-weight: bold;
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(20%, 1fr));
+    gap: 1.5vh;
+    padding: 2vh;
+    font-weight: bold;
     margin: auto; 
     height: 68vh;
-  
     }
-
-
-      .grid-item {
-  font-family: "Helvetica";
-  font-size: 1vw;
-  font-size: 1vh;
-  color: white;
-  text-align: center;
-  border-radius: 15px;
-  box-sizing: border-box;
-  padding: 1.5vh 1vw; 
-  touch-action: manipulation;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  box-shadow: 4px 4px 4px 1px rgba(0,0,0,0.5);
-
-}
-       .themes{
+    .grid-item {
+    font-family: "Helvetica";
+    font-size: 1vw;
+    font-size: 1vh;
+    color: white;
+    text-align: center;
+    border-radius: 15px;
+    box-sizing: border-box;
+    padding: 1.5vh 1vw; 
+    touch-action: manipulation;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    box-shadow: 4px 4px 4px 1px rgba(0,0,0,0.5);
+    }
+    .themes{
     border-radius: 10px;
     width:70vw;
     height:55vh;
@@ -124,77 +114,79 @@
     display: none;
     }
     .themes2 {
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  justify-content: center;
-  width: 60vw;
-  height: 35vh;
-  background-color: #adb5bd;
-  position: absolute;
-  top: 50%;
-  left: 50%;
-  transform: translate(-50%, -30%);
-  gap: 1vh;
-}
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    width: 60vw;
+    height: 35vh;
+    background-color: #adb5bd;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -30%);
+    gap: 1vh;
+    }
     
     .light{
-        background-color: white;
+    background-color: white;
     }
     .dark{
-        background-color: #495057;
+    background-color: #495057;
     }
     .spring{
-        background-image: url("spring.jpg");
-
-         background-size: cover;
+    background-image: url("spring.jpg");
+    background-size: cover;
     background-repeat: no-repeat;
     background-position: center center;
     height: 100vh;
     background-color: rgb(247, 246, 243);
     }
     .summer{
-        background-image: url("summer.jpg");
- background-size: cover;
+    background-image: url("summer.jpg");
+    background-size: cover;
     background-repeat: no-repeat;
     background-position: center center;
     height: 100vh;
     background-color: rgb(51, 96, 141);
     }
     .fall{
-        background-image: url("fall.jpg ");
- background-size: cover;
+    background-image: url("fall.jpg");
+    background-size: cover;
     background-repeat: no-repeat;
     background-position: center center;
     height: 100vh;
-        background-color: rgb(196, 72, 49);
+    background-color: rgb(196, 72, 49);
     }
     .winter{
-        background-image: url("winter.jpg");
- background-size: cover;
+    background-image: url("winter.jpg");
+    background-size: cover;
     background-repeat: no-repeat;
     background-position: center center;
     height: 100vh;
     background-color: rgb(127, 145, 158);
-        
     }
-    
     .titleThemes{
     text-align: center;
-      font-weight: bold;
-      color: black;
-      font-size: 4vw;
-      font-size: 4vh;
-      font-family: "Helvetica";
-      overflow: hidden;
+    font-weight: bold;
+    color: black;
+    font-size: 4vw;
+    font-size: 4vh;
+    font-family: "Helvetica";
+    overflow: hidden;
     }
     .exitButton {
-        font-size: 1.5vw;
-      font-size: 1.5vh;
-      color: white;
-      font-weight: bold;
-      font-family: "Helvetica";
-      border-radius: 50px;
-      background-color: rgba(255, 0, 0, 0.5);
-     margin-left: 0.1vw;
+    font-size: 1.5vw;
+    font-size: 1.5vh;
+    color: white;
+    font-weight: bold;
+    font-family: "Helvetica";
+    border-radius: 50px;
+    background-color: rgba(255, 0, 0, 0.5);
+    margin-left: 0.1vw;
+    }
+    .redx{
+    font-weight:bold;
+    color:red;
+    overflow:hidden;
     }
