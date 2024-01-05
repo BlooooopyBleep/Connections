@@ -138,15 +138,13 @@ function handleTouchEnd(event) {
     });
     var target = document.elementFromPoint(event.changedTouches[0].clientX, event.changedTouches[0].clientY);
 
-    // Check if the dragged element has the redx class
     if (selectedTextBox.classList.contains('redx')) {
-      selectedTextBox = null; // Prevent dragging redx elements
+      selectedTextBox = null; 
       return;
     }
 
-    // Check if the target element has the redx class
     if (target && target.classList.contains('redx')) {
-      selectedTextBox = null; // Prevent dropping onto redx elements
+      selectedTextBox = null;
       return;
     }
 
