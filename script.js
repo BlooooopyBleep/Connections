@@ -148,16 +148,26 @@ function handleTouchEnd(event) {
     document.querySelectorAll('.grid-item').forEach(function (box) {
       box.classList.remove('highlighted');
     });
-    var target = document.elementFromPoint(event.changedTouches[0].clientX, event.changedTouches[0].clientY);
-    if (target && target.classList.contains('grid-item') && !target.classList.contains('selected')) {
-      var data = selectedTextBox.innerHTML;
-      selectedTextBox.innerHTML = target.innerHTML;
-      target.innerHTML = data;
-
+    
+    // Check if the target has the redx class
+    if (event.target.classList.contains('redx')) {
+      // Handle logic for dropping onto elements with redx class
+      // For example, you might want to remove the redx class from the target
+      event.target.classList.remove('redx');
+    } else {
+      // Proceed with the drop if the target is not a redx element
+      var target = document.elementFromPoint(event.changedTouches[0].clientX, event.changedTouches[0].clientY);
+      if (target && target.classList.contains('grid-item') && !target.classList.contains('selected')) {
+        var data = selectedTextBox.innerHTML;
+        selectedTextBox.innerHTML = target.innerHTML;
+        target.innerHTML = data;
+      }
     }
+    
     selectedTextBox = null;
   }
 }
+
 function highlightBox(touchedTextBox) {
   document.querySelectorAll('.grid-item').forEach(function (box) {
     box.classList.remove('highlighted');
