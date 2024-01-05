@@ -124,19 +124,24 @@ function handleTouchEnd(event) {
       box.classList.remove('highlighted');
     });
 
-    // Check if the target has the redx class
-    if (event.target.classList.contains('redx')) {
-      // Handle logic for dropping onto elements with redx class
-      // For example, you might want to remove the redx class from the target
-      event.target.classList.remove('redx');
-    } else {
-      // Proceed with the drop if the target is not a redx element
-      var target = document.elementFromPoint(event.changedTouches[0].clientX, event.changedTouches[0].clientY);
-      if (target && target.classList.contains('grid-item') && !target.classList.contains('selected')) {
-        var data = selectedTextBox.innerHTML;
-        selectedTextBox.innerHTML = target.innerHTML;
-        target.innerHTML = data;
-      }
+    var target = document.elementFromPoint(event.changedTouches[0].clientX, event.changedTouches[0].clientY);
+
+    // Check if the dragged element has the redx class
+    if (selectedTextBox.classList.contains('redx')) {
+      selectedTextBox = null; // Prevent dragging redx elements
+      return;
+    }
+
+    // Check if the target element has the redx class
+    if (target && target.classList.contains('redx')) {
+      selectedTextBox = null; // Prevent dropping onto redx elements
+      return;
+    }
+
+    if (target && target.classList.contains('grid-item') && !target.classList.contains('selected')) {
+      var data = selectedTextBox.innerHTML;
+      selectedTextBox.innerHTML = target.innerHTML;
+      target.innerHTML = data;
     }
 
     selectedTextBox = null;
