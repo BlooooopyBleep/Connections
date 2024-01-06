@@ -28,7 +28,6 @@
     padding:0.1vw;
     }
     .button {
-    font-size: 2.3vw;
     font-size: 2.3vh;
     color: white;
     font-weight: bold;
@@ -42,7 +41,6 @@
     box-shadow: 4px 4px 4px 1px rgba(0,0,0,0.5);
     }
     .themesButtons{
-    font-size: 1.5vw;
     font-size: 1.5vh;
     color: white;
     font-weight: bold;
@@ -69,7 +67,6 @@
     background-color: #343a40;
     opacity: .7;
     }
-   
     .non-empty-item {
     background-color: #6c757d;
     opacity: .7;
@@ -85,7 +82,6 @@
     }
     .grid-item {
     font-family: "Helvetica";
-    font-size: 1vw;
     font-size: 1vh;
     color: white;
     text-align: center;
