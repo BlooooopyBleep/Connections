@@ -12,8 +12,6 @@ xhr.addEventListener("readystatechange", function() {
 });
 xhr.open("GET", "https://play.william-duan.games:8443/api/v1/dailypuzzle");
 xhr.send();
-
-
 function test() {
   var xhr = new XMLHttpRequest();
   xhr.withCredentials = true;
@@ -58,8 +56,6 @@ function closeRectangle(rectangleId) {
 function changeBodyClass(className) {
       document.body.className = className;
     }
-   
-    
 function handleDragStart(event) {
   event.dataTransfer.setData("text/plain", event.target.id);
 }
@@ -67,29 +63,22 @@ function handleDrop(event) {
   event.preventDefault();
   var data = event.dataTransfer.getData("text/plain");
   var draggedElement = document.getElementById(data);
-
-  // Check if the dragged element has the redx class
   if (draggedElement.classList.contains('redx')) {
-    return; // Prevent dropping elements with redx class
+    return;
   }
-
-  // Check if the target element or any of its ancestors have the redx class
   var target = event.target;
   while (target && !target.classList.contains('redx')) {
     target = target.parentElement;
   }
   if (target && target.classList.contains('redx')) {
-    return; // Prevent dropping onto elements with redx class
+    return;
   }
-
-  // Proceed with the drop if the above conditions are not met
   if (event.target.classList.contains('grid-item') && !event.target.classList.contains('selected')) {
     var targetText = event.target.innerHTML;
     event.target.innerHTML = draggedElement.innerHTML;
     draggedElement.innerHTML = targetText;
   }
 }
-
 function handleDragOver(event) {
   event.preventDefault();
 }
@@ -145,19 +134,15 @@ function handleTouchEnd(event) {
       selectedTextBox = null; 
       return;
     }
-
     if (target && target.classList.contains('redx')) {
       selectedTextBox = null; 
       return;
     }
-
     if (target && target.classList.contains('grid-item') && !target.classList.contains('selected')) {
       var data = selectedTextBox.innerHTML;
       selectedTextBox.innerHTML = target.innerHTML;
       target.innerHTML = data;
     }
-
-
     selectedTextBox = null;
   }
 }
