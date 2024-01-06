@@ -47,13 +47,13 @@ function resetGrid() {
 // Same idea as loading the data, but putting &nbsp as the empty grid items for a blank item.
 document.querySelector('.buttonLeft').addEventListener('click', resetGrid());
 document.querySelector('.buttonLeft').addEventListener('touchend', resetGrid());
-function openmenu(id) {
-  var menu = document.getElementById(id);
-  menu.style.display = menu.style.display === 'none' ? 'block' : 'none';
+function openmenu(rectangleId) {
+  var rectangle = document.getElementById(rectangleId);
+  rectangle.style.display = rectangle.style.display === 'none' ? 'block' : 'none';
 }
-function openmenu(id) {
-  var menu = document.getElementById(id);
-  menu.style.display = 'none';
+function closemenu(rectangleId) {
+  var rectangle = document.getElementById(rectangleId);
+  rectangle.style.display = 'none';
 }
 // This opens/closes the themes menu.
 function changeBodyClass(className) {
