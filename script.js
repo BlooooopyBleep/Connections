@@ -6,7 +6,7 @@ xhr.addEventListener("readystatechange", function() {
   if(this.readyState === 4) {
     console.log(this.responseText);
     data = this.responseText.slice(1,-1).split(",");
-    console.log(data+" loaded");
+    console.log(data.length+" loaded");
     loadData(data);
   }
 });
@@ -31,7 +31,6 @@ function test() {
 function loadData(data) {
   for (var wordNum = 1; wordNum <= 16; wordNum++) {
     document.getElementById("box" + wordNum).innerHTML = data[wordNum - 1];
-    console.log(data[wordNum] + " loaded");
   }
 }
 function resetGrid() {
