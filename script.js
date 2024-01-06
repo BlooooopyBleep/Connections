@@ -31,7 +31,7 @@ function test() {
 function loadData(data) {
   for (var wordNum = 1; wordNum <= 16; wordNum++) {
     document.getElementById("box" + wordNum).innerHTML = data[wordNum - 1];
-    console.log(data[wordNum-1] + " loaded");
+    console.log(data[wordNum] + " loaded");
   }
 }
 function resetGrid() {
@@ -67,21 +67,29 @@ function handleDrop(event) {
   event.preventDefault();
   var data = event.dataTransfer.getData("text/plain");
   var draggedElement = document.getElementById(data);
+
+  // Check if the dragged element has the redx class
   if (draggedElement.classList.contains('redx')) {
+    return; // Prevent dropping elements with redx class
   }
+
+  // Check if the target element or any of its ancestors have the redx class
   var target = event.target;
   while (target && !target.classList.contains('redx')) {
     target = target.parentElement;
   }
   if (target && target.classList.contains('redx')) {
-    return;
+    return; // Prevent dropping onto elements with redx class
   }
+
+  // Proceed with the drop if the above conditions are not met
   if (event.target.classList.contains('grid-item') && !event.target.classList.contains('selected')) {
     var targetText = event.target.innerHTML;
     event.target.innerHTML = draggedElement.innerHTML;
     draggedElement.innerHTML = targetText;
   }
 }
+
 function handleDragOver(event) {
   event.preventDefault();
 }
