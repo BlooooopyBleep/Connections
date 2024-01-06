@@ -31,7 +31,7 @@ function test() {
 function loadData(data) {
   for (var wordNum = 1; wordNum <= 16; wordNum++) {
     document.getElementById("box" + wordNum).innerHTML = data[wordNum - 1];
-    console.log(data[wordNum] + " loaded");
+    console.log(data[wordNum-1] + " loaded");
   }
 }
 function resetGrid() {
