@@ -26,11 +26,13 @@ function test() {
   xhr.open("GET", "https://play.william-duan.games:8443/api/v1/dailypuzzle");
   xhr.send();
 }
+// This function utilizes a html request to get the words from a websie which already has the scraped words to prevent "overscraping" New York Times whenever someone opens the app.
 function loadData(data) {
   for (var wordNum = 1; wordNum <= 16; wordNum++) {
     document.getElementById("box" + wordNum).innerHTML = data[wordNum - 1];
   }
 }
+// Uses the id from each non-empty-grid item to fill in the data.
 function resetGrid() {
   document.querySelectorAll('.grid-item').forEach(function (item) {
     item.classList.remove('redx');
@@ -42,16 +44,18 @@ function resetGrid() {
     document.getElementById("num" + wordNum).innerHTML = "&nbsp;";
   }
 }
+// Same idea as loading the data, but putting &nbsp as the empty grid items for a blank item.
 document.querySelector('.buttonLeft').addEventListener('click', resetGrid());
 document.querySelector('.buttonLeft').addEventListener('touchend', resetGrid());
-function toggleRectangle(rectangleId) {
-  var rectangle = document.getElementById(rectangleId);
+function openmenu(id) {
+  var menu = document.getElementById(id);
   rectangle.style.display = rectangle.style.display === 'none' ? 'block' : 'none';
 }
-function closeRectangle(rectangleId) {
-  var rectangle = document.getElementById(rectangleId);
+function openmenu(id) {
+  var menu = document.getElementById(id);
   rectangle.style.display = 'none';
 }
+// 
 function changeBodyClass(className) {
       document.body.className = className;
     }
