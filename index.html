@@ -3,9 +3,11 @@
 <head>
   <title>Connections</title>
   <link rel="stylesheet" href="styles.css">
+   <!-- The stylesheet is called styles.css, I put it there instead of including it in this code to seperate and shorten them. -->
 </head>
 <body>
   <sus>Connections: See It!</sus>
+  <!-- sus is a custom div I made for the title, ignore the name please. -->
   <div class="grid-container">
   
     <div class="grid-item non-empty-item" draggable="true" ontouchstart="handleTouchStart(event)" ontouchmove="handleTouchMove(event)" ontouchend="handleTouchEnd(event)" id="box1">empty</div>
@@ -48,12 +50,14 @@
     <div class="grid-item empty-item" draggable="true" ontouchstart="handleTouchStart(event)" ontouchmove="handleTouchMove(event)" ontouchend="handleTouchEnd(event)" id="num15">&nbsp</div>
     <div class="grid-item empty-item" draggable="true" ontouchstart="handleTouchStart(event)" ontouchmove="handleTouchMove(event)" ontouchend="handleTouchEnd(event)" id="num16">&nbsp</div>
     </div>
+  <!-- Creates the grid of 32 items with the top being the non-empty items (containing the 16 words) and the bottom being &nbsp as a placeholder. -->
 <div>
 <div class="buttonContainer">
 <button class="button buttonLeft" onclick="resetGrid()" ontouchend="resetGrid()">Reset</button>
 <button class="button buttonRight" onclick="toggleRectangle('themesRectangle')" ontouchend="toggleRectangle('themesRectangle')">Themes</button>
 </div>
 </div>
+  <!-- Creates the themes and reset buttons -->
   <div id="themesRectangle" class="themes">
     <button class="exitButton" onclick="closeRectangle('themesRectangle')" ontouchend="closeRectangle('themesRectangle')">Exit</button>
     <p class ="titleThemes">Choose a Theme!</p>
@@ -66,6 +70,8 @@
     <button class="themesButtons" onclick="changeBodyClass('winter')" ontouchend="changeBodyClass('winter')">Winter</button>
     </div>
   </div>
+  <!-- These are all the buttons that change the body class depending on the theme -->
   <script type="text/javascript" src="script.js"></script>
+  <!-- This is where all the scripts are stored - scripts.js -->
 </body>
 </html>
