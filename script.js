@@ -1,12 +1,12 @@
-
 var xhr = new XMLHttpRequest();
 xhr.withCredentials = true;
 var selectedTextBox = null;
-var data;
+var data= ["","","","","","","","","","","","","","","",""];
 xhr.addEventListener("readystatechange", function() {
   if(this.readyState === 4) {
     console.log(this.responseText);
     data = this.responseText.slice(1,-1).split(",");
+    console.log(data+" loaded");
     loadData(data);
   }
 });
