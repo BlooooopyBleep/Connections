@@ -49,16 +49,17 @@ document.querySelector('.buttonLeft').addEventListener('click', resetGrid());
 document.querySelector('.buttonLeft').addEventListener('touchend', resetGrid());
 function openmenu(id) {
   var menu = document.getElementById(id);
-  rectangle.style.display = rectangle.style.display === 'none' ? 'block' : 'none';
+  menu.style.display = menu.style.display === 'none' ? 'block' : 'none';
 }
 function openmenu(id) {
   var menu = document.getElementById(id);
-  rectangle.style.display = 'none';
+  menu.style.display = 'none';
 }
-// 
+// This opens/closes the themes menu.
 function changeBodyClass(className) {
       document.body.className = className;
     }
+// Changes the body class, used for the different themes.
 function handleDragStart(event) {
   event.dataTransfer.setData("text/plain", event.target.id);
 }
@@ -85,6 +86,8 @@ function handleDrop(event) {
 function handleDragOver(event) {
   event.preventDefault();
 }
+// This allows pc dragging to work.
+// Checking for the redx basically says that if the item is crossed out (contains class redx) then it cannot be dragged onto it or the item cannot be dragged.
 var gridItems = document.querySelectorAll('.grid-item');
 gridItems.forEach(function (item) {
   item.setAttribute('draggable', true);
@@ -92,12 +95,7 @@ gridItems.forEach(function (item) {
 });
 document.addEventListener('dragover', handleDragOver);
 document.addEventListener('drop', handleDrop);
-function closeMenu() {
-  var menus = document.getElementsByClassName('menu');
-  for (var i = 0; i < menus.length; i++) {
-    menus[i].style.display = 'none';
-  }
-}
+// Sets each item in the grid to be draggable and adds listeners for the drag.
 var selectedTextBox = null;
 function handleTouchStart(event) {
   event.preventDefault();
@@ -149,6 +147,7 @@ function handleTouchEnd(event) {
     selectedTextBox = null;
   }
 }
+// This allows mobile dragging to work. At first, the box that was dragged would render away from the finger, interfering with the scaling. However, extra lines were added here to hide the item being dragged.
 function highlightBox(touchedTextBox) {
   document.querySelectorAll('.grid-item').forEach(function (box) {
     box.classList.remove('highlighted');
@@ -157,6 +156,7 @@ function highlightBox(touchedTextBox) {
     touchedTextBox.classList.add('highlighted');
   }
 }
+// This highlights the grid item being dragged.
 function checkAndAddRedX() {
   document.querySelectorAll('.grid-item.non-empty-item').forEach(function (item) {
     if (item.innerHTML.trim() === '&nbsp;') {
@@ -172,8 +172,11 @@ function checkAndRemoveRedX() {
     }
   });
 }
+// Adds the redx class, which makes the grid item have a "X" in it, signaling that the word has been used there.
 setInterval(checkAndRemoveRedX,1);
 setInterval(checkAndAddRedX, 1);
+// Checks and updates the classes every mili.
 document.addEventListener('touchstart', handleTouchStart, { passive: false });
 document.addEventListener('touchmove', handleTouchMove, { passive: false });
 document.addEventListener('touchend', handleTouchEnd);
+// Event listeners.
