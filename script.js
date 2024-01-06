@@ -67,19 +67,15 @@ function handleDrop(event) {
   event.preventDefault();
   var data = event.dataTransfer.getData("text/plain");
   var draggedElement = document.getElementById(data);
-  // Check if the dragged element has the redx class
   if (draggedElement.classList.contains('redx')) {
-    return; // Prevent dropping elements with redx class
   }
-  // Check if the target element or any of its ancestors have the redx class
   var target = event.target;
   while (target && !target.classList.contains('redx')) {
     target = target.parentElement;
   }
   if (target && target.classList.contains('redx')) {
-    return; // Prevent dropping onto elements with redx class
+    return;
   }
-  // Proceed with the drop if the above conditions are not met
   if (event.target.classList.contains('grid-item') && !event.target.classList.contains('selected')) {
     var targetText = event.target.innerHTML;
     event.target.innerHTML = draggedElement.innerHTML;
@@ -110,7 +106,7 @@ function handleTouchStart(event) {
     selectedTextBox = touchedElement;
     highlightBox(selectedTextBox);
     selectedTextBox.style.transition = 'none';
-    selectedTextBox.style.pointerEvents = 'none'; // Disable hitbox
+    selectedTextBox.style.pointerEvents = 'none'; 
     selectedTextBox.style.pointerEvents = 'none'; 
   }
 }
@@ -129,22 +125,21 @@ function handleTouchMove(event) {
 function handleTouchEnd(event) {
   event.preventDefault();
   if (selectedTextBox) {
-    selectedTextBox.style.transition = ''; // Reset transition
+    selectedTextBox.style.transition = '';
     selectedTextBox.style.left = '';
     selectedTextBox.style.top = '';
-    selectedTextBox.style.pointerEvents = 'auto'; // Enable hitbox
+    selectedTextBox.style.pointerEvents = 'auto'; 
     document.querySelectorAll('.grid-item').forEach(function (box) {
       box.classList.remove('highlighted');
     });
     var target = document.elementFromPoint(event.changedTouches[0].clientX, event.changedTouches[0].clientY);
-
     if (selectedTextBox.classList.contains('redx')) {
       selectedTextBox = null; 
       return;
     }
 
     if (target && target.classList.contains('redx')) {
-      selectedTextBox = null;
+      selectedTextBox = null; 
       return;
     }
 
@@ -153,6 +148,7 @@ function handleTouchEnd(event) {
       selectedTextBox.innerHTML = target.innerHTML;
       target.innerHTML = data;
     }
+
 
     selectedTextBox = null;
   }
