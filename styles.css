@@ -65,11 +65,11 @@
     }
     .empty-item {
     background-color: #343a40;
-    opacity: .7;
+    opacity: .8;
     }
     .non-empty-item {
     background-color: #6c757d;
-    opacity: .7;
+    opacity: .8;
     }
     .grid-container {
     display: grid;
@@ -82,7 +82,7 @@
     }
     .grid-item {
     font-family: "Helvetica";
-    font-size: 1.5vh;
+    font-size: 1.75vh;
     color: white;
     text-align: center;
     border-radius: 15px;
